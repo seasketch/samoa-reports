@@ -1,0 +1,10 @@
+{
+  "author": "Tim Welch <tim.j.welch@gmail.com>",
+  "organization": "SeaSketch",
+  "region": "us-west-1",
+  "clients": [],
+  "preprocessingFunctions": [
+    "src/functions/clipToOceanEez.ts"
+  ],
+  "geoprocessingFunctions": []
+}
