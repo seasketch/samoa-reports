@@ -10,3 +10,4 @@ data/dist/**
 
 data/src/**
 data/dist/**
+test/*

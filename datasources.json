@@ -1,0 +1,36 @@
+{
+  "vector": [
+    {
+      "datasourceId": "deepwater_bioregions",
+      "formats": [
+        "fgb"
+      ],
+      "classProperty": "Draft name",
+      "created": "2022-07-08T23:04:05.577Z",
+      "lastUpdated": "2022-07-09T00:01:21.681Z",
+      "classStats": {
+        "Loto-i-Toga": {
+          "count": 1,
+          "area": 4644230437.20613
+        },
+        "Fafa-o-Mauga": {
+          "count": 3,
+          "area": 24543186744.367363
+        },
+        "I'a manu": {
+          "count": 2,
+          "area": 6775765453.443979
+        },
+        "Vasa-i-Saute": {
+          "count": 1,
+          "area": 41159387243.88757
+        },
+        "La'i": {
+          "count": 1,
+          "area": 52879833233.06447
+        }
+      }
+    }
+  ],
+  "raster": []
+}

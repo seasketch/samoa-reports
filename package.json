@@ -4,9 +4,15 @@
   "description": "Samoa MSP reports",
   "main": "src/index.js",
   "scripts": {
-    "ts-node": "ts-node --transpile-only --compiler-options '{\"esModuleInterop\":true, \"module\":\"commonjs\"}'",
-    "test": "geoprocessing test",
+    "start-data": "http-server data/dist -c-1 --silent",
+    "__test": "geoprocessing test",
+    "test": "npm run test:unit && npm run test:smoke",
+    "test:unit": "npm run __test -- --group=unit",
+    "test:unit:matching": "npm run __test -- --runInBand --group=unit -t",
+    "test:smoke": "start-server-and-test start-data 8080 'npm run __test -- --runInBand --group=smoke --silent'",
+    "test:smoke:matching": "npm run __test -- --runInBand --group=smoke -t",
     "add:template": "geoprocessing add:template",
+    "import:data": "npx ts-node data/importData.ts",
     "create:function": "geoprocessing create:function",
     "create:client": "geoprocessing create:client",
     "start:client": "geoprocessing start:client",
@@ -27,8 +33,8 @@
   ],
   "dependencies": {
     "@turf/area": "6.5.0",
-    "@turf/bbox-clip": "6.5.0",
     "@turf/bbox": "6.5.0",
+    "@turf/bbox-clip": "6.5.0",
     "@turf/combine": "6.5.0",
     "@turf/flatten": "6.5.0",
     "@turf/invariant": "6.5.0",
@@ -38,7 +44,8 @@
   "devDependencies": {
     "@seasketch/geoprocessing": "0.15.1-experimental-aws-refactor.64",
     "@turf/boolean-disjoint": "6.5.0",
-    "@turf/boolean-valid": "6.5.0"
+    "@turf/boolean-valid": "6.5.0",
+    "zx": "^4.3.0"
   },
   "repositoryUrl": "https://github.com/mcclintock-lab/samoa-reports",
   "author": "Tim Welch",
