@@ -1,21 +1,25 @@
+import fs from "fs-extra";
+
 /**
  * @group unit
  */
-import { importVector } from "./importData";
+import { importVectorDataset } from "./importDatasource";
 
 afterEach(() => {
-  // fs.removeSync("./test/data");
-  // fs.remove("./test/datasources_test.json");
+  fs.removeSync("./test/data");
+  fs.remove("./test/datasources_test.json");
 });
 
+// Switch to generating a geojson dataset
 describe("Import vector data", () => {
   test("importVector multi-class", async () => {
-    const vectorD = await importVector({
+    // TODO: switch to generating test vector dataset
+    const vectorD = await importVectorDataset({
       src: "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
       dstPath: "./test/data",
       datasourceId: "deepwater_bioregions",
-      datasourcePath: "./test/datasources_test.json",
-      classProperty: "Draft name",
+      // datasourcePath: "./test/datasources_test.json",
+      classKeys: ["Draft name"],
       publish: false,
     });
 

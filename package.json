@@ -39,7 +39,8 @@
     "@turf/flatten": "6.5.0",
     "@turf/invariant": "6.5.0",
     "@turf/kinks": "6.5.0",
-    "union-subdivided-polygons": "^0.9.1"
+    "union-subdivided-polygons": "^0.9.1",
+    "zod": "^3.17.3"
   },
   "devDependencies": {
     "@seasketch/geoprocessing": "0.15.1-experimental-aws-refactor.64",
