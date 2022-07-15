@@ -16,14 +16,17 @@ import { clipMultiMerge } from "@seasketch/geoprocessing";
 import {
   getLandVectorDatasource,
   getEezVectorDatasource,
-} from "../util/datasources";
+} from "../util/datasources/global";
+import config from "../../config/config";
+import { datasourcesSchema } from "../util/datasources/types";
 
 const ENFORCE_MAX_SIZE = false;
 const MAX_SIZE_KM = 500000 * 1000 ** 2; // Default 500,000 KM
 
 // Defined at module level for potential caching/reuse by serverless process
-const landDatasource = getLandVectorDatasource();
-const eezDatasource = getEezVectorDatasource();
+const datasources = datasourcesSchema.parse(config.datasources);
+const landDatasource = getLandVectorDatasource(datasources);
+const eezDatasource = getEezVectorDatasource(datasources);
 
 export async function clipLand(feature: Feature<Polygon | MultiPolygon>) {
   const landFeatures = await landDatasource.fetchUnion(bbox(feature), "gid");

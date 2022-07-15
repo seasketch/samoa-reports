@@ -1,0 +1,31 @@
+[
+    {
+        "metricId": "deepwaterRegionAreaOverlap",
+        "type": "areaOverlap",
+        "datasourceId": "deepwater_bioregions",
+        "objective": "deepwaterBioregions",
+        "classes": [
+            {
+                "classId": "Loto-i-Toga",
+                "display": "Loto-i-Toga"
+            },
+            {
+                "classId": "Fafa-o-Mauga",
+                "display": "Fafa-o-Mauga"
+            },
+            {
+                "classId": "I'a manu",
+                "display": "I'a manu"
+            },
+            {
+                "classId": "Vasa-i-Saute",
+                "display": "Vasa-i-Saute"
+            },
+            {
+                "classId": "La'i",
+                "display": "La'i"
+            }
+        ],
+        "layerId": ""
+    }
+]

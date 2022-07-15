@@ -1,16 +1,7 @@
-import { VectorDataSource, Feature, Polygon } from "@seasketch/geoprocessing";
 import fs from "fs-extra";
 import path from "path";
-import {
-  InternalDatasource,
-  ExternalDatasource,
-  internalDatasourceSchema,
-  externalDatasourceSchema,
-  datasourcesSchema,
-  Datasource,
-  Datasources,
-} from "./types";
-import { z } from "zod";
+import { datasourcesSchema, Datasource, Datasources } from "./types";
+import { isInternalDatasource } from "./helpers";
 
 /**
  * Manages datasources for a geoprocessing project
@@ -112,78 +103,3 @@ export function writeDatasources(pd: Datasources, filePath?: string) {
     filePath && filePath.length > 0 ? filePath : DATASOURCE_PATH;
   fs.writeJSONSync(finalFilePath, pd, { spaces: 2 });
 }
-
-//// HELPERS ////
-
-export const isInternalDatasource = (
-  /** InternalDatasource object */
-  ds: any
-): ds is InternalDatasource => {
-  return internalDatasourceSchema.safeParse(ds).success;
-};
-
-export const isExternalDatasource = (
-  /** ExternalDatasource object */
-  ds: any
-): ds is ExternalDatasource => {
-  return externalDatasourceSchema.safeParse(ds).success;
-};
-
-/** find and return datasource from passed datasources, otherwise reads from disk */
-export const getDatasourceById = (
-  datasourceId: string,
-  datasources?: Datasources
-): Datasource => {
-  const pds = datasources || readDatasources();
-  const pd = pds.find((pd) => pd.datasourceId === "global-clipping-osm-land");
-  if (!pd) {
-    throw new Error(`Missing datasource ${datasourceId} in datasource.json`);
-  } else {
-    return pd;
-  }
-};
-
-/** find and return external datasource from passed datasources, otherwise reads from disk */
-export const getExternalDatasourceById = (
-  datasourceId: string
-): ExternalDatasource => {
-  const pd = getDatasourceById(datasourceId);
-  if (isExternalDatasource(pd)) {
-    return pd;
-  } else {
-    throw new Error(
-      `Missing external datasource ${datasourceId} in datasource.json`
-    );
-  }
-};
-
-/** find and return internal datasource from passed datasources, otherwise reads from disk */
-export const getInternalDatasourceById = (
-  datasourceId: string
-): InternalDatasource => {
-  const pd = getDatasourceById(datasourceId);
-  if (isInternalDatasource(pd)) {
-    return pd;
-  } else {
-    throw new Error(
-      `Missing internal datasource ${datasourceId} in datasource.json`
-    );
-  }
-};
-
-////  GLOBAL DATASOURCE ////
-
-export type OsmLandFeature = Feature<Polygon, { gid: number }>;
-export type EezLandUnion = Feature<Polygon, { gid: number; UNION: string }>;
-
-export const getLandVectorDatasource = (): VectorDataSource<OsmLandFeature> => {
-  return new VectorDataSource<OsmLandFeature>(
-    getExternalDatasourceById("global-clipping-osm-land").url
-  );
-};
-
-export const getEezVectorDatasource = () => {
-  return new VectorDataSource<EezLandUnion>(
-    getExternalDatasourceById("global-clipping-eez-land-union").url
-  );
-};

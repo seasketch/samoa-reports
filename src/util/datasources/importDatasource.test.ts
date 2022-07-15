@@ -18,7 +18,7 @@ describe("Import vector data", () => {
       src: "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
       dstPath: "./test/data",
       datasourceId: "deepwater_bioregions",
-      // datasourcePath: "./test/datasources_test.json",
+      datasourcePath: "./test/datasources_test.json",
       classKeys: ["Draft name"],
       publish: false,
     });

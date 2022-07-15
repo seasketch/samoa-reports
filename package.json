@@ -46,6 +46,7 @@
     "@seasketch/geoprocessing": "0.15.1-experimental-aws-refactor.64",
     "@turf/boolean-disjoint": "6.5.0",
     "@turf/boolean-valid": "6.5.0",
+    "ts-to-zod": "^1.11.0",
     "zx": "^4.3.0"
   },
   "repositoryUrl": "https://github.com/mcclintock-lab/samoa-reports",

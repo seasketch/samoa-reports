@@ -1,4 +1,3 @@
-import { ISO8601DateTime, Nullable } from "@seasketch/geoprocessing";
 import { z } from "zod";
 
 //// SCHEMA ////
@@ -24,12 +23,13 @@ export const baseDatasourceSchema = z.object({
   datasourceId: z.string(),
   /** basic geospatial type */
   geo_type: geoTypesSchema,
-  /** keys to generate classes for.  Vector - properties, Raster - band numbers */
+  /** keys to generate classes for.  Vector - properties, Raster - numeric string value for categorical raster */
   classKeys: z.array(z.string()),
   /** Pre-calculated stats by key by class */
   keyStats: keyStatsSchema.optional(),
   /** Available formats */
   formats: z.array(supportedFormatsSchema),
+  noDataValue: z.number().optional(),
 });
 
 /** Define external location of datasource */

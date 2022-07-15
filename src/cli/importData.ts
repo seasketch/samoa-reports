@@ -1,7 +1,7 @@
 #! ./node_modules/.bin/ts-node
 import inquirer from "inquirer";
-import { importVectorDataset } from "../util/importDatasource";
-import { GeoTypes } from "../util/types";
+import { importVectorDataset } from "../util/datasources/importDatasource";
+import { GeoTypes } from "../util/datasources/types";
 
 export interface DataTypeAnswer {
   dataType: GeoTypes;

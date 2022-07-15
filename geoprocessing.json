@@ -6,5 +6,7 @@
   "preprocessingFunctions": [
     "src/functions/clipToOceanEez.ts"
   ],
-  "geoprocessingFunctions": []
+  "geoprocessingFunctions": [
+    "src/functions/deepwaterRegions.ts"
+  ]
 }
