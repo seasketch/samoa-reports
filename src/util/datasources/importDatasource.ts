@@ -13,6 +13,7 @@ import {
   KeyStats,
   ImportDatasourceOptions,
   ImportDatasourceConfig,
+  Stats,
 } from "./types";
 import dsConfig from "./config";
 
@@ -49,14 +50,15 @@ export async function importDatasource(
     })
   );
 
+  const timestamp = new Date().toISOString();
   const newVectorD: InternalDatasource = {
     src: config.src,
     geo_type: "vector",
     datasourceId: config.datasourceId,
     formats: config.formats,
     classKeys: config.classKeys,
-    created: new Date().toISOString(),
-    lastUpdated: new Date().toISOString(),
+    created: timestamp,
+    lastUpdated: timestamp,
     keyStats: classStatsByProperty,
     propertiesToKeep: config.propertiesToKeep,
   };
@@ -66,7 +68,7 @@ export async function importDatasource(
 }
 
 /** Takes import options and creates full import config */
-function genConfig(
+export function genConfig(
   options: ImportDatasourceOptions,
   newDstPath?: string
 ): ImportDatasourceConfig {
@@ -102,8 +104,74 @@ function genConfig(
   return config;
 }
 
+/** Returns classes for dataset.  If classKeys not defined then will return a single class with datasourceID */
+export function genKeyStats(options: ImportDatasourceConfig): KeyStats {
+  const rawJson = fs.readJsonSync(getJsonFilename(options));
+  const featureColl = rawJson as FeatureCollection<Polygon>;
+
+  if (!options.classKeys || options.classKeys.length === 0)
+    return {
+      total: {
+        total: {
+          count: 1,
+          area: area(featureColl),
+        },
+      },
+    };
+
+  const totalStats = featureColl.features.reduce<Stats>(
+    (statsSoFar, feat) => {
+      const featArea = area(feat);
+      return {
+        count: statsSoFar.count + 1,
+        area: statsSoFar?.area || 0 + featArea,
+      };
+    },
+    {
+      count: 0,
+      area: 0,
+    }
+  );
+
+  const classStats = options.classKeys.reduce<KeyStats>(
+    (statsSoFar, classProperty) => {
+      const metrics = featureColl.features.reduce<ClassStats>(
+        (classesSoFar, feat) => {
+          if (!feat.properties) throw new Error("Missing properties");
+          if (!options.classKeys) throw new Error("Missing classProperty");
+          const curClass = feat.properties[classProperty];
+          const curCount = classesSoFar[curClass]?.count || 0;
+          const curArea = classesSoFar[curClass]?.area || 0;
+          const featArea = area(feat);
+          return {
+            ...classesSoFar,
+            [curClass]: {
+              count: curCount + 1,
+              area: curArea + featArea,
+            },
+          };
+        },
+        {}
+      );
+
+      return {
+        ...statsSoFar,
+        [classProperty]: metrics,
+      };
+    },
+    {}
+  );
+
+  return {
+    ...classStats,
+    total: {
+      total: totalStats,
+    },
+  };
+}
+
 /** Convert vector datasource to GeoJSON */
-async function genGeojson(config: ImportDatasourceConfig) {
+export async function genGeojson(config: ImportDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
   const dst = getJsonFilename(config);
   const query = `SELECT "${
@@ -113,49 +181,8 @@ async function genGeojson(config: ImportDatasourceConfig) {
   await $`ogr2ogr -t_srs "EPSG:4326" -f GeoJSON -explodecollections -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
-/** Returns classes for dataset.  If classKeys not defined then will return a single class with datasourceID */
-function genKeyStats(options: ImportDatasourceConfig): KeyStats {
-  const rawJson = fs.readJsonSync(getJsonFilename(options));
-  const featureColl = rawJson as FeatureCollection<Polygon>;
-
-  if (!options.classKeys || options.classKeys.length === 0)
-    return {
-      all: {
-        [options.datasourceId]: {
-          count: 1,
-          area: area(featureColl),
-        },
-      },
-    };
-
-  return options.classKeys.reduce<KeyStats>((statsSoFar, classProperty) => {
-    const metrics = featureColl.features.reduce<ClassStats>(
-      (classesSoFar, feat) => {
-        if (!feat.properties) throw new Error("Missing properties");
-        if (!options.classKeys) throw new Error("Missing classProperty");
-        const curClass = feat.properties[classProperty];
-        const curCount = classesSoFar[curClass]?.count || 0;
-        const curArea = classesSoFar[curClass]?.area || 0;
-        const featArea = area(feat);
-        return {
-          ...classesSoFar,
-          [curClass]: {
-            count: curCount + 1,
-            area: curArea + featArea,
-          },
-        };
-      },
-      {}
-    );
-    return {
-      ...statsSoFar,
-      [classProperty]: metrics,
-    };
-  }, {});
-}
-
 /** Convert vector datasource to FlatGeobuf */
-async function genFlatgeobuf(config: ImportDatasourceConfig) {
+export async function genFlatgeobuf(config: ImportDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
   const dst = getFlatGeobufFilename(config);
   const query = `SELECT "${
@@ -173,6 +200,6 @@ function getFlatGeobufFilename(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".fgb";
 }
 
-function getDatasetBucketName(config: ImportDatasourceConfig) {
+export function getDatasetBucketName(config: ImportDatasourceConfig) {
   return `gp-${config.package.name}-datasets`;
 }

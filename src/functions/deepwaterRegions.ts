@@ -13,6 +13,7 @@ export async function deepwaterRegions(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
   console.log("config function!", config.datasources);
+  const ds = config.getDatasourceById("deepwater_bioregions");
   return {
     metrics: [],
     sketch: toNullSketch(sketch),

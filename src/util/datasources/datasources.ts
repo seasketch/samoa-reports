@@ -19,20 +19,23 @@ export async function createOrUpdateDatasource(
     (dSource) => dSource.datasourceId === inputDatasource.datasourceId
   );
   const dExists = dIndex > -1;
+  let finalDatasource: Datasource;
   if (dExists) {
-    console.log(`Updating existing datasource ${inputDatasource.datasourceId}`);
+    console.log(
+      `Updating ${inputDatasource.datasourceId} record in datasource file`
+    );
     // Update in place
-    let dsToUpdate = dSources[dIndex];
-    if (isInternalDatasource(dsToUpdate)) {
-      dsToUpdate = {
+    if (isInternalDatasource(inputDatasource)) {
+      dSources[dIndex] = {
+        ...dSources[dIndex],
         ...inputDatasource,
-        created: dsToUpdate.created,
+        lastUpdated: new Date().toISOString(),
       };
-    } else {
-      dsToUpdate = inputDatasource;
     }
   } else {
-    console.log(`Adding new datasource ${inputDatasource.datasourceId}`);
+    console.log(
+      `Adding ${inputDatasource.datasourceId} record in datasource file`
+    );
     // Just add onto the end
     dSources = dSources.concat(inputDatasource);
   }
@@ -41,7 +44,7 @@ export async function createOrUpdateDatasource(
 }
 
 /**
- * Reads datasources from disk and returns deep copy.
+ * Reads datasources from disk, validates them, and returns deep copy.
  * If datasource file not exist then start a new one and ensure directory exists
  */
 export function readDatasources(filePath?: string) {

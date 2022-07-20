@@ -1,4 +1,6 @@
 import { z } from "zod";
+
+// ToDo: move to first class type in geoprocessing
 import { Package } from "@seasketch/geoprocessing/dist/scripts";
 import { GeoprocessingJsonConfig } from "@seasketch/geoprocessing";
 
@@ -12,13 +14,13 @@ export const geoTypesSchema = z.enum(GEO_TYPES);
 const SUPPORTED_FORMATS = ["fgb", "geojson", "cog", "subdivided"] as const;
 export const supportedFormatsSchema = z.enum(SUPPORTED_FORMATS);
 
+export const statsSchema = z.object({
+  count: z.number(),
+  area: z.number().nullable(),
+});
+
 /** Pre-calculated stats by key by class */
-export const classStatsSchema = z.record(
-  z.object({
-    count: z.number(),
-    area: z.number().nullable(),
-  })
-);
+export const classStatsSchema = z.record(statsSchema);
 
 export const keyStatsSchema = z.record(classStatsSchema);
 
@@ -75,6 +77,7 @@ export const datasourcesSchema = z.array(datasourceSchema);
 
 export type GeoTypes = z.infer<typeof geoTypesSchema>;
 export type SupportedFormats = z.infer<typeof supportedFormatsSchema>;
+export type Stats = z.infer<typeof statsSchema>;
 export type ClassStats = z.infer<typeof classStatsSchema>;
 export type KeyStats = z.infer<typeof keyStatsSchema>;
 export type BaseDatasource = z.infer<typeof baseDatasourceSchema>;

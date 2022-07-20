@@ -45,13 +45,19 @@
           "count": 1,
           "area": 52879833233.06447
         }
+      },
+      "total": {
+        "total": {
+          "count": 8,
+          "area": 4644230437.20613
+        }
       }
     },
     "formats": [
       "fgb"
     ],
     "created": "2022-07-14T19:16:36.606Z",
-    "lastUpdated": "2022-07-14T19:16:36.606Z",
+    "lastUpdated": "2022-07-20T21:08:49.484Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -62,8 +68,8 @@
     "geo_type": "vector",
     "classKeys": [],
     "keyStats": {
-      "all": {
-        "inshore": {
+      "total": {
+        "total": {
           "count": 1,
           "area": 1207288309.411385
         }
@@ -73,7 +79,7 @@
       "fgb"
     ],
     "created": "2022-07-20T01:57:58.460Z",
-    "lastUpdated": "2022-07-20T01:57:58.460Z",
+    "lastUpdated": "2022-07-20T21:08:51.083Z",
     "src": "data/src/Data_Products/Data_Created/inshore.shp",
     "propertiesToKeep": []
   },
@@ -82,8 +88,8 @@
     "geo_type": "vector",
     "classKeys": [],
     "keyStats": {
-      "all": {
-        "offshore": {
+      "total": {
+        "total": {
           "count": 1,
           "area": 130001968050.2049
         }
@@ -93,28 +99,28 @@
       "fgb"
     ],
     "created": "2022-07-20T02:00:19.881Z",
-    "lastUpdated": "2022-07-20T02:00:19.881Z",
+    "lastUpdated": "2022-07-20T21:08:52.481Z",
     "src": "data/src/Data_Products/Data_Created/offshore.shp",
     "propertiesToKeep": []
   },
   {
-    "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
-    "geo_type": "vector",
     "datasourceId": "eez",
-    "formats": [
-      "fgb"
-    ],
+    "geo_type": "vector",
     "classKeys": [],
-    "created": "2022-07-20T02:10:02.627Z",
-    "lastUpdated": "2022-07-20T02:10:02.627Z",
     "keyStats": {
-      "all": {
-        "eez": {
+      "total": {
+        "total": {
           "count": 1,
           "area": 131259352923.98027
         }
       }
     },
+    "formats": [
+      "fgb"
+    ],
+    "created": "2022-07-20T02:10:02.627Z",
+    "lastUpdated": "2022-07-20T21:08:53.778Z",
+    "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   }
 ]
