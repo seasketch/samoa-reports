@@ -10,6 +10,13 @@ import {
 import { getDatasourceById } from "../src/util/datasources/helpers";
 import { MetricGroups, metricGroupsSchema } from "../src/util/metrics/types";
 import { ObjectivesNew, objectivesSchema } from "../src/util/objectives/types";
+import { VectorDataSource } from "@seasketch/geoprocessing";
+
+import {
+  getLandVectorDatasource as getGlobalLandVectorDatasource,
+  getEezVectorDatasource as getGlobalEezVectorDatasource,
+  getGlobalVectorDatasourceById,
+} from "../src/util/datasources/global";
 
 /**
  * Read-only client for project configuration for use by clients and functions
@@ -50,6 +57,18 @@ export class ConfigClient {
 
   public getDatasourceById(datasourceId: string): Datasource {
     return getDatasourceById(datasourceId, this._datasources);
+  }
+
+  public getGlobalVectorDatasourceById(datasourceId: string) {
+    return getGlobalVectorDatasourceById(datasourceId, this._datasources);
+  }
+
+  public getGlobalLandVectorDatasource() {
+    return getGlobalLandVectorDatasource(this._datasources);
+  }
+
+  public getGlobalEezVectorDatasource() {
+    return getGlobalEezVectorDatasource(this._datasources);
   }
 }
 

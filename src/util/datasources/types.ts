@@ -1,6 +1,10 @@
 import { z } from "zod";
+import { Package } from "@seasketch/geoprocessing/dist/scripts";
+import { GeoprocessingJsonConfig } from "@seasketch/geoprocessing";
 
-//// SCHEMA ////
+//// DATASOURCES ////
+
+// SCHEMA //
 
 const GEO_TYPES = ["vector", "raster"] as const;
 export const geoTypesSchema = z.enum(GEO_TYPES);
@@ -29,13 +33,24 @@ export const baseDatasourceSchema = z.object({
   keyStats: keyStatsSchema.optional(),
   /** Available formats */
   formats: z.array(supportedFormatsSchema),
+  /** Raster nodata value */
   noDataValue: z.number().optional(),
+  /** Import - Layer name/band within datasource to extract */
+  layerName: z.string().optional(),
 });
 
 /** Define external location of datasource */
-export const datasourceLocationSchema = z.object({
+export const externalSourceSchema = z.object({
   /** Url if external datasource */
   url: z.string(),
+});
+
+/** Define external location of datasource */
+export const internalImportSchema = z.object({
+  /** Import - Path to source data, with filename */
+  src: z.string(),
+  /** Import - Properties to filter into final dataset, all others will be removed */
+  propertiesToKeep: z.array(z.string()),
 });
 
 /** Define timestamps to ease syncing with local/published datasource files */
@@ -46,20 +61,17 @@ export const datasourceTimestampSchema = z.object({
   lastUpdated: z.string(),
 });
 
-export const internalDatasourceSchema = z.intersection(
-  baseDatasourceSchema,
-  datasourceTimestampSchema
-);
-export const externalDatasourceSchema = z.intersection(
-  baseDatasourceSchema,
-  datasourceLocationSchema
-);
+export const internalDatasourceSchema = baseDatasourceSchema
+  .merge(datasourceTimestampSchema)
+  .merge(internalImportSchema);
+export const externalDatasourceSchema =
+  baseDatasourceSchema.and(externalSourceSchema);
 export const datasourceSchema = internalDatasourceSchema.or(
   externalDatasourceSchema
 );
 export const datasourcesSchema = z.array(datasourceSchema);
 
-//// INFERRED TYPES ////
+// INFERRED TYPES //
 
 export type GeoTypes = z.infer<typeof geoTypesSchema>;
 export type SupportedFormats = z.infer<typeof supportedFormatsSchema>;
@@ -70,3 +82,28 @@ export type InternalDatasource = z.infer<typeof internalDatasourceSchema>;
 export type ExternalDatasource = z.infer<typeof externalDatasourceSchema>;
 export type Datasource = z.infer<typeof datasourceSchema>;
 export type Datasources = z.infer<typeof datasourcesSchema>;
+
+//// IMPORT DATSOURCE ////
+
+// SCHEMA //
+
+export const importDatasourceOptionsSchema =
+  baseDatasourceSchema.merge(internalImportSchema);
+
+// INFERRED TYPES //
+
+export type ImportDatasourceOptions = z.infer<
+  typeof importDatasourceOptionsSchema
+>;
+
+// NATIVE TYPES //
+
+/** Full configuration needed to import a dataset */
+export interface ImportDatasourceConfig extends ImportDatasourceOptions {
+  /** Path to store imported datasets after transformation, ready to be published or accessed via local web server for tests */
+  dstPath: string;
+  /** project package metadata */
+  package: Package;
+  /** geoprocessing metadata */
+  gp: GeoprocessingJsonConfig;
+}

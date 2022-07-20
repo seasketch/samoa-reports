@@ -1,125 +1,109 @@
-import {
-  FeatureCollection,
-  Polygon,
-  GeoprocessingJsonConfig,
-} from "@seasketch/geoprocessing";
-import { Package } from "@seasketch/geoprocessing/dist/scripts";
+import { FeatureCollection, Polygon } from "@seasketch/geoprocessing";
 import { $ } from "zx";
 import fs from "fs-extra";
 import path from "path";
 import area from "@turf/area";
 
 import { createOrUpdateDatasource } from "./datasources";
+import { publishDatasource } from "./publishDatasource";
 
 import {
   InternalDatasource,
-  SupportedFormats,
   ClassStats,
   KeyStats,
+  ImportDatasourceOptions,
+  ImportDatasourceConfig,
 } from "./types";
-
-/** Flexible options for representing a vector file dataset to import */
-export interface ImportVectorOptions {
-  /** Path to the src dataset */
-  src: string;
-  /** Name to call this datasource once imported */
-  datasourceId: string;
-  /** Path to datasource file */
-  datasourcePath?: string;
-  /** Path to store imported data */
-  dstPath?: string;
-  /** Layer name within datasource */
-  layerName?: string;
-  /** Properties to group by and calculate stats */
-  classKeys: string[];
-  /** Properties to filter into final dataset, all others will be removed */
-  propertiesToKeep?: string[];
-  /** Formats to publish to S3 */
-  formatsToPublish?: SupportedFormats[];
-  /** Whether to publish the datasource to s3 */
-  publish?: boolean;
-}
-
-/** Full properties of imported dataset */
-export interface ImportVectorConfig extends ImportVectorOptions {
-  dstPath: string;
-  layerName: string;
-  propertiesToKeep: string[];
-  formatsToPublish: SupportedFormats[];
-  meta: {
-    package: Package;
-    gp: GeoprocessingJsonConfig;
-  };
-}
+import dsConfig from "./config";
 
 /**
- * Import a vector dataset into the project.  Must be a src file that OGR can read.
- * Importing means stripping out all but classProperty and attribsToKeep,
- * converting to geojson/flatgeobuf, publishing to the datasets s3 bucket,
+ * Import a dataset into the project.  Must be a src file that OGR or GDAL can read.
+ * Importing means stripping unnecessary properties/layers,
+ * converting to cloud optimized format, publishing to the datasets s3 bucket,
  * and adding as datasource.
  */
-export async function importVectorDataset(options: ImportVectorOptions) {
-  const config = await genConfig(options);
+export async function importDatasource(
+  options: ImportDatasourceOptions,
+  newDatasourcePath?: string,
+  newDstPath?: string
+) {
+  const config = await genConfig(options, newDstPath);
 
   // Ensure dstPath is created
   fs.ensureDirSync(config.dstPath);
 
-  await genGeojson(config);
-  const classStatsByProperty = genKeyStats(config);
-  await genFlatgeobuf(config);
-  if (options.publish) {
-    await publishData(config);
+  if (options.geo_type === "vector") {
+    await genGeojson(config);
+    await genFlatgeobuf(config);
   }
+  const classStatsByProperty = genKeyStats(config);
+
+  await Promise.all(
+    config.formats.map((format) => {
+      return publishDatasource(
+        config.dstPath,
+        format,
+        config.datasourceId,
+        getDatasetBucketName(config)
+      );
+    })
+  );
 
   const newVectorD: InternalDatasource = {
+    src: config.src,
     geo_type: "vector",
     datasourceId: config.datasourceId,
-    formats: config.formatsToPublish,
+    formats: config.formats,
     classKeys: config.classKeys,
     created: new Date().toISOString(),
     lastUpdated: new Date().toISOString(),
     keyStats: classStatsByProperty,
+    propertiesToKeep: config.propertiesToKeep,
   };
 
-  await createOrUpdateDatasource(newVectorD, options.datasourcePath);
+  await createOrUpdateDatasource(newVectorD, newDatasourcePath);
   return newVectorD;
 }
 
-function genConfig(options: ImportVectorOptions): ImportVectorConfig {
+/** Takes import options and creates full import config */
+function genConfig(
+  options: ImportDatasourceOptions,
+  newDstPath?: string
+): ImportDatasourceConfig {
   let {
+    geo_type,
     src,
-    dstPath = "data/dist",
     datasourceId,
     propertiesToKeep = [],
     classKeys,
     layerName,
-    formatsToPublish = ["fgb"],
-    publish = true,
+    formats = dsConfig.importDefaultVectorFormats,
   } = options;
+
   if (!layerName)
     layerName = path.basename(src, "." + path.basename(src).split(".").pop());
-  if (!propertiesToKeep) propertiesToKeep = [layerName];
 
-  const meta = {
-    package: fs.readJsonSync(path.join(".", "package.json")),
-    gp: fs.readJsonSync(path.join(".", "geoprocessing.json")),
-  };
+  // merge to ensure keep at least classKeys
+  propertiesToKeep = Array.from(new Set(propertiesToKeep.concat(classKeys)));
 
-  return {
+  const config: ImportDatasourceConfig = {
+    geo_type,
     src,
-    dstPath,
+    dstPath: newDstPath || dsConfig.defaultDstPath,
     propertiesToKeep,
     classKeys,
     layerName,
     datasourceId,
-    formatsToPublish,
-    meta,
-    publish,
+    package: fs.readJsonSync(path.join(".", "package.json")),
+    gp: fs.readJsonSync(path.join(".", "geoprocessing.json")),
+    formats,
   };
+
+  return config;
 }
 
 /** Convert vector datasource to GeoJSON */
-async function genGeojson(config: ImportVectorConfig) {
+async function genGeojson(config: ImportDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
   const dst = getJsonFilename(config);
   const query = `SELECT "${
@@ -129,8 +113,8 @@ async function genGeojson(config: ImportVectorConfig) {
   await $`ogr2ogr -t_srs "EPSG:4326" -f GeoJSON -explodecollections -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
-/** Returns classes for dataset.  If classProperty not defined then will return a single class with datasourceID */
-function genKeyStats(options: ImportVectorConfig): KeyStats {
+/** Returns classes for dataset.  If classKeys not defined then will return a single class with datasourceID */
+function genKeyStats(options: ImportDatasourceConfig): KeyStats {
   const rawJson = fs.readJsonSync(getJsonFilename(options));
   const featureColl = rawJson as FeatureCollection<Polygon>;
 
@@ -171,7 +155,7 @@ function genKeyStats(options: ImportVectorConfig): KeyStats {
 }
 
 /** Convert vector datasource to FlatGeobuf */
-async function genFlatgeobuf(config: ImportVectorConfig) {
+async function genFlatgeobuf(config: ImportDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
   const dst = getFlatGeobufFilename(config);
   const query = `SELECT "${
@@ -181,25 +165,14 @@ async function genFlatgeobuf(config: ImportVectorConfig) {
   await $`ogr2ogr -t_srs "EPSG:4326" -f FlatGeobuf -explodecollections -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
-/** Publish datasource to datasets bucket */
-async function publishData(config: ImportVectorConfig) {
-  await Promise.all(
-    config.formatsToPublish.map(async (format) => {
-      return await $`aws s3 sync ${config.dstPath} s3://${getDatasetBucketName(
-        config
-      )}`;
-    })
-  );
-}
-
-function getJsonFilename(config: ImportVectorConfig) {
+function getJsonFilename(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".json";
 }
 
-function getFlatGeobufFilename(config: ImportVectorConfig) {
+function getFlatGeobufFilename(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".fgb";
 }
 
-function getDatasetBucketName(config: ImportVectorConfig) {
-  return `gp-${config.meta.package.name}-datasets`;
+function getDatasetBucketName(config: ImportDatasourceConfig) {
+  return `gp-${config.package.name}-datasets`;
 }

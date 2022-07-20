@@ -2,13 +2,11 @@ import fs from "fs-extra";
 import path from "path";
 import { datasourcesSchema, Datasource, Datasources } from "./types";
 import { isInternalDatasource } from "./helpers";
+import dsConfig from "./config";
 
 /**
  * Manages datasources for a geoprocessing project
  */
-
-// Default datasource file location, relative to project root
-export const DATASOURCE_PATH = "./datasources.json";
 
 /** Creates or updates datasource record on disk */
 export async function createOrUpdateDatasource(
@@ -22,7 +20,7 @@ export async function createOrUpdateDatasource(
   );
   const dExists = dIndex > -1;
   if (dExists) {
-    console.log(`Updating datasource ${inputDatasource.datasourceId}`);
+    console.log(`Updating existing datasource ${inputDatasource.datasourceId}`);
     // Update in place
     let dsToUpdate = dSources[dIndex];
     if (isInternalDatasource(dsToUpdate)) {
@@ -34,7 +32,7 @@ export async function createOrUpdateDatasource(
       dsToUpdate = inputDatasource;
     }
   } else {
-    console.log(`Updating datasource ${inputDatasource.datasourceId}`);
+    console.log(`Adding new datasource ${inputDatasource.datasourceId}`);
     // Just add onto the end
     dSources = dSources.concat(inputDatasource);
   }
@@ -66,7 +64,9 @@ export function readDatasources(filePath?: string) {
   ];
   // Override datasources path
   const finalFilePath =
-    filePath && filePath.length > 0 ? filePath : DATASOURCE_PATH;
+    filePath && filePath.length > 0
+      ? filePath
+      : dsConfig.defaultDatasourcesPath;
 
   const diskPds = (() => {
     try {
@@ -82,7 +82,7 @@ export function readDatasources(filePath?: string) {
       console.log(
         `Datasource file not found at ${finalFilePath}, using default datasources`
       );
-      fs.ensureDirSync(path.dirname(DATASOURCE_PATH));
+      fs.ensureDirSync(path.dirname(dsConfig.defaultDatasourcesPath));
       // fallback to default
       return pds;
     }
@@ -90,7 +90,7 @@ export function readDatasources(filePath?: string) {
 
   const result = datasourcesSchema.safeParse(diskPds);
   if (!result.success) {
-    console.error("Malformed datasources");
+    console.error("Datasources file is invalid.  Did you make manual changes?");
     console.log(JSON.stringify(result.error.issues, null, 2));
     throw new Error("Please fix or report this issue");
   } else {
@@ -100,6 +100,8 @@ export function readDatasources(filePath?: string) {
 
 export function writeDatasources(pd: Datasources, filePath?: string) {
   const finalFilePath =
-    filePath && filePath.length > 0 ? filePath : DATASOURCE_PATH;
+    filePath && filePath.length > 0
+      ? filePath
+      : dsConfig.defaultDatasourcesPath;
   fs.writeJSONSync(finalFilePath, pd, { spaces: 2 });
 }
