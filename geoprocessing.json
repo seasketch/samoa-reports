@@ -2,11 +2,15 @@
   "author": "Tim Welch <tim.j.welch@gmail.com>",
   "organization": "SeaSketch",
   "region": "us-west-1",
-  "clients": [],
+  "clients": [{
+    "name": "AllReport",
+    "description":  "All reports",
+    "source": "src/clients/AllReport.tsx"
+  }],
   "preprocessingFunctions": [
     "src/functions/clipToOceanEez.ts"
   ],
   "geoprocessingFunctions": [
-    "src/functions/deepwaterRegions.ts"
+    "src/functions/boundaryAreaOverlap.ts"
   ]
 }

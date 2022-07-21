@@ -10,7 +10,11 @@ import {
   Datasource,
   datasourcesSchema,
 } from "../src/util/datasources/types";
-import { getDatasourceById } from "../src/util/datasources/helpers";
+import {
+  getDatasourceById,
+  getFlatGeobufFilename,
+  isInternalDatasource,
+} from "../src/util/datasources/helpers";
 import {
   MetricGroup,
   MetricGroups,
@@ -22,6 +26,8 @@ import {
   GeoprocessingJsonConfig,
   Feature,
   Polygon,
+  createMetric,
+  Metric,
 } from "@seasketch/geoprocessing";
 
 import {
@@ -137,6 +143,85 @@ export class ConfigClient {
     if (!mg) throw new Error(`Missing MetricGroup ${metricId} in metrics.json`);
     return mg;
   }
+
+  public getMetricGroupTotalByClass(mg: MetricGroup): Metric[] {
+    const metrics = mg.classes
+      .map((curClass) => {
+        if (!curClass.datasourceId) {
+          throw new Error(`Missing datasourceId ${curClass.classId}`);
+        }
+        const ds = config.getDatasourceById(curClass.datasourceId);
+        if (isInternalDatasource(ds)) {
+          const totalArea = ds.keyStats?.total.total.area;
+          if (!totalArea)
+            throw new Error(
+              `Missing total area stat for ${ds.datasourceId} ${curClass.classId}`
+            );
+          return [
+            createMetric({
+              metricId: mg.metricId,
+              classId: curClass.classId,
+              value: totalArea,
+            }),
+          ];
+        }
+        return [];
+      })
+      .reduce<Metric[]>((metricsSoFar, curClassMetrics) => {
+        return metricsSoFar.concat(curClassMetrics);
+      }, []);
+
+    return metrics;
+  }
+
+  /**
+   * 
+   *     "keyStats": {
+      "total": {
+        "total": {
+          "count": 1,
+          "area": 1207288309.411385
+        }
+      }
+    },
+   * 
+   * {
+  "metrics": [
+    {
+      "metricId": "enviroZoneValueOverlap",
+      "sketchId": null,
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 782991
+    },
+    {
+      "metricId": "enviroZoneValueOverlap",
+      "sketchId": null,
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 630776
+    },
+    {
+      "metricId": "enviroZoneValueOverlap",
+      "sketchId": null,
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 555419
+    },
+    {
+      "metricId": "enviroZoneValueOverlap",
+      "sketchId": null,
+      "classId": "4",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1795434
+    }
+  ]
+}
+   */
 }
 
 const config = ConfigClient.getInstance();
