@@ -1,0 +1,43 @@
+{
+  "metrics": [
+    {
+      "metricId": "boundaryAreaOverlap",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 128814893.19981624,
+      "extra": {
+        "sketchName": "Example Sketch"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "classId": "inshore",
+      "groupId": null,
+      "geographyId": null,
+      "value": 25800445.573158555,
+      "extra": {
+        "sketchName": "Example Sketch"
+      }
+    },
+    {
+      "metricId": "boundaryAreaOverlap",
+      "classId": "offshore",
+      "groupId": null,
+      "geographyId": null,
+      "value": 99412601.45374818,
+      "extra": {
+        "sketchName": "Example Sketch"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "name": "Example Sketch",
+      "updatedAt": "2020-01-29T16:02:53.645Z",
+      "sketchClassId": "123abc"
+    },
+    "geometry": null
+  }
+}

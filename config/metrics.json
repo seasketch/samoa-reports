@@ -1,5 +1,29 @@
 [
     {
+        "metricId": "boundaryAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "eez",
+                "display": "EEZ",
+                "datasourceId": "eez",
+                "layerId": ""
+            },
+            {
+                "classId": "inshore",
+                "display": "Inshore",
+                "datasourceId": "inshore",
+                "layerId": ""
+            },
+            {
+                "classId": "offshore",
+                "display": "Offshore",
+                "datasourceId": "offshore",
+                "layerId": ""
+            }
+        ]
+    },
+    {
         "metricId": "deepwaterRegionAreaOverlap",
         "type": "areaOverlap",
         "datasourceId": "deepwater_bioregions",

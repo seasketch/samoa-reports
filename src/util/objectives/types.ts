@@ -8,7 +8,7 @@ export const objectiveAnswerSchema = z.enum(OBJECTIVE_COUNTS_ANSWERS);
 export const objectiveAnswerMapSchema = z.record(objectiveAnswerSchema);
 
 export const objectiveSchema = z.object({
-  id: z.string(),
+  objectiveId: z.string(),
   shortDesc: z.string(),
   target: z.number().nonnegative(),
   countsToward: objectiveAnswerMapSchema,

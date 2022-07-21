@@ -40,5 +40,5 @@ export const metricGroupsSchema = z.array(metricGroupSchema);
 
 //// INFERRED TYPES ////
 
-export type MetricGroupBase = z.infer<typeof metricGroupSchema>;
+export type MetricGroup = z.infer<typeof metricGroupSchema>;
 export type MetricGroups = z.infer<typeof metricGroupsSchema>;

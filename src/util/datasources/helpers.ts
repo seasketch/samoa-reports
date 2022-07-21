@@ -59,3 +59,13 @@ export const getInternalDatasourceById = (
     throw new Error(`Internal datasource not found -${datasourceId}`);
   }
 };
+
+/** Returns datasource filename in geojson format */
+export function getJsonFilename(datasource: InternalDatasource) {
+  return datasource.datasourceId + ".json";
+}
+
+/** Returns datasource filename in flatgeobuf format */
+export function getFlatGeobufFilename(datasource: InternalDatasource) {
+  return datasource.datasourceId + ".fgb";
+}

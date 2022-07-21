@@ -106,7 +106,7 @@ export function genConfig(
 
 /** Returns classes for dataset.  If classKeys not defined then will return a single class with datasourceID */
 export function genKeyStats(options: ImportDatasourceConfig): KeyStats {
-  const rawJson = fs.readJsonSync(getJsonFilename(options));
+  const rawJson = fs.readJsonSync(getJsonPath(options));
   const featureColl = rawJson as FeatureCollection<Polygon>;
 
   if (!options.classKeys || options.classKeys.length === 0)
@@ -173,7 +173,7 @@ export function genKeyStats(options: ImportDatasourceConfig): KeyStats {
 /** Convert vector datasource to GeoJSON */
 export async function genGeojson(config: ImportDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
-  const dst = getJsonFilename(config);
+  const dst = getJsonPath(config);
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
   }" FROM "${layerName}"`;
@@ -184,7 +184,7 @@ export async function genGeojson(config: ImportDatasourceConfig) {
 /** Convert vector datasource to FlatGeobuf */
 export async function genFlatgeobuf(config: ImportDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
-  const dst = getFlatGeobufFilename(config);
+  const dst = getFlatGeobufPath(config);
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
   }" FROM "${layerName}"`;
@@ -192,11 +192,11 @@ export async function genFlatgeobuf(config: ImportDatasourceConfig) {
   await $`ogr2ogr -t_srs "EPSG:4326" -f FlatGeobuf -explodecollections -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
-function getJsonFilename(config: ImportDatasourceConfig) {
+function getJsonPath(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".json";
 }
 
-function getFlatGeobufFilename(config: ImportDatasourceConfig) {
+function getFlatGeobufPath(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".fgb";
 }
 
