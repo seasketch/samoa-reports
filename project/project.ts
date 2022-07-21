@@ -9,10 +9,12 @@ import {
   Datasources,
   Datasource,
   datasourcesSchema,
+  InternalDatasource,
+  Stats,
 } from "../src/util/datasources/types";
 import {
   getDatasourceById,
-  isInternalDatasource,
+  getInternalDatasourceById,
 } from "../src/util/datasources/helpers";
 import {
   MetricGroup,
@@ -35,8 +37,7 @@ import { Package } from "@seasketch/geoprocessing/dist/scripts";
 import { Project, projectSchema } from "../src/util/project/types";
 
 /**
- * Read-only client for project configuration for use by clients and functions
- * Merges, validates, and otherwise ties everything together
+ * Client for reading project configuration/metadata.
  */
 export class ProjectClient {
   private static _instance: ProjectClient = new ProjectClient();
@@ -112,6 +113,11 @@ export class ProjectClient {
     return getDatasourceById(datasourceId, this._datasources);
   }
 
+  /** Returns InternalDatasource given datasourceId, throws if not found */
+  public getInternalDatasourceById(datasourceId: string): InternalDatasource {
+    return getInternalDatasourceById(datasourceId, this._datasources);
+  }
+
   /** Returns global VectorDatasource given datasourceId */
   public getGlobalVectorDatasourceById(datasourceId: string) {
     return getGlobalVectorDatasourceById(datasourceId, this._datasources);
@@ -135,18 +141,47 @@ export class ProjectClient {
     return mg;
   }
 
-  public getMetricGroupTotalByClass(mg: MetricGroup): Metric[] {
-    const metrics = mg.classes
-      .map((curClass) => {
-        if (!curClass.datasourceId) {
-          throw new Error(`Missing datasourceId ${curClass.classId}`);
-        }
-        const ds = this.getDatasourceById(curClass.datasourceId);
-        if (isInternalDatasource(ds)) {
-          const totalArea = ds.keyStats?.total.total.area;
+  /** Returns Metrics for given MetricGroup stat precalcuated on import (keyStats) */
+  public getPrecalcMetrics(
+    mg: MetricGroup,
+    /** The stat name to return - area, count */
+    statName: keyof Stats,
+    /** Optional class key to use */
+    classKey?: string
+  ): Metric[] {
+    if (mg.datasourceId && classKey) {
+      // top-level datasource, multi-class
+      const ds = this.getInternalDatasourceById(mg.datasourceId);
+      const metrics = mg.classes.map((curClass) => {
+        if (!ds.keyStats)
+          throw new Error(`Missing keyStats for ${ds.datasourceId}`);
+        const classArea = ds.keyStats[classKey][curClass.classId][statName];
+        if (!classArea)
+          throw new Error(
+            `Missing total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
+          );
+        const classMetric = createMetric({
+          metricId: mg.metricId,
+          classId: curClass.classId,
+          value: classArea,
+        });
+        return classMetric;
+      });
+      return metrics;
+    } else if (mg.classes[0].datasourceId) {
+      // class-level datasources, single-class each
+      const metrics = mg.classes
+        .map((curClass) => {
+          if (!curClass.datasourceId) {
+            throw new Error(`Missing datasourceId ${mg.metricId}`);
+          }
+          const ds = this.getInternalDatasourceById(curClass.datasourceId);
+          if (!ds.keyStats)
+            throw new Error(`Missing keyStats for ${ds.datasourceId}`);
+          const totalArea = ds.keyStats.total.total[statName];
           if (!totalArea)
             throw new Error(
-              `Missing total area stat for ${ds.datasourceId} ${curClass.classId}`
+              `Missing total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
             );
           return [
             createMetric({
@@ -155,14 +190,14 @@ export class ProjectClient {
               value: totalArea,
             }),
           ];
-        }
-        return [];
-      })
-      .reduce<Metric[]>((metricsSoFar, curClassMetrics) => {
-        return metricsSoFar.concat(curClassMetrics);
-      }, []);
+        })
+        .reduce<Metric[]>((metricsSoFar, curClassMetrics) => {
+          return metricsSoFar.concat(curClassMetrics);
+        }, []);
 
-    return metrics;
+      return metrics;
+    }
+    throw new Error(`Missing datasourceId(s) in MetricGroup ${mg.metricId}`);
   }
 }
 

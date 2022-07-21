@@ -24,8 +24,10 @@ import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
 const boundaryMetricGroup = project.getMetricGroup("boundaryAreaOverlap");
-const boundaryTotalMetrics =
-  project.getMetricGroupTotalByClass(boundaryMetricGroup);
+const boundaryTotalMetrics = project.getPrecalcMetrics(
+  boundaryMetricGroup,
+  "area"
+);
 
 const METRIC_ID = boundaryMetricGroup.metricId;
 const PERC_METRIC_ID = `${boundaryMetricGroup.metricId}Perc`;
