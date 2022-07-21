@@ -53,6 +53,8 @@ export const internalImportSchema = z.object({
   src: z.string(),
   /** Import - Properties to filter into final dataset, all others will be removed */
   propertiesToKeep: z.array(z.string()),
+  /** Import - Whether to explode multi-geometries into single e.g. MultiPolygon to Polygon. Defaults to false */
+  explodeMulti: z.boolean().optional(),
 });
 
 /** Define timestamps to ease syncing with local/published datasource files */

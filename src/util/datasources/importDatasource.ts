@@ -61,6 +61,7 @@ export async function importDatasource(
     lastUpdated: timestamp,
     keyStats: classStatsByProperty,
     propertiesToKeep: config.propertiesToKeep,
+    explodeMulti: config.explodeMulti,
   };
 
   await createOrUpdateDatasource(newVectorD, newDatasourcePath);
@@ -80,6 +81,7 @@ export function genConfig(
     classKeys,
     layerName,
     formats = dsConfig.importDefaultVectorFormats,
+    explodeMulti,
   } = options;
 
   if (!layerName)
@@ -99,6 +101,7 @@ export function genConfig(
     package: fs.readJsonSync(path.join(".", "package.json")),
     gp: fs.readJsonSync(path.join(".", "geoprocessing.json")),
     formats,
+    explodeMulti,
   };
 
   return config;
@@ -177,8 +180,14 @@ export async function genGeojson(config: ImportDatasourceConfig) {
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
   }" FROM "${layerName}"`;
+  const explodeOption =
+    config.explodeMulti === undefined
+      ? "-explodecollections"
+      : config.explodeMulti === true
+      ? "-explodecollections"
+      : "";
   fs.removeSync(dst);
-  await $`ogr2ogr -t_srs "EPSG:4326" -f GeoJSON -explodecollections -dialect OGRSQL -sql ${query} ${dst} ${src}`;
+  await $`ogr2ogr -t_srs "EPSG:4326" -f GeoJSON  ${explodeOption} -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
 /** Convert vector datasource to FlatGeobuf */
@@ -188,8 +197,14 @@ export async function genFlatgeobuf(config: ImportDatasourceConfig) {
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
   }" FROM "${layerName}"`;
+  const explodeOption =
+    config.explodeMulti === undefined
+      ? "-explodecollections"
+      : config.explodeMulti === true
+      ? "-explodecollections"
+      : "";
   fs.removeSync(dst);
-  await $`ogr2ogr -t_srs "EPSG:4326" -f FlatGeobuf -explodecollections -dialect OGRSQL -sql ${query} ${dst} ${src}`;
+  await $`ogr2ogr -t_srs "EPSG:4326" -f FlatGeobuf ${explodeOption} -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
 function getJsonPath(config: ImportDatasourceConfig) {
