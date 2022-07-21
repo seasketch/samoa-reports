@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { SegmentControl, ReportPage } from "@seasketch/geoprocessing/client-ui";
 import Viability from "./Viability";
-import config from "../../config";
 
 const enableAllTabs = false;
 const AllReports = () => {
-  console.log(config.datasources);
   const [tab, setTab] = useState<string>("Viability");
   return (
     <>
@@ -13,7 +11,7 @@ const AllReports = () => {
         <SegmentControl
           value={tab}
           onClick={(segment) => setTab(segment)}
-          segments={["Viability", "Representation"]}
+          segments={["Viability"]}
         />
       </div>
       <ReportPage hidden={!enableAllTabs && tab !== "Viability"}>

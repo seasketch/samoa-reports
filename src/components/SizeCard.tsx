@@ -20,12 +20,12 @@ import {
   DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
 import styled from "styled-components";
-import config from "../../config";
+import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
-const boundaryMetricGroup = config.getMetricGroup("boundaryAreaOverlap");
+const boundaryMetricGroup = project.getMetricGroup("boundaryAreaOverlap");
 const boundaryTotalMetrics =
-  config.getMetricGroupTotalByClass(boundaryMetricGroup);
+  project.getMetricGroupTotalByClass(boundaryMetricGroup);
 
 const METRIC_ID = boundaryMetricGroup.metricId;
 const PERC_METRIC_ID = `${boundaryMetricGroup.metricId}Perc`;
@@ -88,7 +88,7 @@ const SizeCard = () => {
           >
             <p>
               Offshore plans must meet size objectives and stay within the
-              offshore area of the {config.project.nounPossessive || ""} EEZ
+              offshore area of the {project.basic.nounPossessive || ""} EEZ
               (12-200 nautical miles from shore).
             </p>
 

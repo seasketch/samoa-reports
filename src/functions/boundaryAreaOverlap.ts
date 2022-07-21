@@ -12,7 +12,7 @@ import {
   sortMetrics,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
-import config from "../../config";
+import project from "../../project";
 import {
   getFlatGeobufFilename,
   isInternalDatasource,
@@ -21,7 +21,7 @@ import {
 export async function boundaryAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
-  const metricGroup = config.getMetricGroup("boundaryAreaOverlap");
+  const metricGroup = project.getMetricGroup("boundaryAreaOverlap");
 
   const polysByBoundary = (
     await Promise.all(
@@ -29,14 +29,14 @@ export async function boundaryAreaOverlap(
         if (!curClass.datasourceId) {
           throw new Error(`Missing datasourceId ${curClass.classId}`);
         }
-        const ds = config.getDatasourceById(curClass.datasourceId);
+        const ds = project.getDatasourceById(curClass.datasourceId);
         if (isInternalDatasource(ds)) {
-          const url = `${config.dataBucketUrl}${getFlatGeobufFilename(ds)}`;
+          const url = `${project.dataBucketUrl}${getFlatGeobufFilename(ds)}`;
           console.log("url", url);
           // Fetch for entire project area, we want the whole thing
           const polys = await fgbFetchAll<Feature<Polygon>>(
             url,
-            config.projectBbox
+            project.basic.bbox
           );
           return polys;
         }

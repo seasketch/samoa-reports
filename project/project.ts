@@ -1,7 +1,7 @@
 import datasources from "./datasources.json";
 import metrics from "./metrics.json";
 import objectives from "./objectives.json";
-import project from "./project.json";
+import basic from "./basic.json";
 import projectPackage from "../package.json";
 import gp from "../geoprocessing.json";
 
@@ -12,7 +12,6 @@ import {
 } from "../src/util/datasources/types";
 import {
   getDatasourceById,
-  getFlatGeobufFilename,
   isInternalDatasource,
 } from "../src/util/datasources/helpers";
 import {
@@ -22,10 +21,7 @@ import {
 } from "../src/util/metrics/types";
 import { ObjectivesNew, objectivesSchema } from "../src/util/objectives/types";
 import {
-  BBox,
   GeoprocessingJsonConfig,
-  Feature,
-  Polygon,
   createMetric,
   Metric,
 } from "@seasketch/geoprocessing";
@@ -42,10 +38,10 @@ import { Project, projectSchema } from "../src/util/project/types";
  * Read-only client for project configuration for use by clients and functions
  * Merges, validates, and otherwise ties everything together
  */
-export class ConfigClient {
-  private static _instance: ConfigClient = new ConfigClient();
+export class ProjectClient {
+  private static _instance: ProjectClient = new ProjectClient();
 
-  private _project: Project = projectSchema.parse(project);
+  private _project: Project = projectSchema.parse(basic);
   private _datasources: Datasources = datasourcesSchema.parse(datasources);
   private _metrics: MetricGroups = metricGroupsSchema.parse(metrics);
   private _objectives: ObjectivesNew = objectivesSchema.parse(objectives);
@@ -55,22 +51,22 @@ export class ConfigClient {
   private _geoprocessing: GeoprocessingJsonConfig = gp;
 
   constructor() {
-    if (ConfigClient._instance) {
+    if (ProjectClient._instance) {
       throw new Error(
-        "Error: Instantiation failed: Use Config.getInstance() instead of new."
+        "Error: Instantiation failed: Use ProjectClient.getInstance() instead of new."
       );
     }
-    ConfigClient._instance = this;
+    ProjectClient._instance = this;
   }
 
-  public static getInstance(): ConfigClient {
-    return ConfigClient._instance;
+  public static getInstance(): ProjectClient {
+    return ProjectClient._instance;
   }
 
   // ASSETS //
 
   /** Returns typed config from project.json */
-  public get project(): Project {
+  public get basic(): Project {
     return this._project;
   }
 
@@ -109,11 +105,6 @@ export class ConfigClient {
       : `https://gp-${this._package.name}-datasets.s3.${this._geoprocessing.region}.amazonaws.com/`;
   }
 
-  /** Returns bounding box of the project region */
-  public get projectBbox() {
-    return this._project.bbox;
-  }
-
   // HELPERS //
 
   /** Returns Datasource given datasourceId */
@@ -150,7 +141,7 @@ export class ConfigClient {
         if (!curClass.datasourceId) {
           throw new Error(`Missing datasourceId ${curClass.classId}`);
         }
-        const ds = config.getDatasourceById(curClass.datasourceId);
+        const ds = this.getDatasourceById(curClass.datasourceId);
         if (isInternalDatasource(ds)) {
           const totalArea = ds.keyStats?.total.total.area;
           if (!totalArea)
@@ -173,56 +164,7 @@ export class ConfigClient {
 
     return metrics;
   }
-
-  /**
-   * 
-   *     "keyStats": {
-      "total": {
-        "total": {
-          "count": 1,
-          "area": 1207288309.411385
-        }
-      }
-    },
-   * 
-   * {
-  "metrics": [
-    {
-      "metricId": "enviroZoneValueOverlap",
-      "sketchId": null,
-      "classId": "1",
-      "groupId": null,
-      "geographyId": null,
-      "value": 782991
-    },
-    {
-      "metricId": "enviroZoneValueOverlap",
-      "sketchId": null,
-      "classId": "2",
-      "groupId": null,
-      "geographyId": null,
-      "value": 630776
-    },
-    {
-      "metricId": "enviroZoneValueOverlap",
-      "sketchId": null,
-      "classId": "3",
-      "groupId": null,
-      "geographyId": null,
-      "value": 555419
-    },
-    {
-      "metricId": "enviroZoneValueOverlap",
-      "sketchId": null,
-      "classId": "4",
-      "groupId": null,
-      "geographyId": null,
-      "value": 1795434
-    }
-  ]
-}
-   */
 }
 
-const config = ConfigClient.getInstance();
-export default config;
+const project = ProjectClient.getInstance();
+export default project;
