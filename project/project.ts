@@ -5,6 +5,8 @@ import basic from "./basic.json";
 import projectPackage from "../package.json";
 import gp from "../geoprocessing.json";
 
+import { MetricGroup as MetricGroupLegacy } from "@seasketch/geoprocessing";
+
 import {
   Datasources,
   Datasource,
@@ -17,11 +19,19 @@ import {
   getInternalDatasourceById,
 } from "../src/util/datasources/helpers";
 import {
+  getObjectiveById,
+  newObjectiveToLegacy,
+} from "../src/util/objectives/helpers";
+import {
   MetricGroup,
   MetricGroups,
   metricGroupsSchema,
 } from "../src/util/metrics/types";
-import { ObjectivesNew, objectivesSchema } from "../src/util/objectives/types";
+import {
+  ObjectiveNew,
+  ObjectivesNew,
+  objectivesSchema,
+} from "../src/util/objectives/types";
 import {
   GeoprocessingJsonConfig,
   createMetric,
@@ -133,12 +143,45 @@ export class ProjectClient {
     return getGlobalEezVectorDatasource(this._datasources);
   }
 
+  // OBJECTIVES //
+
+  /** Returns Objective given objectiveId */
+  public getObjectiveById(objectiveId: string): ObjectiveNew {
+    return getObjectiveById(objectiveId, this._objectives);
+  }
+
   // METRICS //
 
   public getMetricGroup(metricId: string): MetricGroup {
     const mg = this._metrics.find((m) => m.metricId === metricId);
     if (!mg) throw new Error(`Missing MetricGroup ${metricId} in metrics.json`);
+
     return mg;
+  }
+
+  public getLegacyMetricGroup(metricId: string): MetricGroupLegacy {
+    const mg = this.getMetricGroup(metricId);
+    const topObjective = mg.objectiveId
+      ? newObjectiveToLegacy(this.getObjectiveById(mg.objectiveId))
+      : undefined;
+
+    const legacyMg: MetricGroupLegacy = {
+      ...mg,
+      classes: mg.classes.map((curClass) => {
+        const target = curClass.objectiveId
+          ? this.getObjectiveById(curClass.objectiveId).target
+          : topObjective
+          ? topObjective.target
+          : undefined;
+        return {
+          ...curClass,
+          goalValue: target,
+        };
+      }),
+      ...({ objective: topObjective } || {}),
+    };
+
+    return legacyMg;
   }
 
   /** Returns Metrics for given MetricGroup stat precalcuated on import (keyStats) */
@@ -154,11 +197,11 @@ export class ProjectClient {
       const ds = this.getInternalDatasourceById(mg.datasourceId);
       const metrics = mg.classes.map((curClass) => {
         if (!ds.keyStats)
-          throw new Error(`Missing keyStats for ${ds.datasourceId}`);
+          throw new Error(`Expected keyStats for ${ds.datasourceId}`);
         const classArea = ds.keyStats[classKey][curClass.classId][statName];
         if (!classArea)
           throw new Error(
-            `Missing total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
+            `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
           );
         const classMetric = createMetric({
           metricId: mg.metricId,
@@ -177,11 +220,11 @@ export class ProjectClient {
           }
           const ds = this.getInternalDatasourceById(curClass.datasourceId);
           if (!ds.keyStats)
-            throw new Error(`Missing keyStats for ${ds.datasourceId}`);
+            throw new Error(`Expected keyStats for ${ds.datasourceId}`);
           const totalArea = ds.keyStats.total.total[statName];
           if (!totalArea)
             throw new Error(
-              `Missing total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
+              `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
             );
           return [
             createMetric({

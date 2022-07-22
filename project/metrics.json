@@ -7,18 +7,21 @@
                 "classId": "eez",
                 "display": "EEZ",
                 "datasourceId": "eez",
+                "objectiveId": "eez",
                 "layerId": ""
             },
             {
                 "classId": "inshore",
                 "display": "Inshore",
                 "datasourceId": "inshore",
+                "objectiveId": "inshore",
                 "layerId": ""
             },
             {
                 "classId": "offshore",
                 "display": "Offshore",
                 "datasourceId": "offshore",
+                "objectiveId": "offshore",
                 "layerId": ""
             }
         ]
@@ -27,7 +30,7 @@
         "metricId": "deepwaterRegionAreaOverlap",
         "type": "areaOverlap",
         "datasourceId": "deepwater_bioregions",
-        "objective": "deepwaterBioregions",
+        "objectiveId": "deepwaterBioregions",
         "classes": [
             {
                 "classId": "Loto-i-Toga",

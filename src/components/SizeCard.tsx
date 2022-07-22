@@ -24,6 +24,9 @@ import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
 const boundaryMetricGroup = project.getMetricGroup("boundaryAreaOverlap");
+const boundaryLegacyMetricGroup = project.getLegacyMetricGroup(
+  "boundaryAreaOverlap"
+);
 const boundaryTotalMetrics = project.getPrecalcMetrics(
   boundaryMetricGroup,
   "area"
@@ -170,7 +173,7 @@ const genSingleSizeTable = (data: ReportResult) => {
     <>
       <ClassTable
         rows={finalMetrics}
-        dataGroup={boundaryMetricGroup}
+        dataGroup={boundaryLegacyMetricGroup}
         columnConfig={[
           {
             columnLabel: "Boundary",
@@ -252,7 +255,7 @@ const genNetworkSizeTable = (data: ReportResult) => {
   }));
 
   const classColumns: Column<{ sketchId: string }>[] =
-    boundaryMetricGroup.classes.map((curClass, index) => ({
+    boundaryLegacyMetricGroup.classes.map((curClass, index) => ({
       Header: curClass.display,
       style: { color: "#777" },
       columns: [

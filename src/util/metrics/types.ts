@@ -1,5 +1,4 @@
 import { z } from "zod";
-import { objectiveSchema } from "../objectives/types";
 
 //// SCHEMA ////
 
@@ -18,7 +17,7 @@ export const dataClassSchema = z.object({
   /** Optional ID of map layer associated with this class */
   layerId: z.string().optional(),
   /** class level objective */
-  objective: z.string().optional(),
+  objectiveId: z.string().optional(),
 });
 
 export const metricGroupSchema = z.object({
