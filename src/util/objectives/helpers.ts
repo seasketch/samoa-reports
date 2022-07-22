@@ -1,4 +1,4 @@
-import { Objective } from "@seasketch/geoprocessing";
+import { Objective } from "@seasketch/geoprocessing/client-core";
 import { ObjectiveNew } from "./types";
 
 /** find and return objectives from passed objectives, otherwise reads from disk */

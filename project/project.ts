@@ -5,8 +5,6 @@ import basic from "./basic.json";
 import projectPackage from "../package.json";
 import gp from "../geoprocessing.json";
 
-import { MetricGroup as MetricGroupLegacy } from "@seasketch/geoprocessing";
-
 import {
   Datasources,
   Datasource,
@@ -36,7 +34,8 @@ import {
   GeoprocessingJsonConfig,
   createMetric,
   Metric,
-} from "@seasketch/geoprocessing";
+  MetricGroup as MetricGroupLegacy,
+} from "@seasketch/geoprocessing/client-core";
 
 import {
   getLandVectorDatasource as getGlobalLandVectorDatasource,
