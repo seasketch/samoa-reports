@@ -16,11 +16,13 @@ import bbox from "@turf/bbox";
 import project from "../../project";
 import { getFlatGeobufFilename } from "../util/datasources/helpers";
 
+//// GENERATE THIS ON DATASOURCE IMPORT?  That way the client can use it
 export const classKey = "Draft name";
 export type DatasourceProperties = {
   [classKey: string]: string;
 };
 export type DatasourceFeature = Feature<Polygon, DatasourceProperties>;
+////
 
 export async function deepwaterRegionAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>

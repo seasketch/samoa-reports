@@ -31,6 +31,7 @@
         "type": "areaOverlap",
         "datasourceId": "deepwater_bioregions",
         "objectiveId": "deepwaterBioregions",
+        "classKey": "Draft name",
         "classes": [
             {
                 "classId": "Loto-i-Toga",

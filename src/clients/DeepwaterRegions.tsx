@@ -16,13 +16,16 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 
 import project from "../../project";
-import { classKey } from "../functions/deepwaterRegionAreaOverlap";
 
 const metricGroup = project.getMetricGroup("deepwaterRegionAreaOverlap");
 const legacyMetricGroup = project.getLegacyMetricGroup(
   "deepwaterRegionAreaOverlap"
 );
-const precalcMetrics = project.getPrecalcMetrics(metricGroup, "area", classKey);
+const precalcMetrics = project.getPrecalcMetrics(
+  metricGroup,
+  "area",
+  metricGroup.classKey
+);
 
 const DeepwaterRegions = () => {
   const [{ isCollection }] = useSketchProperties();

@@ -25,8 +25,10 @@ export const metricGroupSchema = z.object({
   metricId: z.string(),
   /** Metric type */
   type: metricTypesSchema,
-  /** Datasource for entire group, multi-class */
+  /** Datasource to generate metrics from */
   datasourceId: z.string().optional(),
+  /** Optional datasource class key used to source classIds  */
+  classKey: z.string().optional(),
   /** data classes used by group */
   classes: z.array(dataClassSchema),
   /** Optional ID of map layer associated with this metric */
