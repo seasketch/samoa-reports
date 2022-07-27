@@ -79,7 +79,7 @@ export async function deepwaterRegionAreaOverlap(
 }
 
 export default new GeoprocessingHandler(deepwaterRegionAreaOverlap, {
-  title: "offshoreBioregions",
+  title: "deepwaterRegionAreaOverlap",
   description: "Calculate sketch overlap with boundary polygons",
   executionMode: "async",
   timeout: 40,

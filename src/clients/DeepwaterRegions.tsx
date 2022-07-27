@@ -49,9 +49,14 @@ const DeepwaterRegions = () => {
           return (
             <>
               <p>
-                Plans should consider and optimize for overlap with existing
-                protected areas. This report summarizes the percentage of
-                currently legislated areas that overlap with this plan.
+                5 different deepwater subregions have been identified in the
+                offshore, each supporting distinct habitats and related
+                ecosystems. Plans should include a representative portion of
+                each subregion.
+              </p>
+              <p>
+                This report summarizes the percentage of each offshore subregion
+                that overlaps with this plan.
               </p>
               <ClassTable
                 rows={parentMetrics}

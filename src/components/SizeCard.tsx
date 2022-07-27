@@ -93,8 +93,7 @@ const SizeCard = () => {
           >
             <p>
               Offshore plans must meet size objectives and stay within the
-              offshore area of the {project.basic.nounPossessive || ""} EEZ
-              (12-200 nautical miles from shore).
+              offshore area of the {project.basic.nounPossessive || ""} EEZ.
             </p>
 
             {genSingleSizeTable(data)}
@@ -109,9 +108,9 @@ const SizeCard = () => {
               <p>
                 The Exclusive Economic Zone (EEZ) extends from the shoreline out
                 to 200 nautical miles. The EEZ is further split up into two
-                distinct subregions, nearshore which extends from the shoreline
-                out to 12 nautical miles and offshore, which extends from 12 out
-                to 200 nautical miles.
+                distinct subregions, inshore which extends from the shoreline
+                out to 200 meters depth and offshore, which extends from 200
+                meters depth out to 200 nautical miles.
               </p>
               <p>
                 {" "}

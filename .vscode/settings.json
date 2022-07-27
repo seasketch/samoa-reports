@@ -31,5 +31,6 @@
   ],
   "aws.experiments": {
     "CodeWhisperer": false
-  }
+  },
+  "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false
 }
