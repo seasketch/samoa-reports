@@ -55,7 +55,7 @@
     },
     "formats": [],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-02T04:11:36.355Z",
+    "lastUpdated": "2022-08-02T17:21:24.833Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -75,7 +75,7 @@
     },
     "formats": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-02T04:11:36.957Z",
+    "lastUpdated": "2022-08-02T17:21:25.069Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
@@ -96,21 +96,14 @@
     ],
     "layerName": "webm_Offshore_AOI_3395",
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-02T04:47:34.556Z",
+    "lastUpdated": "2022-08-02T17:21:26.876Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
   {
-    "src": "data/src/SamoaPlanningLayers.gdb",
-    "layerName": "webm_Inshore_Planning_Grid_1km2",
-    "geo_type": "vector",
     "datasourceId": "inshore",
-    "formats": [
-      "fgb"
-    ],
+    "geo_type": "vector",
     "classKeys": [],
-    "created": "2022-08-02T04:48:19.966Z",
-    "lastUpdated": "2022-08-02T04:48:19.966Z",
     "keyStats": {
       "total": {
         "total": {
@@ -119,6 +112,13 @@
         }
       }
     },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "webm_Inshore_Planning_Grid_1km2",
+    "created": "2022-08-02T04:48:19.966Z",
+    "lastUpdated": "2022-08-02T17:21:29.023Z",
+    "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   }
 ]

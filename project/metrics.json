@@ -8,21 +8,21 @@
                 "display": "EEZ",
                 "datasourceId": "eez",
                 "objectiveId": "eez",
-                "layerId": ""
+                "layerId": "60c7ca5c75ab03840c7c0528"
             },
             {
                 "classId": "inshore",
                 "display": "Inshore",
                 "datasourceId": "inshore",
                 "objectiveId": "inshore",
-                "layerId": ""
+                "layerId": "62db005954123c0c561e9561"
             },
             {
                 "classId": "offshore",
                 "display": "Offshore",
                 "datasourceId": "offshore",
                 "objectiveId": "offshore",
-                "layerId": ""
+                "layerId": "62db005954123c0c561e955f"
             }
         ]
     },
@@ -54,6 +54,6 @@
                 "display": "La'i"
             }
         ],
-        "layerId": ""
+        "layerId": "61f2f09533bd6818222554fa"
     }
 ]

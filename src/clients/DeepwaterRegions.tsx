@@ -5,6 +5,8 @@ import {
   SketchClassTable,
   ResultsCard,
   useSketchProperties,
+  ToolbarCard,
+  LayerToggle,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -35,6 +37,7 @@ const DeepwaterRegions = () => {
       <ResultsCard
         title="Deepwater Regions"
         functionName="deepwaterRegionAreaOverlap"
+        useChildCard
       >
         {(data: ReportResult) => {
           // Generate percent metrics - supports collection or single sketch
@@ -47,7 +50,12 @@ const DeepwaterRegions = () => {
           );
 
           return (
-            <>
+            <ToolbarCard
+              title="Deepwater Regions"
+              items={
+                <LayerToggle label="Map" layerId={metricGroup.layerId} simple />
+              }
+            >
               <p>
                 5 different deepwater subregions have been identified in the
                 offshore, each supporting distinct habitats and related
@@ -101,7 +109,7 @@ const DeepwaterRegions = () => {
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>
               )}
-            </>
+            </ToolbarCard>
           );
         }}
       </ResultsCard>
