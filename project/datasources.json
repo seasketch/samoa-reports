@@ -101,24 +101,24 @@
     "propertiesToKeep": []
   },
   {
-    "datasourceId": "inshore",
+    "src": "data/src/SamoaPlanningLayers.gdb",
+    "layerName": "webm_Inshore_AOI_3395",
     "geo_type": "vector",
+    "datasourceId": "inshore",
+    "formats": [
+      "fgb"
+    ],
     "classKeys": [],
+    "created": "2022-08-02T19:19:19.486Z",
+    "lastUpdated": "2022-08-02T19:19:19.486Z",
     "keyStats": {
       "total": {
         "total": {
           "count": 1,
-          "area": 1207288279.902367
+          "area": 1207288279.902524
         }
       }
     },
-    "formats": [
-      "fgb"
-    ],
-    "layerName": "webm_Inshore_Planning_Grid_1km2",
-    "created": "2022-08-02T04:48:19.966Z",
-    "lastUpdated": "2022-08-02T17:21:29.023Z",
-    "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   }
 ]
