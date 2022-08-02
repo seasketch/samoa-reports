@@ -32,10 +32,9 @@ import {
 } from "../src/util/objectives/types";
 import {
   GeoprocessingJsonConfig,
-  createMetric,
   Metric,
   MetricGroup as MetricGroupLegacy,
-} from "@seasketch/geoprocessing/client-core";
+} from "@seasketch/geoprocessing";
 
 import {
   getLandVectorDatasource as getGlobalLandVectorDatasource,
@@ -202,11 +201,14 @@ export class ProjectClient {
           throw new Error(
             `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
           );
-        const classMetric = createMetric({
+        const classMetric = {
+          groupId: null,
+          geographyId: null,
+          sketchId: null,
           metricId: mg.metricId,
           classId: curClass.classId,
           value: classArea,
-        });
+        };
         return classMetric;
       });
       return metrics;
@@ -226,11 +228,14 @@ export class ProjectClient {
               `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
             );
           return [
-            createMetric({
+            {
+              groupId: null,
+              geographyId: null,
+              sketchId: null,
               metricId: mg.metricId,
               classId: curClass.classId,
               value: totalArea,
-            }),
+            },
           ];
         })
         .reduce<Metric[]>((metricsSoFar, curClassMetrics) => {

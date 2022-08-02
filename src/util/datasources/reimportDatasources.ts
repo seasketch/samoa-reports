@@ -12,7 +12,7 @@ import {
   genGeojson,
   genFlatgeobuf,
   getDatasetBucketName,
-  genKeyStats,
+  genVectorKeyStats,
 } from "./importDatasource";
 
 /**
@@ -43,7 +43,7 @@ export async function reimportDatasources(
         const config = genConfig(options, newDstPath);
         await genGeojson(config);
         await genFlatgeobuf(config);
-        const classStatsByProperty = genKeyStats(config);
+        const classStatsByProperty = genVectorKeyStats(config);
 
         await Promise.all(
           config.formats.map((format) => {

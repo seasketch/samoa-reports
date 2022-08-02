@@ -24,8 +24,10 @@ describe("Import vector data", () => {
         formats: [],
         propertiesToKeep: [],
       },
-      "./test/datasources_test.json",
-      "./test/data"
+      {
+        newDatasourcePath: "./test/datasources_test.json",
+        newDstPath: "./test/data",
+      }
     );
 
     // ensure folder and files exist with proper contents!
@@ -42,8 +44,10 @@ describe("Import vector data", () => {
         formats: [],
         propertiesToKeep: [],
       },
-      "./test/datasources_test.json",
-      "./test/data"
+      {
+        newDatasourcePath: "./test/datasources_test.json",
+        newDstPath: "./test/data",
+      }
     );
     const offshoreD = await importDatasource(
       {
@@ -54,8 +58,10 @@ describe("Import vector data", () => {
         formats: [],
         propertiesToKeep: [],
       },
-      "./test/datasources_test.json",
-      "./test/data"
+      {
+        newDatasourcePath: "./test/datasources_test.json",
+        newDstPath: "./test/data",
+      }
     );
     const eezD = await importDatasource(
       {
@@ -66,8 +72,10 @@ describe("Import vector data", () => {
         formats: [],
         propertiesToKeep: [],
       },
-      "./test/datasources_test.json",
-      "./test/data"
+      {
+        newDatasourcePath: "./test/datasources_test.json",
+        newDstPath: "./test/data",
+      }
     );
 
     // ensure folder and files exist with proper contents!

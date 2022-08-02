@@ -1,8 +1,15 @@
-import { FeatureCollection, Polygon } from "@seasketch/geoprocessing";
+import {
+  createMetric,
+  FeatureCollection,
+  Polygon,
+} from "@seasketch/geoprocessing";
 import { $ } from "zx";
 import fs from "fs-extra";
 import path from "path";
 import area from "@turf/area";
+import { loadCogWindow } from "./cog";
+// @ts-ignore
+import geoblaze from "geoblaze";
 
 import { createOrUpdateDatasource } from "./datasources";
 import { publishDatasource } from "./publishDatasource";
@@ -25,9 +32,13 @@ import dsConfig from "./config";
  */
 export async function importDatasource(
   options: ImportDatasourceOptions,
-  newDatasourcePath?: string,
-  newDstPath?: string
+  extraOptions: {
+    newDatasourcePath?: string;
+    newDstPath?: string;
+    srcUrl?: string;
+  }
 ) {
+  const { newDatasourcePath, newDstPath, srcUrl } = extraOptions;
   const config = await genConfig(options, newDstPath);
 
   // Ensure dstPath is created
@@ -37,7 +48,22 @@ export async function importDatasource(
     await genGeojson(config);
     await genFlatgeobuf(config);
   }
-  const classStatsByProperty = genKeyStats(config);
+  // else if (options.geo_type === "raster") {
+  //   await genCog(config);
+  // }
+
+  const classStatsByProperty = (() => {
+    // if (options.geo_type === "vector") {
+    return genVectorKeyStats(config);
+    // }
+    // else {
+    //   if (!srcUrl) throw new Error("Missing srcUrl in importDatasource");
+    //   return genRasterKeyStats(config, srcUrl);
+    // }
+  })();
+
+  // categorical only? does histogram
+  // genRasterKeyStats(config)
 
   await Promise.all(
     config.formats.map((format) => {
@@ -53,6 +79,7 @@ export async function importDatasource(
   const timestamp = new Date().toISOString();
   const newVectorD: InternalDatasource = {
     src: config.src,
+    layerName: config.layerName,
     geo_type: "vector",
     datasourceId: config.datasourceId,
     formats: config.formats,
@@ -107,8 +134,27 @@ export function genConfig(
   return config;
 }
 
-/** Returns classes for dataset.  If classKeys not defined then will return a single class with datasourceID */
-export function genKeyStats(options: ImportDatasourceConfig): KeyStats {
+/** Returns classes for datasource.  If classKeys not defined then will return a single class with datasourceID */
+// export async function genRasterKeyStats(
+//   options: ImportDatasourceConfig,
+//   srcUrl: string
+// ): KeyStats {
+//   console.log(`Fetching ${srcUrl}`);
+//   const raster = await loadCogWindow(srcUrl, {});
+
+//   // continous - sum
+//   const value = geoblaze.sum(raster)[0] as number; // assumes single band/layer
+//   return createMetric({
+//     classId: curClass.classId,
+//     metricId: METRIC.metricId,
+//     value,
+//   });
+
+//   // categorical - histogram
+// }
+
+/** Returns classes for datasource.  If classKeys not defined then will return a single class with datasourceID */
+export function genVectorKeyStats(options: ImportDatasourceConfig): KeyStats {
   const rawJson = fs.readJsonSync(getJsonPath(options));
   const featureColl = rawJson as FeatureCollection<Polygon>;
 
@@ -192,7 +238,7 @@ export async function genGeojson(config: ImportDatasourceConfig) {
 
 /** Convert vector datasource to FlatGeobuf */
 export async function genFlatgeobuf(config: ImportDatasourceConfig) {
-  let { src, propertiesToKeep, layerName } = config;
+  const { src, propertiesToKeep, layerName } = config;
   const dst = getFlatGeobufPath(config);
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
@@ -207,12 +253,29 @@ export async function genFlatgeobuf(config: ImportDatasourceConfig) {
   await $`ogr2ogr -t_srs "EPSG:4326" -f FlatGeobuf ${explodeOption} -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
+export async function genCog(config: ImportDatasourceConfig) {
+  const { src } = config;
+  const warpDst = getCogPath(config, "_4326");
+  const dst = getCogPath(config);
+  await $`gdalwarp -t_srs "EPSG:4326" ${src} ${warpDst}`;
+  await $`gdal_translate -r nearest -of COG -stats ${warpDst} ${dst}`;
+  await $`rm ${warpDst}`;
+}
+
 function getJsonPath(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".json";
 }
 
 function getFlatGeobufPath(config: ImportDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".fgb";
+}
+
+function getCogPath(config: ImportDatasourceConfig, postfix?: string) {
+  return (
+    path.join(config.dstPath, config.datasourceId) +
+    (postfix ? postfix : "") +
+    ".tif"
+  );
 }
 
 export function getDatasetBucketName(config: ImportDatasourceConfig) {

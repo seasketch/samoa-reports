@@ -29,7 +29,7 @@ export const baseDatasourceSchema = z.object({
   datasourceId: z.string(),
   /** basic geospatial type */
   geo_type: geoTypesSchema,
-  /** keys to generate classes for.  Vector - properties, Raster - numeric string value for categorical raster */
+  /** VECTOR ONLY! keys to generate classes for.  Vector - property names, Raster - use for categorical raster to classify by ID, use string values e.g. '34', defaults to all */
   classKeys: z.array(z.string()),
   /** Pre-calculated stats by key by class */
   keyStats: keyStatsSchema.optional(),
@@ -51,9 +51,9 @@ export const externalSourceSchema = z.object({
 export const internalImportSchema = z.object({
   /** Import - Path to source data, with filename */
   src: z.string(),
-  /** Import - Properties to filter into final dataset, all others will be removed */
+  /** VECTOR ONLY! Import - What to keep in final dataset. Vector - properties, all else removed   */
   propertiesToKeep: z.array(z.string()),
-  /** Import - Whether to explode multi-geometries into single e.g. MultiPolygon to Polygon. Defaults to false */
+  /** VECTOR ONLY! Import - Whether to explode multi-geometries into single e.g. MultiPolygon to Polygon. Defaults to false */
   explodeMulti: z.boolean().optional(),
 });
 
@@ -63,6 +63,12 @@ export const datasourceTimestampSchema = z.object({
   created: z.string(),
   /** Datasource updated timestamp */
   lastUpdated: z.string(),
+});
+
+/** Define timestamps to ease syncing with local/published datasource files */
+export const rasterSchema = z.object({
+  /** categorical vs. ??  */
+  rasterType: z.string(),
 });
 
 export const internalDatasourceSchema = baseDatasourceSchema
