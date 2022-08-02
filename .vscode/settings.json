@@ -28,5 +28,9 @@
       ],
       "url": "http://json.schemastore.org/geojson"
     }
-  ]
+  ],
+  "aws.experiments": {
+    "CodeWhisperer": false
+  },
+  "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false
 }
