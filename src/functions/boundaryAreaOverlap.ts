@@ -15,7 +15,7 @@ import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import project from "../../project";
 import {
   getFlatGeobufFilename,
-  isInternalDatasource,
+  isInternalVectorDatasource,
 } from "../util/datasources/helpers";
 
 export async function boundaryAreaOverlap(
@@ -30,7 +30,7 @@ export async function boundaryAreaOverlap(
           throw new Error(`Missing datasourceId ${curClass.classId}`);
         }
         const ds = project.getDatasourceById(curClass.datasourceId);
-        if (isInternalDatasource(ds)) {
+        if (isInternalVectorDatasource(ds)) {
           const url = `${project.dataBucketUrl}${getFlatGeobufFilename(ds)}`;
           console.log("url", url);
           // Fetch for entire project area, we want the whole thing

@@ -2,18 +2,18 @@ import { createOrUpdateDatasource, readDatasources } from "./datasources";
 import { publishDatasource } from "./publishDatasource";
 
 import {
-  ImportDatasourceOptions,
-  importDatasourceOptionsSchema,
-  InternalDatasource,
+  ImportVectorDatasourceOptions,
+  importVectorDatasourceOptionsSchema,
+  InternalVectorDatasource,
 } from "./types";
-import { isInternalDatasource } from "./helpers";
+import { isInternalVectorDatasource } from "./helpers";
+import { getDatasetBucketName } from "./helpers";
 import {
-  genConfig,
+  genVectorConfig,
   genGeojson,
   genFlatgeobuf,
-  getDatasetBucketName,
   genVectorKeyStats,
-} from "./importDatasource";
+} from "./importVectorDatasource";
 
 /**
  * Import a dataset into the project.  Must be a src file that OGR or GDAL can read.
@@ -33,14 +33,14 @@ export async function reimportDatasources(
   let failed = 0;
   let updated = 0;
   for (const ds of datasources) {
-    if (isInternalDatasource(ds) && ds.geo_type === "vector") {
+    if (isInternalVectorDatasource(ds) && ds.geo_type === "vector") {
       try {
         console.log(`${ds.datasourceId} reimport started`);
         // parse import options from datasource record, is just a subset
-        const options: ImportDatasourceOptions =
-          importDatasourceOptionsSchema.parse(ds);
+        const options: ImportVectorDatasourceOptions =
+          importVectorDatasourceOptionsSchema.parse(ds);
         // generate full config
-        const config = genConfig(options, newDstPath);
+        const config = genVectorConfig(options, newDstPath);
         await genGeojson(config);
         await genFlatgeobuf(config);
         const classStatsByProperty = genVectorKeyStats(config);
@@ -56,7 +56,7 @@ export async function reimportDatasources(
           })
         );
 
-        const newVectorD: InternalDatasource = {
+        const newVectorD: InternalVectorDatasource = {
           ...ds,
           keyStats: classStatsByProperty,
         };

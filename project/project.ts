@@ -9,12 +9,14 @@ import {
   Datasources,
   Datasource,
   datasourcesSchema,
-  InternalDatasource,
+  InternalVectorDatasource,
   Stats,
+  InternalRasterDatasource,
 } from "../src/util/datasources/types";
 import {
   getDatasourceById,
-  getInternalDatasourceById,
+  getInternalRasterDatasourceById,
+  getInternalVectorDatasourceById,
 } from "../src/util/datasources/helpers";
 import {
   getObjectiveById,
@@ -31,6 +33,8 @@ import {
   objectivesSchema,
 } from "../src/util/objectives/types";
 import {
+  DataClass,
+  DataGroup,
   GeoprocessingJsonConfig,
   Metric,
   MetricGroup as MetricGroupLegacy,
@@ -105,11 +109,11 @@ export class ProjectClient {
   }
 
   /**
-   * Returns URL to dataset bucket for project.  In test environment will
+   * Returns URL to dataset bucket for project.  In test environment or if local parameter is true, will
    * return local URL expected to serve up dist data folder
    */
-  public get dataBucketUrl() {
-    return process.env.NODE_ENV === "test"
+  public dataBucketUrl(local: boolean = false) {
+    return process.env.NODE_ENV === "test" || local
       ? `http://127.0.0.1:8080/`
       : `https://gp-${this._package.name}-datasets.s3.${this._geoprocessing.region}.amazonaws.com/`;
   }
@@ -121,9 +125,18 @@ export class ProjectClient {
     return getDatasourceById(datasourceId, this._datasources);
   }
 
-  /** Returns InternalDatasource given datasourceId, throws if not found */
-  public getInternalDatasourceById(datasourceId: string): InternalDatasource {
-    return getInternalDatasourceById(datasourceId, this._datasources);
+  /** Returns InternalVectorDatasource given datasourceId, throws if not found */
+  public getInternalVectorDatasourceById(
+    datasourceId: string
+  ): InternalVectorDatasource {
+    return getInternalVectorDatasourceById(datasourceId, this._datasources);
+  }
+
+  /** Returns InternalRasterDatasource given datasourceId, throws if not found */
+  public getInternalRasterDatasourceById(
+    datasourceId: string
+  ): InternalRasterDatasource {
+    return getInternalRasterDatasourceById(datasourceId, this._datasources);
   }
 
   /** Returns global VectorDatasource given datasourceId */
@@ -192,7 +205,7 @@ export class ProjectClient {
   ): Metric[] {
     if (mg.datasourceId && classKey) {
       // top-level datasource, multi-class
-      const ds = this.getInternalDatasourceById(mg.datasourceId);
+      const ds = this.getInternalVectorDatasourceById(mg.datasourceId);
       const metrics = mg.classes.map((curClass) => {
         if (!ds.keyStats)
           throw new Error(`Expected keyStats for ${ds.datasourceId}`);
@@ -219,7 +232,9 @@ export class ProjectClient {
           if (!curClass.datasourceId) {
             throw new Error(`Missing datasourceId ${mg.metricId}`);
           }
-          const ds = this.getInternalDatasourceById(curClass.datasourceId);
+          const ds = this.getInternalVectorDatasourceById(
+            curClass.datasourceId
+          );
           if (!ds.keyStats)
             throw new Error(`Expected keyStats for ${ds.datasourceId}`);
           const totalArea = ds.keyStats.total.total[statName];

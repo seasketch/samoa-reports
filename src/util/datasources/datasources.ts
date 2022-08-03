@@ -1,7 +1,10 @@
 import fs from "fs-extra";
 import path from "path";
 import { datasourcesSchema, Datasource, Datasources } from "./types";
-import { isInternalDatasource } from "./helpers";
+import {
+  isInternalVectorDatasource,
+  isInternalRasterDatasource,
+} from "./helpers";
 import dsConfig from "./config";
 
 /**
@@ -25,7 +28,10 @@ export async function createOrUpdateDatasource(
       `Updating ${inputDatasource.datasourceId} record in datasource file`
     );
     // Update in place
-    if (isInternalDatasource(inputDatasource)) {
+    if (
+      isInternalVectorDatasource(inputDatasource) ||
+      isInternalRasterDatasource(inputDatasource)
+    ) {
       dSources[dIndex] = {
         ...dSources[dIndex],
         ...inputDatasource,

@@ -7,7 +7,7 @@ import {
   Properties,
 } from "@seasketch/geoprocessing";
 import { Datasources } from "./types";
-import { getExternalDatasourceById } from "./helpers";
+import { getExternalVectorDatasourceById } from "./helpers";
 
 export type OsmLandFeature = Feature<Polygon, { gid: number }>;
 export type EezLandUnion = Feature<Polygon, { gid: number; UNION: string }>;
@@ -22,11 +22,14 @@ export function getGlobalVectorDatasourceById<
   switch (datasourceId) {
     case "global-clipping-osm-land":
       return new VectorDataSource<T>(
-        getExternalDatasourceById("global-clipping-osm-land", datasources).url
+        getExternalVectorDatasourceById(
+          "global-clipping-osm-land",
+          datasources
+        ).url
       );
     case "global-clipping-eez-land-union":
       return new VectorDataSource<T>(
-        getExternalDatasourceById(
+        getExternalVectorDatasourceById(
           "global-clipping-eez-land-union",
           datasources
         ).url
@@ -40,12 +43,15 @@ export const getLandVectorDatasource = (
   datasources: Datasources
 ): VectorDataSource<OsmLandFeature> => {
   return new VectorDataSource<OsmLandFeature>(
-    getExternalDatasourceById("global-clipping-osm-land", datasources).url
+    getExternalVectorDatasourceById("global-clipping-osm-land", datasources).url
   );
 };
 
 export const getEezVectorDatasource = (datasources: Datasources) => {
   return new VectorDataSource<EezLandUnion>(
-    getExternalDatasourceById("global-clipping-eez-land-union", datasources).url
+    getExternalVectorDatasourceById(
+      "global-clipping-eez-land-union",
+      datasources
+    ).url
   );
 };

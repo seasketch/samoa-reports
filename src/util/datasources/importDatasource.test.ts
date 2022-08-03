@@ -38,7 +38,7 @@ describe("Import vector data", () => {
     const inshoreD = await importDatasource(
       {
         geo_type: "vector",
-        src: "data/src/Data_Products/Data_Created/inshore.shp",
+        src: "data/src/Data_Products/Boundaries/inshore.shp",
         datasourceId: "inshore",
         classKeys: [],
         formats: [],
@@ -52,7 +52,7 @@ describe("Import vector data", () => {
     const offshoreD = await importDatasource(
       {
         geo_type: "vector",
-        src: "data/src/Data_Products/Data_Created/offshore.shp",
+        src: "data/src/Data_Products/Boundaries/offshore.shp",
         datasourceId: "offshore",
         classKeys: [],
         formats: [],
