@@ -4,6 +4,7 @@
   "description": "Samoa MSP reports",
   "main": "src/index.js",
   "scripts": {
+    "ts-node": "ts-node --transpile-only --compiler-options '{\"esModuleInterop\":true, \"module\":\"commonjs\"}'",
     "start-data": "http-server data/dist -c-1 --silent",
     "__test": "geoprocessing test",
     "test": "npm run test:unit && npm run test:smoke",
@@ -41,6 +42,7 @@
     "@turf/invariant": "6.5.0",
     "@turf/kinks": "6.5.0",
     "encoding": "^0.1.13",
+    "geoblaze": "^0.3.2",
     "union-subdivided-polygons": "^0.9.1",
     "zod": "^3.17.3"
   },

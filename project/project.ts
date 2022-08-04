@@ -195,6 +195,38 @@ export class ProjectClient {
     return legacyMg;
   }
 
+  public getLegacyOusMetricGroup(): MetricGroupLegacy {
+    const cogFileSuffix = "_cog.tif";
+    const ousClasses: DataClass[] = [
+      {
+        baseFilename: "Commercial_Fishing",
+        filename: `Commercial_Fishing${cogFileSuffix}`,
+        classId: "commercial-fishing",
+        display: "Commercial Fishing",
+        noDataValue: 0,
+        layerId: "621837c3824398156adbfc6c",
+      },
+      {
+        baseFilename: "Subsistence_Fishing",
+        filename: `Subsistence_Fishing${cogFileSuffix}`,
+        classId: "subsistence-fishing",
+        display: "Subsistence Fishing",
+        noDataValue: 0,
+        layerId: "6218379d824398156adbfc55",
+      },
+    ];
+
+    const ousDataGroup: DataGroup = {
+      classes: ousClasses,
+    };
+
+    const ousValueOverlap: MetricGroupLegacy = {
+      metricId: "ousValueOverlap",
+      ...ousDataGroup,
+    };
+    return ousValueOverlap;
+  }
+
   /** Returns Metrics for given MetricGroup stat precalcuated on import (keyStats) */
   public getPrecalcMetrics(
     mg: MetricGroup,

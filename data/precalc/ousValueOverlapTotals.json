@@ -1,0 +1,20 @@
+{
+  "metrics": [
+    {
+      "metricId": "ousValueOverlap",
+      "sketchId": null,
+      "classId": "commercial-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1130350
+    },
+    {
+      "metricId": "ousValueOverlap",
+      "sketchId": null,
+      "classId": "subsistence-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 108252
+    }
+  ]
+}

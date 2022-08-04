@@ -1,34 +1,23 @@
 {
   "metrics": [
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d96fdcb8852d2258f694c4",
-      "classId": "eez",
+      "classId": "commercial-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 146028944.88487396,
+      "value": 83826,
       "extra": {
         "sketchName": "nearshore1"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d96fdcb8852d2258f694c4",
-      "classId": "inshore",
+      "classId": "subsistence-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 7187953.072158599,
-      "extra": {
-        "sketchName": "nearshore1"
-      }
-    },
-    {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "62d96fdcb8852d2258f694c4",
-      "classId": "offshore",
-      "groupId": null,
-      "geographyId": null,
-      "value": 138840730.76624003,
+      "value": 0,
       "extra": {
         "sketchName": "nearshore1"
       }

@@ -40,7 +40,7 @@ export async function deepwaterRegionAreaOverlap(
   const ds = project.getInternalVectorDatasourceById(metricGroup.datasourceId);
   const classKey = ds.classKeys[0];
 
-  const url = `${project.dataBucketUrl}${getFlatGeobufFilename(ds)}`;
+  const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(ds)}`;
   const features = await fgbFetchAll<DatasourceFeature>(url, box);
 
   const metrics: Metric[] = (

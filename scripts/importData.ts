@@ -4,8 +4,8 @@ import { readDatasources } from "../src/util/datasources/datasources";
 import { formatDescriptions } from "../src/util/datasources/formats";
 import { importDatasource } from "../src/util/datasources/importDatasource";
 import {
-  importDatasourceOptionsSchema,
-  ImportDatasourceOptions,
+  importVectorDatasourceOptionsSchema,
+  ImportVectorDatasourceOptions,
   Datasources,
 } from "../src/util/datasources/types";
 
@@ -14,7 +14,7 @@ import project from "../project";
 
 interface ImportDatasourceAnswers
   extends Pick<
-    ImportDatasourceOptions,
+    ImportVectorDatasourceOptions,
     "src" | "datasourceId" | "layerName" | "geo_type" | "formats"
   > {
   classKeys: string;
@@ -40,13 +40,15 @@ if (typeof require !== "undefined" && require.main === module) {
       ...detailedGeoAnswers,
     });
 
-    await importDatasource(config, { srcUrl: project.dataBucketUrl });
+    await importDatasource(config, { srcUrl: project.dataBucketUrl() });
   })();
 }
 
 /** Maps answers object to options */
-function mapper(answers: ImportDatasourceAnswers): ImportDatasourceOptions {
-  const options: ImportDatasourceOptions = {
+function mapper(
+  answers: ImportDatasourceAnswers
+): ImportVectorDatasourceOptions {
+  const options: ImportVectorDatasourceOptions = {
     ...answers,
     classKeys: answers.classKeys.length > 0 ? answers.classKeys.split(",") : [],
     propertiesToKeep:
@@ -55,7 +57,7 @@ function mapper(answers: ImportDatasourceAnswers): ImportDatasourceOptions {
         : [],
   };
 
-  const validOptions = importDatasourceOptionsSchema.parse(options);
+  const validOptions = importVectorDatasourceOptionsSchema.parse(options);
   return validOptions;
 }
 

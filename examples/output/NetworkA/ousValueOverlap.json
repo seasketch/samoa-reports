@@ -1,76 +1,31 @@
 {
   "metrics": [
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970333c46c258221883f5",
-      "classId": "eez",
+      "classId": "commercial-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 146028944.88487396,
+      "value": 83826,
       "extra": {
         "sketchName": "nearshore1"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970333c46c258221883f6",
-      "classId": "eez",
+      "classId": "commercial-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 1538682371.4875228,
+      "value": 67442,
       "extra": {
         "sketchName": "span1"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970333c46c258221883f7",
-      "classId": "eez",
-      "groupId": null,
-      "geographyId": null,
-      "value": 1746062612.5073645,
-      "extra": {
-        "sketchName": "offshore1"
-      }
-    },
-    {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "62d970b0b8852d2258f694d3",
-      "classId": "eez",
-      "groupId": null,
-      "geographyId": null,
-      "value": 3430773928.879761,
-      "extra": {
-        "sketchName": "NetworkA",
-        "isCollection": true
-      }
-    },
-    {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "62d970333c46c258221883f5",
-      "classId": "inshore",
-      "groupId": null,
-      "geographyId": null,
-      "value": 7187953.072158599,
-      "extra": {
-        "sketchName": "nearshore1"
-      }
-    },
-    {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "62d970333c46c258221883f6",
-      "classId": "inshore",
-      "groupId": null,
-      "geographyId": null,
-      "value": 3479507.3747340464,
-      "extra": {
-        "sketchName": "span1"
-      }
-    },
-    {
-      "metricId": "boundaryAreaOverlap",
-      "sketchId": "62d970333c46c258221883f7",
-      "classId": "inshore",
+      "classId": "commercial-fishing",
       "groupId": null,
       "geographyId": null,
       "value": 0,
@@ -79,57 +34,57 @@
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970b0b8852d2258f694d3",
-      "classId": "inshore",
+      "classId": "commercial-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 10667460.446892645,
+      "value": 151268,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970333c46c258221883f5",
-      "classId": "offshore",
+      "classId": "subsistence-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 138840730.76624003,
+      "value": 0,
       "extra": {
         "sketchName": "nearshore1"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970333c46c258221883f6",
-      "classId": "offshore",
+      "classId": "subsistence-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 1535205480.0325046,
+      "value": 21,
       "extra": {
         "sketchName": "span1"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970333c46c258221883f7",
-      "classId": "offshore",
+      "classId": "subsistence-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 1746062612.5073645,
+      "value": 0,
       "extra": {
         "sketchName": "offshore1"
       }
     },
     {
-      "metricId": "boundaryAreaOverlap",
+      "metricId": "ousValueOverlap",
       "sketchId": "62d970b0b8852d2258f694d3",
-      "classId": "offshore",
+      "classId": "subsistence-fishing",
       "groupId": null,
       "geographyId": null,
-      "value": 3420108823.3061094,
+      "value": 21,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true

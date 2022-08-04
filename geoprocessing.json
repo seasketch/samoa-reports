@@ -12,6 +12,7 @@
   ],
   "geoprocessingFunctions": [
     "src/functions/boundaryAreaOverlap.ts",
-    "src/functions/deepwaterRegionAreaOverlap.ts"
+    "src/functions/deepwaterRegionAreaOverlap.ts",
+    "src/functions/ousValueOverlap.ts"
   ]
 }

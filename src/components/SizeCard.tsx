@@ -83,7 +83,7 @@ const SizeCard = () => {
             items={
               <>
                 <DataDownload
-                  filename="sample"
+                  filename="size"
                   data={data.metrics}
                   formats={["csv", "json"]}
                   placement="left-end"

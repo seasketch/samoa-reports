@@ -31,7 +31,7 @@ export async function boundaryAreaOverlap(
         }
         const ds = project.getDatasourceById(curClass.datasourceId);
         if (isInternalVectorDatasource(ds)) {
-          const url = `${project.dataBucketUrl}${getFlatGeobufFilename(ds)}`;
+          const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(ds)}`;
           console.log("url", url);
           // Fetch for entire project area, we want the whole thing
           const polys = await fgbFetchAll<Feature<Polygon>>(
