@@ -55,5 +55,25 @@
             }
         ],
         "layerId": "61f2f09533bd6818222554fa"
+    },
+    {
+        "metricId": "ousValueOverlap",
+        "type": "valueOverlap",
+        "classes": [
+            {
+                "classId": "commercial-fishing",
+                "display": "Commercial Fishing",
+                "datasourceId": "Commercial_Fishing",
+                "noDataValue": 0,
+                "layerId": "621837c3824398156adbfc6c"
+            },
+            {
+                "classId": "subsistence-fishing",
+                "display": "Subsistence Fishing",
+                "datasourceId": "Subsistence_Fishing",
+                "noDataValue": 0,
+                "layerId": "6218379d824398156adbfc55"
+            }
+        ]
     }
 ]

@@ -2,27 +2,24 @@
   {
     "datasourceId": "global-clipping-osm-land",
     "geo_type": "vector",
-    "classKeys": [],
     "formats": [
       "subdivided"
     ],
+    "classKeys": [],
     "url": "https://d3p1dsef9f0gjr.cloudfront.net/"
   },
   {
     "datasourceId": "global-clipping-eez-land-union",
     "geo_type": "vector",
-    "classKeys": [],
     "formats": [
       "subdivided"
     ],
+    "classKeys": [],
     "url": "https://d3muy0hbwp5qkl.cloudfront.net"
   },
   {
     "datasourceId": "deepwater_bioregions",
     "geo_type": "vector",
-    "classKeys": [
-      "Draft name"
-    ],
     "keyStats": {
       "Draft name": {
         "Loto-i-Toga": {
@@ -48,14 +45,18 @@
       },
       "total": {
         "total": {
-          "count": 8,
+          "count": 1,
+          "sum": null,
           "area": 4644230437.20613
         }
       }
     },
     "formats": [],
+    "classKeys": [
+      "Draft name"
+    ],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-02T17:21:24.833Z",
+    "lastUpdated": "2022-08-05T03:14:53.996Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -64,29 +65,30 @@
   {
     "datasourceId": "eez",
     "geo_type": "vector",
-    "classKeys": [],
     "keyStats": {
       "total": {
         "total": {
           "count": 1,
+          "sum": null,
           "area": 131259352923.98027
         }
       }
     },
     "formats": [],
+    "classKeys": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-02T17:21:25.069Z",
+    "lastUpdated": "2022-08-05T03:14:54.276Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
   {
     "datasourceId": "offshore",
     "geo_type": "vector",
-    "classKeys": [],
     "keyStats": {
       "total": {
         "total": {
           "count": 1,
+          "sum": null,
           "area": 130054325833.12949
         }
       }
@@ -95,30 +97,74 @@
       "fgb"
     ],
     "layerName": "webm_Offshore_AOI_3395",
+    "classKeys": [],
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-02T17:21:26.876Z",
+    "lastUpdated": "2022-08-05T03:14:56.057Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
   {
-    "src": "data/src/SamoaPlanningLayers.gdb",
-    "layerName": "webm_Inshore_AOI_3395",
-    "geo_type": "vector",
     "datasourceId": "inshore",
-    "formats": [
-      "fgb"
-    ],
-    "classKeys": [],
-    "created": "2022-08-02T19:19:19.486Z",
-    "lastUpdated": "2022-08-02T19:19:19.486Z",
+    "geo_type": "vector",
     "keyStats": {
       "total": {
         "total": {
           "count": 1,
+          "sum": null,
           "area": 1207288279.902524
         }
       }
     },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "webm_Inshore_AOI_3395",
+    "classKeys": [],
+    "created": "2022-08-02T19:19:19.486Z",
+    "lastUpdated": "2022-08-05T03:14:57.757Z",
+    "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "ous_comm",
+    "geo_type": "raster",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 1130350,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "band": 0,
+    "noDataValue": 0,
+    "created": "2022-08-05T02:34:25.996Z",
+    "lastUpdated": "2022-08-05T03:15:15.084Z",
+    "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
+  },
+  {
+    "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif",
+    "band": 0,
+    "geo_type": "raster",
+    "datasourceId": "ous_subsistence",
+    "formats": [
+      "tif"
+    ],
+    "created": "2022-08-05T03:24:47.725Z",
+    "lastUpdated": "2022-08-05T03:24:47.725Z",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 108252,
+          "area": null
+        }
+      }
+    },
+    "noDataValue": 0
   }
 ]

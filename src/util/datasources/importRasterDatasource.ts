@@ -6,7 +6,6 @@ import {
   KeyStats,
   InternalRasterDatasource,
   ImportRasterDatasourceOptions,
-  Stats,
   ImportRasterDatasourceConfig,
 } from "./types";
 import dsConfig from "./config";
@@ -14,115 +13,124 @@ import { publishDatasource } from "./publishDatasource";
 import { createOrUpdateDatasource } from "./datasources";
 import { getDatasetBucketName } from "./helpers";
 import { loadCogWindow } from "./cog";
+import project from "../../../project";
 // @ts-ignore
 import geoblaze from "geoblaze";
+import LocalFileServer from "../localServer";
 
-// export async function importRasterDatasource(
-//   options: ImportRasterDatasourceOptions,
-//   extraOptions: {
-//     newDatasourcePath?: string;
-//     newDstPath?: string;
-//     srcUrl?: string;
-//   }
-// ) {
-//   const { newDatasourcePath, newDstPath, srcUrl } = extraOptions;
-//   const config = await genVectorConfig(options, newDstPath);
+export async function importRasterDatasource(
+  options: ImportRasterDatasourceOptions,
+  extraOptions: {
+    newDatasourcePath?: string;
+    newDstPath?: string;
+    srcUrl?: string;
+  }
+) {
+  const { newDatasourcePath, newDstPath } = extraOptions;
+  const config = await genRasterConfig(options, newDstPath);
 
-//   // Ensure dstPath is created
-//   fs.ensureDirSync(config.dstPath);
+  // Ensure dstPath is created
+  fs.ensureDirSync(config.dstPath);
 
-//   await genCog(config);
+  await genCog(config);
 
-//   const classStatsByProperty = genRasterKeyStats(config);
+  const tempPort = 8001;
+  const server = new LocalFileServer({ path: config.dstPath, port: tempPort });
+  const url = `${project.dataBucketUrl(true, tempPort)}${getCogFilename(
+    config
+  )}`;
+  console.log(
+    `Fetching raster to calculate stats from temp file server ${url}`
+  );
+  const raster = await loadCogWindow(url, {});
+  server.close();
 
-//   await Promise.all(
-//     config.formats.map((format) => {
-//       return publishDatasource(
-//         config.dstPath,
-//         format,
-//         config.datasourceId,
-//         getDatasetBucketName(config)
-//       );
-//     })
-//   );
+  const classStatsByProperty = await genRasterKeyStats(config, raster);
+  console.log("Stats calculated");
 
-//   const timestamp = new Date().toISOString();
+  await Promise.all(
+    config.formats.map((format) => {
+      return publishDatasource(
+        config.dstPath,
+        format,
+        config.datasourceId,
+        getDatasetBucketName(config)
+      );
+    })
+  );
 
-//   const newVectorD: InternalRasterDatasource = {
-//     src: config.src,
-//     layerName: config.layerName,
-//     geo_type: "vector",
-//     datasourceId: config.datasourceId,
-//     formats: config.formats,
-//     classKeys: config.classKeys,
-//     created: timestamp,
-//     lastUpdated: timestamp,
-//     keyStats: classStatsByProperty,
-//     propertiesToKeep: config.propertiesToKeep,
-//     explodeMulti: config.explodeMulti,
-//   };
+  const timestamp = new Date().toISOString();
 
-//   await createOrUpdateDatasource(newVectorD, newDatasourcePath);
-//   return newVectorD;
-// }
+  const newVectorD: InternalRasterDatasource = {
+    src: config.src,
+    band: config.band,
+    geo_type: "raster",
+    datasourceId: config.datasourceId,
+    formats: config.formats,
+    created: timestamp,
+    lastUpdated: timestamp,
+    keyStats: classStatsByProperty,
+    noDataValue: config.noDataValue,
+  };
 
-// /** Takes import options and creates full import config */
-// export function genVectorConfig(
-//   options: ImportVectorDatasourceOptions,
-//   newDstPath?: string
-// ): ImportVectorDatasourceConfig {
-//   let {
-//     geo_type,
-//     src,
-//     datasourceId,
-//     propertiesToKeep = [],
-//     classKeys,
-//     layerName,
-//     formats = dsConfig.importDefaultVectorFormats,
-//     explodeMulti,
-//   } = options;
+  await createOrUpdateDatasource(newVectorD, newDatasourcePath);
+  return newVectorD;
+}
 
-//   if (!layerName)
-//     layerName = path.basename(src, "." + path.basename(src).split(".").pop());
+/** Takes import options and creates full import config */
+export function genRasterConfig(
+  options: ImportRasterDatasourceOptions,
+  newDstPath?: string
+): ImportRasterDatasourceConfig {
+  let {
+    geo_type,
+    src,
+    datasourceId,
+    band,
+    formats = dsConfig.importDefaultRasterFormats,
+    noDataValue,
+  } = options;
 
-//   // merge to ensure keep at least classKeys
-//   propertiesToKeep = Array.from(new Set(propertiesToKeep.concat(classKeys)));
+  if (!band) band = 0;
 
-//   const config: ImportRasterDatasourceConfig = {
-//     geo_type,
-//     src,
-//     dstPath: newDstPath || dsConfig.defaultDstPath,
-//     propertiesToKeep,
-//     classKeys,
-//     layerName,
-//     datasourceId,
-//     package: fs.readJsonSync(path.join(".", "package.json")),
-//     gp: fs.readJsonSync(path.join(".", "geoprocessing.json")),
-//     formats,
-//     explodeMulti,
-//   };
+  const config: ImportRasterDatasourceConfig = {
+    geo_type,
+    src,
+    dstPath: newDstPath || dsConfig.defaultDstPath,
+    band,
+    datasourceId,
+    package: fs.readJsonSync(path.join(".", "package.json")),
+    gp: fs.readJsonSync(path.join(".", "geoprocessing.json")),
+    formats,
+    noDataValue,
+  };
 
-//   return config;
-// }
+  return config;
+}
 
-// /** Returns classes for datasource.  If classKeys not defined then will return a single class with datasourceID */
-// export async function genRasterKeyStats(
-//   options: ImportRasterDatasourceConfig,
-//   srcUrl: string
-// ): KeyStats {
-//   console.log(`Fetching ${srcUrl}`);
-//   const raster = await loadCogWindow(srcUrl, {});
+/** Returns classes for datasource.  If classKeys not defined then will return a single class with datasourceID */
+export async function genRasterKeyStats(
+  options: ImportRasterDatasourceConfig,
+  raster: any
+): Promise<KeyStats> {
+  // continous - sum
+  const sum = geoblaze.sum(raster)[0] as number; // assumes single band/layer
+  const totalStats = {
+    count: null,
+    sum,
+    area: null,
+  };
 
-//   // continous - sum
-//   const value = geoblaze.sum(raster)[0] as number; // assumes single band/layer
-//   return createMetric({
-//     classId: curClass.classId,
-//     metricId: METRIC.metricId,
-//     value,
-//   });
+  // categorical - histogram, count
+  const classStats = {};
 
-//   // categorical - histogram
-// }
+  return {
+    ...classStats,
+    total: {
+      total: totalStats,
+    },
+  };
+}
 
 export async function genCog(config: ImportRasterDatasourceConfig) {
   const { src } = config;
@@ -133,7 +141,17 @@ export async function genCog(config: ImportRasterDatasourceConfig) {
   await $`rm ${warpDst}`;
 }
 
-function getCogPath(config: ImportRasterDatasourceConfig, postfix?: string) {
+export function getCogFilename(
+  config: ImportRasterDatasourceConfig,
+  postfix?: string
+) {
+  return config.datasourceId + (postfix ? postfix : "") + ".tif";
+}
+
+export function getCogPath(
+  config: ImportRasterDatasourceConfig,
+  postfix?: string
+) {
   return (
     path.join(config.dstPath, config.datasourceId) +
     (postfix ? postfix : "") +

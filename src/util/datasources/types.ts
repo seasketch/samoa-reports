@@ -11,7 +11,7 @@ import { GeoprocessingJsonConfig } from "@seasketch/geoprocessing";
 const GEO_TYPES = ["vector", "raster"] as const;
 export const geoTypesSchema = z.enum(GEO_TYPES);
 
-const SUPPORTED_FORMATS = ["fgb", "geojson", "cog", "subdivided"] as const;
+const SUPPORTED_FORMATS = ["fgb", "json", "tif", "subdivided"] as const;
 export const supportedFormatsSchema = z.enum(SUPPORTED_FORMATS);
 
 /** Data variable measurement type */
@@ -29,8 +29,9 @@ const MEASUREMENT_SCALES = ["nominal", "ordinal", "interval", "ratio"] as const;
 export const measurementScalesSchema = z.enum(MEASUREMENT_SCALES);
 
 export const statsSchema = z.object({
-  count: z.number(),
-  area: z.number().nullable(),
+  count: z.number().nullable().optional(),
+  sum: z.number().nullable().optional(),
+  area: z.number().nullable().optional(),
 });
 
 /** Pre-calculated stats by key by class */
@@ -47,13 +48,13 @@ export const baseDatasourceSchema = z.object({
   keyStats: keyStatsSchema.optional(),
   /** Available formats */
   formats: z.array(supportedFormatsSchema),
-  /** Import - Layer name/band within datasource to extract */
-  layerName: z.string().optional(),
 });
 
 /** Properties for vector datasource */
 export const vectorDatasourceSchema = baseDatasourceSchema.merge(
   z.object({
+    /** Import - Name of layer within vector datasource to extract */
+    layerName: z.string().optional(),
     /** keys to generate classes for.  Vector - property names */
     classKeys: z.array(z.string()),
   })
@@ -62,8 +63,8 @@ export const vectorDatasourceSchema = baseDatasourceSchema.merge(
 /** Properties for raster datasource */
 export const rasterDatasourceSchema = baseDatasourceSchema.merge(
   z.object({
-    /** Single measurement type for raster data */
-    measurementType: measurementTypesSchema,
+    /** Import - band within raster datasource to extract */
+    band: z.number(),
     /** Nodata value */
     noDataValue: z.number().optional(),
   })

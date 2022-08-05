@@ -7,6 +7,6 @@ source "${DATA_DIR}/ous_config.sh"
 for CLASS in "${CLASSES[@]}"
 do
    echo "Publishing "$CLASS" to S3"
-   aws s3 cp --recursive "${DATA_DIR}/dist/" s3://${DATASET_S3_BUCKET} --cache-control max-age=3600 --exclude "*" --include "${CLASS}_cog*.*"
+   aws s3 cp --recursive "${DATA_DIR}/dist/" s3://${DATASET_S3_BUCKET} --cache-control max-age=3600 --exclude "*" --include "${CLASS}*.*"
    echo " "
 done

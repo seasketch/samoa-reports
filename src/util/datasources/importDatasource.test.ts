@@ -1,8 +1,9 @@
-import fs from "fs-extra";
-
 /**
+ * @jest-environment node
  * @group unit
  */
+
+import fs from "fs-extra";
 import { importDatasource } from "./importDatasource";
 import { Datasources } from "./types";
 
@@ -33,7 +34,7 @@ describe("Import vector data", () => {
     // ensure folder and files exist with proper contents!
   }, 10000);
 
-  test("importVector single-file single region", async () => {
+  test("importVectorDatasource single-file single region", async () => {
     // TODO: switch to generating test vector dataset
     const inshoreD = await importDatasource(
       {
@@ -71,6 +72,29 @@ describe("Import vector data", () => {
         classKeys: [],
         formats: [],
         propertiesToKeep: [],
+      },
+      {
+        newDatasourcePath: "./test/datasources_test.json",
+        newDstPath: "./test/data",
+      }
+    );
+
+    // ensure folder and files exist with proper contents!
+  }, 10000);
+});
+
+// Switch to generating a geojson dataset
+describe("Import raster data", () => {
+  test("importRasterDatasource single class", async () => {
+    // TODO: switch to generating test raster dataset
+    const vectorD = await importDatasource(
+      {
+        geo_type: "raster",
+        src: "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif",
+        datasourceId: "Commercial_Fishing",
+        formats: [],
+        noDataValue: 0,
+        band: 0,
       },
       {
         newDatasourcePath: "./test/datasources_test.json",

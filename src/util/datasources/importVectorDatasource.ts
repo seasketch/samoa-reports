@@ -25,7 +25,7 @@ export async function importVectorDatasource(
     srcUrl?: string;
   }
 ) {
-  const { newDatasourcePath, newDstPath, srcUrl } = extraOptions;
+  const { newDatasourcePath, newDstPath } = extraOptions;
   const config = await genVectorConfig(options, newDstPath);
 
   // Ensure dstPath is created
@@ -118,6 +118,7 @@ export function genVectorKeyStats(
       total: {
         total: {
           count: 1,
+          sum: null,
           area: area(featureColl),
         },
       },
@@ -127,12 +128,14 @@ export function genVectorKeyStats(
     (statsSoFar, feat) => {
       const featArea = area(feat);
       return {
-        count: statsSoFar.count + 1,
-        area: statsSoFar?.area || 0 + featArea,
+        count: statsSoFar.count || 0 + 1,
+        sum: null,
+        area: statsSoFar.area || 0 + featArea,
       };
     },
     {
       count: 0,
+      sum: null,
       area: 0,
     }
   );
@@ -214,12 +217,4 @@ function getJsonPath(config: ImportVectorDatasourceConfig) {
 
 function getFlatGeobufPath(config: ImportVectorDatasourceConfig) {
   return path.join(config.dstPath, config.datasourceId) + ".fgb";
-}
-
-function getCogPath(config: ImportRasterDatasourceConfig, postfix?: string) {
-  return (
-    path.join(config.dstPath, config.datasourceId) +
-    (postfix ? postfix : "") +
-    ".tif"
-  );
 }

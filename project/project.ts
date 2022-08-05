@@ -112,9 +112,9 @@ export class ProjectClient {
    * Returns URL to dataset bucket for project.  In test environment or if local parameter is true, will
    * return local URL expected to serve up dist data folder
    */
-  public dataBucketUrl(local: boolean = false) {
+  public dataBucketUrl(local: boolean = false, port: number = 8080) {
     return process.env.NODE_ENV === "test" || local
-      ? `http://127.0.0.1:8080/`
+      ? `http://127.0.0.1:${port}/`
       : `https://gp-${this._package.name}-datasets.s3.${this._geoprocessing.region}.amazonaws.com/`;
   }
 
@@ -196,7 +196,7 @@ export class ProjectClient {
   }
 
   public getLegacyOusMetricGroup(): MetricGroupLegacy {
-    const cogFileSuffix = "_cog.tif";
+    const cogFileSuffix = ".tif";
     const ousClasses: DataClass[] = [
       {
         baseFilename: "Commercial_Fishing",

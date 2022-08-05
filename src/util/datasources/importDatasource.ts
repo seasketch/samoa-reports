@@ -23,10 +23,12 @@ export async function importDatasource(
   }
 ) {
   if (options.geo_type === "vector") {
-    const vectorOptions = importVectorDatasourceOptionsSchema.parse(options);
+    const vectorOptions: ImportVectorDatasourceOptions =
+      importVectorDatasourceOptionsSchema.parse(options);
     return importVectorDatasource(vectorOptions, extraOptions);
   } else {
-    const rasterOptions = importRasterDatasourceOptionsSchema.parse(options);
+    const rasterOptions: ImportRasterDatasourceOptions =
+      importRasterDatasourceOptionsSchema.parse(options);
     return importRasterDatasource(rasterOptions, extraOptions);
   }
 }

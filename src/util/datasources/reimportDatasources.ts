@@ -2,11 +2,17 @@ import { createOrUpdateDatasource, readDatasources } from "./datasources";
 import { publishDatasource } from "./publishDatasource";
 
 import {
+  ImportRasterDatasourceOptions,
+  importRasterDatasourceOptionsSchema,
   ImportVectorDatasourceOptions,
   importVectorDatasourceOptionsSchema,
+  InternalRasterDatasource,
   InternalVectorDatasource,
 } from "./types";
-import { isInternalVectorDatasource } from "./helpers";
+import {
+  isInternalRasterDatasource,
+  isInternalVectorDatasource,
+} from "./helpers";
 import { getDatasetBucketName } from "./helpers";
 import {
   genVectorConfig,
@@ -14,6 +20,17 @@ import {
   genFlatgeobuf,
   genVectorKeyStats,
 } from "./importVectorDatasource";
+import {
+  genCog,
+  genRasterConfig,
+  genRasterKeyStats,
+  getCogFilename,
+} from "./importRasterDatasource";
+import LocalFileServer from "../localServer";
+import { loadCogWindow } from "./cog";
+import project from "../../../project";
+// @ts-ignore
+import geoblaze from "geoblaze";
 
 /**
  * Import a dataset into the project.  Must be a src file that OGR or GDAL can read.
@@ -35,7 +52,7 @@ export async function reimportDatasources(
   for (const ds of datasources) {
     if (isInternalVectorDatasource(ds) && ds.geo_type === "vector") {
       try {
-        console.log(`${ds.datasourceId} reimport started`);
+        console.log(`${ds.datasourceId} vector reimport started`);
         // parse import options from datasource record, is just a subset
         const options: ImportVectorDatasourceOptions =
           importVectorDatasourceOptionsSchema.parse(ds);
@@ -74,10 +91,64 @@ export async function reimportDatasources(
           failed += 1;
         }
       }
+    } else if (isInternalRasterDatasource(ds) && ds.geo_type === "raster") {
+      try {
+        console.log(`${ds.datasourceId} raster reimport started`);
+        // parse import options from datasource record, is just a subset
+        const options: ImportRasterDatasourceOptions =
+          importRasterDatasourceOptionsSchema.parse(ds);
+        // generate full config
+        const config = genRasterConfig(options, newDstPath);
+        await genCog(config);
+
+        const tempPort = 8001;
+        const server = new LocalFileServer({
+          path: config.dstPath,
+          port: tempPort,
+        });
+        const url = `${project.dataBucketUrl(true, tempPort)}${getCogFilename(
+          config
+        )}`;
+        console.log(
+          `Fetching raster to calculate stats from temp file server ${url}`
+        );
+        const raster = await loadCogWindow(url, {});
+        server.close();
+
+        const classStatsByProperty = await genRasterKeyStats(config, raster);
+
+        await Promise.all(
+          config.formats.map((format) => {
+            return publishDatasource(
+              config.dstPath,
+              format,
+              config.datasourceId,
+              getDatasetBucketName(config)
+            );
+          })
+        );
+
+        const newRasterD: InternalRasterDatasource = {
+          ...ds,
+          keyStats: classStatsByProperty,
+        };
+
+        await createOrUpdateDatasource(newRasterD, newDatasourcePath);
+        console.log(`${ds.datasourceId} reimport complete`);
+        updated += 1;
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          console.log(e.message);
+          console.log(e.stack);
+          console.log(
+            `Updating datasource ${ds.datasourceId} failed, moving to next`
+          );
+          failed += 1;
+        }
+      }
     } else {
       console.log(`Skipping ${ds.datasourceId}, reimport not supported`);
     }
-    console.log(" ");
   }
 
   console.log(`${updated} datasources reimported successfully`);
