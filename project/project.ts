@@ -237,7 +237,7 @@ export class ProjectClient {
   ): Metric[] {
     if (mg.datasourceId && classKey) {
       // top-level datasource, multi-class
-      const ds = this.getInternalVectorDatasourceById(mg.datasourceId);
+      const ds = this.getDatasourceById(mg.datasourceId);
       const metrics = mg.classes.map((curClass) => {
         if (!ds.keyStats)
           throw new Error(`Expected keyStats for ${ds.datasourceId}`);
@@ -264,9 +264,7 @@ export class ProjectClient {
           if (!curClass.datasourceId) {
             throw new Error(`Missing datasourceId ${mg.metricId}`);
           }
-          const ds = this.getInternalVectorDatasourceById(
-            curClass.datasourceId
-          );
+          const ds = this.getDatasourceById(curClass.datasourceId);
           if (!ds.keyStats)
             throw new Error(`Expected keyStats for ${ds.datasourceId}`);
           const totalArea = ds.keyStats.total.total[statName];

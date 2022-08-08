@@ -8,7 +8,6 @@ import {
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
-  ReportResultBase,
   toNullSketchArray,
   flattenBySketchAllClass,
   metricsWithSketchId,
@@ -16,10 +15,13 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project";
 
-import ousTotals from "../../data/precalc/ousValueOverlapTotals.json";
-const precalcTotals = ousTotals as ReportResultBase;
-
-const metricGroup = project.getLegacyOusMetricGroup();
+const metricGroup = project.getMetricGroup("ousValueOverlap");
+const legacyMetricGroup = project.getLegacyOusMetricGroup();
+const precalcMetrics = project.getPrecalcMetrics(
+  metricGroup,
+  "sum",
+  metricGroup.classKey
+);
 
 const FishingValue = () => {
   const [{ isCollection }] = useSketchProperties();
@@ -32,7 +34,10 @@ const FishingValue = () => {
         {(data: ReportResult) => {
           // Single sketch or collection top-level
           const parentMetrics = metricsWithSketchId(
-            toPercentMetric(data.metrics, precalcTotals.metrics),
+            toPercentMetric(
+              data.metrics.filter((m) => m.metricId === metricGroup.metricId),
+              precalcMetrics
+            ),
             [data.sketch.properties.id]
           );
 
@@ -138,7 +143,7 @@ const genSketchTable = (data: ReportResult) => {
   const childSketchIds = childSketches.map((sk) => sk.properties.id);
   const childSketchMetrics = toPercentMetric(
     metricsWithSketchId(data.metrics, childSketchIds),
-    precalcTotals.metrics
+    precalcMetrics
   );
   const sketchRows = flattenBySketchAllClass(
     childSketchMetrics,

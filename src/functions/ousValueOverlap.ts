@@ -25,7 +25,6 @@ export async function ousValueOverlap(
       metricGroup.classes.map(async (curClass) => {
         // start raster load and move on in loop while awaiting finish
         const url = `${project.dataBucketUrl()}${curClass.filename}`;
-        console.log("url", url);
         const raster = await loadCogWindow(url, {
           windowBox: box,
         });

@@ -63,14 +63,14 @@
             {
                 "classId": "commercial-fishing",
                 "display": "Commercial Fishing",
-                "datasourceId": "Commercial_Fishing",
+                "datasourceId": "ous_commercial",
                 "noDataValue": 0,
                 "layerId": "621837c3824398156adbfc6c"
             },
             {
                 "classId": "subsistence-fishing",
                 "display": "Subsistence Fishing",
-                "datasourceId": "Subsistence_Fishing",
+                "datasourceId": "ous_subsistence",
                 "noDataValue": 0,
                 "layerId": "6218379d824398156adbfc55"
             }
