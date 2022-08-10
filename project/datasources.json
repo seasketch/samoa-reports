@@ -166,5 +166,27 @@
     "created": "2022-08-05T03:24:47.725Z",
     "lastUpdated": "2022-08-09T18:47:20.865Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
+  },
+  {
+    "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
+    "layerName": "kba",
+    "geo_type": "vector",
+    "datasourceId": "kba",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2022-08-10T04:13:49.722Z",
+    "lastUpdated": "2022-08-10T04:13:49.722Z",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 169308901.32581657
+        }
+      }
+    },
+    "propertiesToKeep": []
   }
 ]

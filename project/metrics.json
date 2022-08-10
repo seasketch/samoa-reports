@@ -75,5 +75,18 @@
                 "layerId": "6218379d824398156adbfc55"
             }
         ]
+    },
+    {
+        "metricId": "kbaAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "kba",
+                "display": "Key Biodiversity Area",
+                "datasourceId": "kba",
+                "objectiveId": "kba",
+                "layerId": "60d37c22b4c604aa56927704"
+            }
+        ]
     }
 ]

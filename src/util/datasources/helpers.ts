@@ -115,6 +115,10 @@ export function getFlatGeobufFilename(datasource: InternalVectorDatasource) {
   return datasource.datasourceId + ".fgb";
 }
 
+export function getCogFilename(datasourceId: string, postfix?: string) {
+  return datasourceId + (postfix ? postfix : "") + ".tif";
+}
+
 export function getDatasetBucketName<C extends BaseImportDatasourceConfig>(
   config: C
 ) {

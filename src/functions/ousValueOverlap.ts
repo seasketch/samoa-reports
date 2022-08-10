@@ -13,7 +13,7 @@ import {
 import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
-import { getCogFilename } from "../util/datasources/importRasterDatasource";
+import { getCogFilename } from "../util/datasources/helpers";
 
 const metricGroup = project.getMetricGroup("ousValueOverlap");
 

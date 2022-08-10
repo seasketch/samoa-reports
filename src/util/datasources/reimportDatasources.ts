@@ -13,7 +13,7 @@ import {
   isInternalRasterDatasource,
   isInternalVectorDatasource,
 } from "./helpers";
-import { getDatasetBucketName } from "./helpers";
+import { getDatasetBucketName, getCogFilename } from "./helpers";
 import {
   genVectorConfig,
   genGeojson,
@@ -24,13 +24,10 @@ import {
   genCog,
   genRasterConfig,
   genRasterKeyStats,
-  getCogFilename,
 } from "./importRasterDatasource";
 import LocalFileServer from "../localServer";
 import { loadCogWindow } from "./cog";
 import project from "../../../project";
-// @ts-ignore
-import geoblaze from "geoblaze";
 
 /**
  * Import a dataset into the project.  Must be a src file that OGR or GDAL can read.

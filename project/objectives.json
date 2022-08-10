@@ -30,5 +30,13 @@
         "countsToward": {
             "Fully Protected Area": "yes"
         }
+    },
+    {
+        "objectiveId": "kba",
+        "shortDesc": "Key Biodiversity Area Objective",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
     }
 ]

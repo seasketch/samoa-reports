@@ -1,0 +1,35 @@
+{
+  "metrics": [
+    {
+      "metricId": "kbaAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "kba",
+      "groupId": null,
+      "geographyId": null,
+      "value": 407125.51024628617,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62d96fdcb8852d2258f694c4",
+      "name": "nearshore1",
+      "updatedAt": "2022-07-21T15:25:16.780Z",
+      "createdAt": "2022-07-21T15:25:16.780Z",
+      "sketchClassId": "62c71ab51d9b70564665d35c",
+      "isCollection": false,
+      "userAttributes": []
+    },
+    "id": "1",
+    "bbox": [
+      -172.27279323500343,
+      -13.956641730619094,
+      -172.15675014418335,
+      -13.803324771426714
+    ],
+    "geometry": null
+  }
+}

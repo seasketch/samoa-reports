@@ -2,7 +2,6 @@ import path from "path";
 import { $ } from "zx";
 import fs from "fs-extra";
 import {
-  ClassStats,
   KeyStats,
   InternalRasterDatasource,
   ImportRasterDatasourceOptions,
@@ -17,6 +16,7 @@ import project from "../../../project";
 // @ts-ignore
 import geoblaze from "geoblaze";
 import LocalFileServer from "../localServer";
+import { getCogFilename } from "./helpers";
 
 export async function importRasterDatasource(
   options: ImportRasterDatasourceOptions,
@@ -144,10 +144,6 @@ export async function genCog(config: ImportRasterDatasourceConfig) {
   await $`gdalwarp -t_srs "EPSG:4326" ${src} ${warpDst}`;
   await $`gdal_translate -r nearest -of COG -stats ${warpDst} ${dst}`;
   await $`rm ${warpDst}`;
-}
-
-export function getCogFilename(datasourceId: string, postfix?: string) {
-  return datasourceId + (postfix ? postfix : "") + ".tif";
 }
 
 export function getCogPath(
