@@ -24,9 +24,10 @@ export async function importRasterDatasource(
     newDatasourcePath?: string;
     newDstPath?: string;
     srcUrl?: string;
+    doPublish?: boolean;
   }
 ) {
-  const { newDatasourcePath, newDstPath } = extraOptions;
+  const { newDatasourcePath, newDstPath, doPublish = true } = extraOptions;
   const config = await genRasterConfig(options, newDstPath);
 
   // Ensure dstPath is created
@@ -37,7 +38,7 @@ export async function importRasterDatasource(
   const tempPort = 8001;
   const server = new LocalFileServer({ path: config.dstPath, port: tempPort });
   const url = `${project.dataBucketUrl(true, tempPort)}${getCogFilename(
-    config
+    config.datasourceId
   )}`;
   console.log(
     `Fetching raster to calculate stats from temp file server ${url}`
@@ -48,16 +49,20 @@ export async function importRasterDatasource(
   const classStatsByProperty = await genRasterKeyStats(config, raster);
   console.log("Stats calculated");
 
-  await Promise.all(
-    config.formats.map((format) => {
-      return publishDatasource(
-        config.dstPath,
-        format,
-        config.datasourceId,
-        getDatasetBucketName(config)
-      );
-    })
-  );
+  if (doPublish) {
+    await Promise.all(
+      config.formats.map((format) => {
+        return publishDatasource(
+          config.dstPath,
+          format,
+          config.datasourceId,
+          getDatasetBucketName(config)
+        );
+      })
+    );
+  } else {
+    console.log("Publish disabled");
+  }
 
   const timestamp = new Date().toISOString();
 
@@ -134,27 +139,21 @@ export async function genRasterKeyStats(
 
 export async function genCog(config: ImportRasterDatasourceConfig) {
   const { src } = config;
-  const warpDst = getCogPath(config, "_4326");
-  const dst = getCogPath(config);
+  const warpDst = getCogPath(config.dstPath, config.datasourceId, "_4326");
+  const dst = getCogPath(config.dstPath, config.datasourceId);
   await $`gdalwarp -t_srs "EPSG:4326" ${src} ${warpDst}`;
   await $`gdal_translate -r nearest -of COG -stats ${warpDst} ${dst}`;
   await $`rm ${warpDst}`;
 }
 
-export function getCogFilename(
-  config: ImportRasterDatasourceConfig,
-  postfix?: string
-) {
-  return config.datasourceId + (postfix ? postfix : "") + ".tif";
+export function getCogFilename(datasourceId: string, postfix?: string) {
+  return datasourceId + (postfix ? postfix : "") + ".tif";
 }
 
 export function getCogPath(
-  config: ImportRasterDatasourceConfig,
+  dstPath: string,
+  datasourceId: string,
   postfix?: string
 ) {
-  return (
-    path.join(config.dstPath, config.datasourceId) +
-    (postfix ? postfix : "") +
-    ".tif"
-  );
+  return path.join(dstPath, datasourceId) + (postfix ? postfix : "") + ".tif";
 }

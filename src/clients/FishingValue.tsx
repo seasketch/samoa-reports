@@ -16,7 +16,6 @@ import {
 import project from "../../project";
 
 const metricGroup = project.getMetricGroup("ousValueOverlap");
-const legacyMetricGroup = project.getLegacyOusMetricGroup();
 const precalcMetrics = project.getPrecalcMetrics(
   metricGroup,
   "sum",

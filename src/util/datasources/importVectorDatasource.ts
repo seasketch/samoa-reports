@@ -9,7 +9,6 @@ import {
   ImportVectorDatasourceOptions,
   Stats,
   ImportVectorDatasourceConfig,
-  ImportRasterDatasourceConfig,
 } from "./types";
 import dsConfig from "./config";
 import { publishDatasource } from "./publishDatasource";
@@ -23,9 +22,10 @@ export async function importVectorDatasource(
     newDatasourcePath?: string;
     newDstPath?: string;
     srcUrl?: string;
+    doPublish?: boolean;
   }
 ) {
-  const { newDatasourcePath, newDstPath } = extraOptions;
+  const { newDatasourcePath, newDstPath, doPublish = true } = extraOptions;
   const config = await genVectorConfig(options, newDstPath);
 
   // Ensure dstPath is created
@@ -36,16 +36,20 @@ export async function importVectorDatasource(
 
   const classStatsByProperty = genVectorKeyStats(config);
 
-  await Promise.all(
-    config.formats.map((format) => {
-      return publishDatasource(
-        config.dstPath,
-        format,
-        config.datasourceId,
-        getDatasetBucketName(config)
-      );
-    })
-  );
+  if (doPublish) {
+    await Promise.all(
+      config.formats.map((format) => {
+        return publishDatasource(
+          config.dstPath,
+          format,
+          config.datasourceId,
+          getDatasetBucketName(config)
+        );
+      })
+    );
+  } else {
+    console.log("Publish disabled");
+  }
 
   const timestamp = new Date().toISOString();
 
@@ -108,12 +112,14 @@ export function genVectorConfig(
 
 /** Returns classes for datasource.  If classKeys not defined then will return a single class with datasourceID */
 export function genVectorKeyStats(
-  options: ImportVectorDatasourceConfig
+  config: ImportVectorDatasourceConfig
 ): KeyStats {
-  const rawJson = fs.readJsonSync(getJsonPath(options));
+  const rawJson = fs.readJsonSync(
+    getJsonPath(config.dstPath, config.datasourceId)
+  );
   const featureColl = rawJson as FeatureCollection<Polygon>;
 
-  if (!options.classKeys || options.classKeys.length === 0)
+  if (!config.classKeys || config.classKeys.length === 0)
     return {
       total: {
         total: {
@@ -140,12 +146,12 @@ export function genVectorKeyStats(
     }
   );
 
-  const classStats = options.classKeys.reduce<KeyStats>(
+  const classStats = config.classKeys.reduce<KeyStats>(
     (statsSoFar, classProperty) => {
       const metrics = featureColl.features.reduce<ClassStats>(
         (classesSoFar, feat) => {
           if (!feat.properties) throw new Error("Missing properties");
-          if (!options.classKeys) throw new Error("Missing classProperty");
+          if (!config.classKeys) throw new Error("Missing classProperty");
           const curClass = feat.properties[classProperty];
           const curCount = classesSoFar[curClass]?.count || 0;
           const curArea = classesSoFar[curClass]?.area || 0;
@@ -180,7 +186,7 @@ export function genVectorKeyStats(
 /** Convert vector datasource to GeoJSON */
 export async function genGeojson(config: ImportVectorDatasourceConfig) {
   let { src, propertiesToKeep, layerName } = config;
-  const dst = getJsonPath(config);
+  const dst = getJsonPath(config.dstPath, config.datasourceId);
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
   }" FROM "${layerName}"`;
@@ -197,7 +203,7 @@ export async function genGeojson(config: ImportVectorDatasourceConfig) {
 /** Convert vector datasource to FlatGeobuf */
 export async function genFlatgeobuf(config: ImportVectorDatasourceConfig) {
   const { src, propertiesToKeep, layerName } = config;
-  const dst = getFlatGeobufPath(config);
+  const dst = getFlatGeobufPath(config.dstPath, config.datasourceId);
   const query = `SELECT "${
     propertiesToKeep.length > 0 ? propertiesToKeep.join(",") : "*"
   }" FROM "${layerName}"`;
@@ -211,10 +217,10 @@ export async function genFlatgeobuf(config: ImportVectorDatasourceConfig) {
   await $`ogr2ogr -t_srs "EPSG:4326" -f FlatGeobuf ${explodeOption} -dialect OGRSQL -sql ${query} ${dst} ${src}`;
 }
 
-function getJsonPath(config: ImportVectorDatasourceConfig) {
-  return path.join(config.dstPath, config.datasourceId) + ".json";
+function getJsonPath(dstPath: string, datasourceId: string) {
+  return path.join(dstPath, datasourceId) + ".json";
 }
 
-function getFlatGeobufPath(config: ImportVectorDatasourceConfig) {
-  return path.join(config.dstPath, config.datasourceId) + ".fgb";
+function getFlatGeobufPath(dstPath: string, datasourceId: string) {
+  return path.join(dstPath, datasourceId) + ".fgb";
 }

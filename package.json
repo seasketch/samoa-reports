@@ -49,7 +49,7 @@
     "zod": "^3.17.3"
   },
   "devDependencies": {
-    "@seasketch/geoprocessing": "0.15.1-experimental-aws-refactor.64",
+    "@seasketch/geoprocessing": "0.15.1-beta.26",
     "@turf/boolean-disjoint": "6.5.0",
     "@turf/boolean-valid": "6.5.0",
     "@types/finalhandler": "^1.1.1",

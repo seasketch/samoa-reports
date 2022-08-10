@@ -91,7 +91,7 @@ describe("Import raster data", () => {
       {
         geo_type: "raster",
         src: "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif",
-        datasourceId: "Commercial_Fishing",
+        datasourceId: "ous_commercial",
         formats: [],
         noDataValue: 0,
         band: 0,

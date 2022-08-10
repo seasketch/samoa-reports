@@ -8,7 +8,8 @@
     "source": "src/clients/AllReport.tsx"
   }],
   "preprocessingFunctions": [
-    "src/functions/clipToOceanEez.ts"
+    "src/functions/clipToOceanEez.ts",
+    "src/functions/clipToOffshore.ts"
   ],
   "geoprocessingFunctions": [
     "src/functions/boundaryAreaOverlap.ts",

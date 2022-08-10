@@ -107,7 +107,7 @@ export async function reimportDatasources(
           port: tempPort,
         });
         const url = `${project.dataBucketUrl(true, tempPort)}${getCogFilename(
-          config
+          config.datasourceId
         )}`;
         console.log(
           `Fetching raster to calculate stats from temp file server ${url}`

@@ -13,8 +13,9 @@ import {
 import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
+import { getCogFilename } from "../util/datasources/importRasterDatasource";
 
-const metricGroup = project.getLegacyOusMetricGroup();
+const metricGroup = project.getMetricGroup("ousValueOverlap");
 
 export async function ousValueOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -24,7 +25,11 @@ export async function ousValueOverlap(
     await Promise.all(
       metricGroup.classes.map(async (curClass) => {
         // start raster load and move on in loop while awaiting finish
-        const url = `${project.dataBucketUrl()}${curClass.filename}`;
+        if (!curClass.datasourceId)
+          throw new Error(`Expected datasourceId for ${curClass}`);
+        const url = `${project.dataBucketUrl()}${getCogFilename(
+          curClass.datasourceId
+        )}`;
         const raster = await loadCogWindow(url, {
           windowBox: box,
         });
