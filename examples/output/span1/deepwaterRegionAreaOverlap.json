@@ -1,0 +1,79 @@
+{
+  "metrics": [
+    {
+      "metricId": "deepwaterRegionAreaOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Fafa-o-Mauga",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "deepwaterRegionAreaOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "I'a manu",
+      "groupId": null,
+      "geographyId": null,
+      "value": 468158256.5199448,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "deepwaterRegionAreaOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "La'i",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "deepwaterRegionAreaOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Loto-i-Toga",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "deepwaterRegionAreaOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Vasa-i-Saute",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1066625785.3227147,
+      "extra": {
+        "sketchName": "span1"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62d96fedb8852d2258f694c6",
+      "name": "span1",
+      "updatedAt": "2022-07-21T15:25:33.305Z",
+      "createdAt": "2022-07-21T15:25:33.305Z",
+      "sketchClassId": "62c71ab51d9b70564665d35c",
+      "isCollection": false,
+      "userAttributes": []
+    },
+    "id": "1",
+    "bbox": [
+      -172.4058308021423,
+      -14.734129262030025,
+      -172.0542683021423,
+      -13.893160813566107
+    ],
+    "geometry": null
+  }
+}

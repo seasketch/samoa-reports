@@ -1,0 +1,92 @@
+[
+    {
+        "metricId": "boundaryAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "eez",
+                "display": "EEZ",
+                "datasourceId": "eez",
+                "objectiveId": "eez",
+                "layerId": "60c7ca5c75ab03840c7c0528"
+            },
+            {
+                "classId": "inshore",
+                "display": "Inshore",
+                "datasourceId": "inshore",
+                "objectiveId": "inshore",
+                "layerId": "62db005954123c0c561e9561"
+            },
+            {
+                "classId": "offshore",
+                "display": "Offshore",
+                "datasourceId": "offshore",
+                "objectiveId": "offshore",
+                "layerId": "62db005954123c0c561e955f"
+            }
+        ]
+    },
+    {
+        "metricId": "deepwaterRegionAreaOverlap",
+        "type": "areaOverlap",
+        "datasourceId": "deepwater_bioregions",
+        "objectiveId": "deepwaterBioregions",
+        "classKey": "Draft name",
+        "classes": [
+            {
+                "classId": "Loto-i-Toga",
+                "display": "Loto-i-Toga"
+            },
+            {
+                "classId": "Fafa-o-Mauga",
+                "display": "Fafa-o-Mauga"
+            },
+            {
+                "classId": "I'a manu",
+                "display": "I'a manu"
+            },
+            {
+                "classId": "Vasa-i-Saute",
+                "display": "Vasa-i-Saute"
+            },
+            {
+                "classId": "La'i",
+                "display": "La'i"
+            }
+        ],
+        "layerId": "61f2f09533bd6818222554fa"
+    },
+    {
+        "metricId": "ousValueOverlap",
+        "type": "valueOverlap",
+        "classes": [
+            {
+                "classId": "commercial-fishing",
+                "display": "Commercial Fishing",
+                "datasourceId": "ous_commercial",
+                "noDataValue": 0,
+                "layerId": "621837c3824398156adbfc6c"
+            },
+            {
+                "classId": "subsistence-fishing",
+                "display": "Subsistence Fishing",
+                "datasourceId": "ous_subsistence",
+                "noDataValue": 0,
+                "layerId": "6218379d824398156adbfc55"
+            }
+        ]
+    },
+    {
+        "metricId": "kbaAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "kba",
+                "display": "Key Biodiversity Area",
+                "datasourceId": "kba",
+                "objectiveId": "kba",
+                "layerId": "60d37c22b4c604aa56927704"
+            }
+        ]
+    }
+]

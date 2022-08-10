@@ -1,0 +1,42 @@
+[
+    {
+        "objectiveId": "deepwaterBioregions",
+        "shortDesc": "Deepwater Bioregion Objective",
+        "target": 0.2,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "eez",
+        "shortDesc": "EEZ Objective",
+        "target": 0.3,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "inshore",
+        "shortDesc": "Inshore Objective",
+        "target": 0.3,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "offshore",
+        "shortDesc": "Offshore Objective",
+        "target": 0.3,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "kba",
+        "shortDesc": "Key Biodiversity Area Objective",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    }
+]

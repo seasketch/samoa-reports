@@ -1,7 +1,6 @@
 import {
   ValidationError,
   PreprocessingHandler,
-  VectorDataSource,
   isPolygonFeature,
   Feature,
   Polygon,
@@ -14,26 +13,23 @@ import { featureCollection as fc } from "@turf/helpers";
 import flatten from "@turf/flatten";
 import kinks from "@turf/kinks";
 import { clipMultiMerge } from "@seasketch/geoprocessing";
+import {
+  getLandVectorDatasource,
+  getEezVectorDatasource,
+} from "../util/datasources/global";
+import project from "../../project";
+import { datasourcesSchema } from "../util/datasources/types";
 
 const ENFORCE_MAX_SIZE = false;
 const MAX_SIZE_KM = 500000 * 1000 ** 2; // Default 500,000 KM
 
-type OsmLandFeature = Feature<Polygon, { gid: number }>;
-type EezLandUnion = Feature<Polygon, { gid: number; UNION: string }>;
-
 // Defined at module level for potential caching/reuse by serverless process
-const SubdividedOsmLandSource = new VectorDataSource<OsmLandFeature>(
-  "https://d3p1dsef9f0gjr.cloudfront.net/"
-);
-const SubdividedEezLandUnionSource = new VectorDataSource<EezLandUnion>(
-  "https://d3muy0hbwp5qkl.cloudfront.net"
-);
+const datasources = datasourcesSchema.parse(project.datasources);
+const landDatasource = getLandVectorDatasource(datasources);
+const eezDatasource = getEezVectorDatasource(datasources);
 
 export async function clipLand(feature: Feature<Polygon | MultiPolygon>) {
-  const landFeatures = await SubdividedOsmLandSource.fetchUnion(
-    bbox(feature),
-    "gid"
-  );
+  const landFeatures = await landDatasource.fetchUnion(bbox(feature), "gid");
   if (landFeatures.features.length === 0) return feature;
   return clip(fc([feature, ...landFeatures.features]), "difference");
 }
@@ -42,7 +38,7 @@ export async function clipOutsideEez(
   feature: Feature<Polygon | MultiPolygon>,
   eezFilterByNames: string[] = ["Samoa"]
 ) {
-  let eezFeatures = await SubdividedEezLandUnionSource.fetch(bbox(feature));
+  let eezFeatures = await eezDatasource.fetch(bbox(feature));
   if (eezFeatures.length === 0) return feature;
   // Optionally filter down to a single country/union EEZ boundary
   if (eezFilterByNames.length > 0) {
