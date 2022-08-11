@@ -23,9 +23,9 @@ import styled from "styled-components";
 import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
-const boundaryMetricGroup = project.getMetricGroup("kbaAreaOverlap");
+const boundaryMetricGroup = project.getMetricGroup("ebsaAreaOverlap");
 const boundaryLegacyMetricGroup =
-  project.getLegacyMetricGroup("kbaAreaOverlap");
+  project.getLegacyMetricGroup("ebsaAreaOverlap");
 const boundaryTotalMetrics = project.getPrecalcMetrics(
   boundaryMetricGroup,
   "area"
@@ -69,12 +69,12 @@ const TableStyled = styled(ReportTableStyled)`
   }
 `;
 
-const KbaCard = () => {
+const EbsaCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <ResultsCard
-      title="Key Biodiversity Areas"
-      functionName="kbaAreaOverlap"
+      title="Ecologically/Biologically Significant Areas"
+      functionName="ebsaAreaOverlap"
       useChildCard
     >
       {(data: ReportResult) => {
@@ -82,7 +82,7 @@ const KbaCard = () => {
           throw new Error("Protection results not found");
         return (
           <ToolbarCard
-            title="Key Biodiversity Areas"
+            title="Ecologically/Biologically Significant Areas"
             items={
               <>
                 <DataDownload
@@ -94,7 +94,7 @@ const KbaCard = () => {
               </>
             }
           >
-            <p>Offshore plans must include Key Biodiversity Areas.</p>
+            <p>Offshore plans must include Key Biodiversity Areas (KBAs).</p>
 
             {genSingleSizeTable(data)}
 
@@ -291,4 +291,4 @@ const genNetworkSizeTable = (data: ReportResult) => {
   );
 };
 
-export default KbaCard;
+export default EbsaCard;

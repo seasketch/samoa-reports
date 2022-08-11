@@ -23,16 +23,17 @@ import styled from "styled-components";
 import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
-const boundaryMetricGroup = project.getMetricGroup("kbaAreaOverlap");
+const metricGroup = project.getMetricGroup("sumaAreaOverlap");
 const boundaryLegacyMetricGroup =
-  project.getLegacyMetricGroup("kbaAreaOverlap");
-const boundaryTotalMetrics = project.getPrecalcMetrics(
-  boundaryMetricGroup,
-  "area"
+  project.getLegacyMetricGroup("sumaAreaOverlap");
+const totalMetrics = project.getPrecalcMetrics(
+  metricGroup,
+  "area",
+  metricGroup.classKey
 );
 
-const METRIC_ID = boundaryMetricGroup.metricId;
-const PERC_METRIC_ID = `${boundaryMetricGroup.metricId}Perc`;
+const METRIC_ID = metricGroup.metricId;
+const PERC_METRIC_ID = `${metricGroup.metricId}Perc`;
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -69,12 +70,12 @@ const TableStyled = styled(ReportTableStyled)`
   }
 `;
 
-const KbaCard = () => {
+const SizeCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <ResultsCard
-      title="Key Biodiversity Areas"
-      functionName="kbaAreaOverlap"
+      title="Special Unique Marine Areas"
+      functionName="sumaAreaOverlap"
       useChildCard
     >
       {(data: ReportResult) => {
@@ -82,11 +83,11 @@ const KbaCard = () => {
           throw new Error("Protection results not found");
         return (
           <ToolbarCard
-            title="Key Biodiversity Areas"
+            title="Special Unique Marine Areas"
             items={
               <>
                 <DataDownload
-                  filename="size"
+                  filename="suma"
                   data={data.metrics}
                   formats={["csv", "json"]}
                   placement="left-end"
@@ -94,7 +95,7 @@ const KbaCard = () => {
               </>
             }
           >
-            <p>Offshore plans must include Key Biodiversity Areas.</p>
+            <p>Offshore plans must include special unique marine areas.</p>
 
             {genSingleSizeTable(data)}
 
@@ -107,7 +108,7 @@ const KbaCard = () => {
             <Collapse title="Learn more">
               <p>
                 {" "}
-                This report summarizes the proportion of known key biological
+                This report summarizes the proportion of special unique marine
                 areas within this plan.
               </p>
               <p>
@@ -123,14 +124,14 @@ const KbaCard = () => {
 };
 
 const genSingleSizeTable = (data: ReportResult) => {
-  const classesById = keyBy(boundaryMetricGroup.classes, (c) => c.classId);
+  const classesById = keyBy(metricGroup.classes, (c) => c.classId);
   let singleMetrics = data.metrics.filter(
     (m) => m.sketchId === data.sketch.properties.id
   );
 
   const finalMetrics = [
     ...singleMetrics,
-    ...toPercentMetric(singleMetrics, boundaryTotalMetrics, PERC_METRIC_ID),
+    ...toPercentMetric(singleMetrics, totalMetrics, PERC_METRIC_ID),
   ];
 
   const aggMetrics = nestMetrics(finalMetrics, ["classId", "metricId"]);
@@ -233,7 +234,7 @@ const genNetworkSizeTable = (data: ReportResult) => {
   );
   const finalMetrics = [
     ...sketchMetrics,
-    ...toPercentMetric(sketchMetrics, boundaryTotalMetrics, PERC_METRIC_ID),
+    ...toPercentMetric(sketchMetrics, totalMetrics, PERC_METRIC_ID),
   ];
 
   const aggMetrics = nestMetrics(finalMetrics, [
@@ -291,4 +292,4 @@ const genNetworkSizeTable = (data: ReportResult) => {
   );
 };
 
-export default KbaCard;
+export default SizeCard;

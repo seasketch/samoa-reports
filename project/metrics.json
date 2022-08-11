@@ -88,5 +88,36 @@
                 "layerId": "60d37c22b4c604aa56927704"
             }
         ]
+    },
+    {
+        "metricId": "ebsaAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "ebsa",
+                "display": "Ecologically/Biologically Significant Areas",
+                "datasourceId": "ebsa",
+                "objectiveId": "ebsa",
+                "layerId": "62f3f4231c9f30d55f2762f7"
+            }
+        ]
+    },
+    {
+        "metricId": "sumaAreaOverlap",
+        "type": "areaOverlap",
+        "datasourceId": "suma",
+        "objectiveId": "suma",
+        "classKey": "Insh_Offsh",
+        "classes": [
+            {
+                "classId": "Inshore",
+                "display": "Inshore"
+            },
+            {
+                "classId": "Offshore",
+                "display": "Offshore"
+            }
+        ],
+        "layerId": "62f3f43c1c9f30d55f276326"
     }
 ]

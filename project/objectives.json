@@ -38,5 +38,21 @@
         "countsToward": {
             "Fully Protected Area": "yes"
         }
+    },
+    {
+        "objectiveId": "ebsa",
+        "shortDesc": "Ecologically/Biologically Significant Objective",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "suma",
+        "shortDesc": "Special Unique Marine Areas",
+        "target": 0.2,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
     }
 ]

@@ -10,6 +10,7 @@ import {
   ImportRasterDatasourceOptions,
   importRasterDatasourceOptionsSchema,
 } from "../src/util/datasources/types";
+import path from "path";
 
 import dsConfig from "../src/util/datasources/config";
 import project from "../project";
@@ -40,7 +41,10 @@ if (typeof require !== "undefined" && require.main === module) {
         // vector
         const inputAnswers = await inputQuestions(datasources);
         const layerNameAnswer = await layerNameQuestion(
-          inputAnswers.datasourceId
+          path.basename(
+            inputAnswers.src,
+            "." + path.basename(inputAnswers.src).split(".").pop()
+          )
         );
         const detailedVectorAnswers = await detailedVectorQuestions(
           datasources
@@ -160,14 +164,14 @@ async function inputQuestions(
 }
 
 async function layerNameQuestion(
-  datasourceId: string
+  layerName: string
 ): Promise<Pick<ImportVectorDatasourceAnswers, "layerName">> {
   return inquirer.prompt<Pick<ImportVectorDatasourceAnswers, "layerName">>([
     {
       type: "input",
       name: "layerName",
       message: "Enter layer name, defaults to filename",
-      default: datasourceId,
+      default: layerName,
     },
   ]);
 }

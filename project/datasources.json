@@ -168,16 +168,8 @@
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
-    "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
-    "layerName": "kba",
-    "geo_type": "vector",
     "datasourceId": "kba",
-    "formats": [
-      "fgb"
-    ],
-    "classKeys": [],
-    "created": "2022-08-10T04:13:49.722Z",
-    "lastUpdated": "2022-08-10T04:13:49.722Z",
+    "geo_type": "vector",
     "keyStats": {
       "total": {
         "total": {
@@ -187,6 +179,72 @@
         }
       }
     },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "kba",
+    "classKeys": [],
+    "created": "2022-08-10T04:13:49.722Z",
+    "lastUpdated": "2022-08-10T04:13:49.722Z",
+    "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
     "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "ebsa",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 118044202514.90329
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "ebsa",
+    "classKeys": [],
+    "created": "2022-08-10T13:11:04.725Z",
+    "lastUpdated": "2022-08-10T13:11:04.725Z",
+    "src": "data/src/Data_Received/Layers_From_Fili/Ecologically_and_biologically_siginificant_areas_(EBSAs)/EBSA.shp",
+    "propertiesToKeep": []
+  },
+  {
+    "src": "data/src/Data_Received/Layers_From_Fili/Special_Unique_Marine_Areas/Samoa_SUMA.shp",
+    "layerName": "Samoa_SUMA",
+    "geo_type": "vector",
+    "datasourceId": "suma",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [
+      "Insh_Offsh"
+    ],
+    "created": "2022-08-10T13:23:53.565Z",
+    "lastUpdated": "2022-08-10T13:23:53.565Z",
+    "keyStats": {
+      "Insh_Offsh": {
+        "Inshore": {
+          "count": 47,
+          "area": 499375219.3861345
+        },
+        "Offshore": {
+          "count": 15,
+          "area": 24524285680.081352
+        }
+      },
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 183513.81964007742
+        }
+      }
+    },
+    "propertiesToKeep": [
+      "Insh_Offsh"
+    ]
   }
 ]
