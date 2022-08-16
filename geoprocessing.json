@@ -17,6 +17,7 @@
     "src/functions/ousValueOverlap.ts",
     "src/functions/kbaAreaOverlap.ts",
     "src/functions/ebsaAreaOverlap.ts",
-    "src/functions/sumaAreaOverlap.ts"
+    "src/functions/sumaAreaOverlap.ts",
+    "src/functions/geomorphAreaOverlap.ts"
   ]
 }

@@ -72,7 +72,7 @@
                 "display": "Subsistence Fishing",
                 "datasourceId": "ous_subsistence",
                 "noDataValue": 0,
-                "layerId": "6218379d824398156adbfc55"
+                "layerId": "6"
             }
         ]
     },
@@ -119,5 +119,42 @@
             }
         ],
         "layerId": "62f3f43c1c9f30d55f276326"
+    },
+    {
+        "metricId": "geomorphAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "Hills",
+                "classKey": "Class",
+                "display": "Abyssal - Hills",
+                "datasourceId": "abyssal_class",
+                "objectiveId": "abyssal",
+                "layerId": ""
+            },
+            {
+                "classId": "Mountains",
+                "classKey": "Class",
+                "display": "Abyssal - Mountains",
+                "datasourceId": "abyssal_class",
+                "objectiveId": "abyssal",
+                "layerId": ""
+            },
+            {
+                "classId": "Plains",
+                "classKey": "Class",
+                "display": "Abyssal - Plains",
+                "datasourceId": "abyssal_class",
+                "objectiveId": "abyssal",
+                "layerId": ""
+            },
+            {
+                "classId": "basins",
+                "display": "Basins",
+                "datasourceId": "basins",
+                "objectiveId": "basins",
+                "layerId": ""
+            }
+        ]
     }
 ]

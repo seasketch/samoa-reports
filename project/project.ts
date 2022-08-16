@@ -203,14 +203,49 @@ export class ProjectClient {
     /** Optional class key to use */
     classKey?: string
   ): Metric[] {
+    // top-level datasource with multi-class
+    // class-level datasource single-class (use total)
+    // class-level datasource multi-class (use total)
+    // class-level multi-datasource single-class and multi-class
+
+    const metrics = mg.classes.map((curClass) => {
+      if (!mg.datasourceId && !curClass.datasourceId)
+        throw new Error(`Missing datasourceId for ${mg.metricId}`);
+      const ds = this.getDatasourceById(
+        mg.datasourceId! || curClass.datasourceId!
+      );
+      if (!ds.keyStats)
+        throw new Error(`Expected keyStats for ${ds.datasourceId}`);
+      const classKey = mg.classKey! || curClass.classKey!;
+      // If not class key use the total
+      const classValue = classKey
+        ? ds.keyStats[classKey][curClass.classId][statName]
+        : ds.keyStats.total.total[statName];
+      if (!classValue)
+        throw new Error(
+          `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
+        );
+      const classMetric = {
+        groupId: null,
+        geographyId: null,
+        sketchId: null,
+        metricId: mg.metricId,
+        classId: curClass.classId,
+        value: classValue,
+      };
+      return classMetric;
+    });
+    return metrics;
+
+    /**
     if (mg.datasourceId && classKey) {
       // top-level datasource, multi-class
       const ds = this.getDatasourceById(mg.datasourceId);
       const metrics = mg.classes.map((curClass) => {
         if (!ds.keyStats)
           throw new Error(`Expected keyStats for ${ds.datasourceId}`);
-        const classArea = ds.keyStats[classKey][curClass.classId][statName];
-        if (!classArea)
+        const classValue = ds.keyStats[classKey][curClass.classId][statName];
+        if (!classValue)
           throw new Error(
             `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
           );
@@ -220,7 +255,7 @@ export class ProjectClient {
           sketchId: null,
           metricId: mg.metricId,
           classId: curClass.classId,
-          value: classArea,
+          value: classValue,
         };
         return classMetric;
       });
@@ -235,11 +270,13 @@ export class ProjectClient {
           const ds = this.getDatasourceById(curClass.datasourceId);
           if (!ds.keyStats)
             throw new Error(`Expected keyStats for ${ds.datasourceId}`);
-          const totalArea = ds.keyStats.total.total[statName];
-          if (!totalArea)
+          // Grab the total
+          const classValue = ds.keyStats.total.total[statName];
+          if (!classValue)
             throw new Error(
               `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
             );
+          // single metric return, one per class
           return [
             {
               groupId: null,
@@ -247,7 +284,7 @@ export class ProjectClient {
               sketchId: null,
               metricId: mg.metricId,
               classId: curClass.classId,
-              value: totalArea,
+              value: classValue,
             },
           ];
         })
@@ -258,6 +295,7 @@ export class ProjectClient {
       return metrics;
     }
     throw new Error(`Missing datasourceId(s) in MetricGroup ${mg.metricId}`);
+    */
   }
 }
 

@@ -56,7 +56,7 @@
       "Draft name"
     ],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-09T18:44:06.945Z",
+    "lastUpdated": "2022-08-16T02:02:16.620Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -77,7 +77,7 @@
     "formats": [],
     "classKeys": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-09T18:44:07.201Z",
+    "lastUpdated": "2022-08-16T02:02:16.870Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
@@ -99,7 +99,7 @@
     "layerName": "webm_Offshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-09T18:44:08.810Z",
+    "lastUpdated": "2022-08-16T02:02:19.374Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -121,7 +121,7 @@
     "layerName": "webm_Inshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T19:19:19.486Z",
-    "lastUpdated": "2022-08-09T18:44:10.483Z",
+    "lastUpdated": "2022-08-16T02:02:21.026Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -143,7 +143,7 @@
     "band": 0,
     "noDataValue": 0,
     "created": "2022-08-05T02:34:25.996Z",
-    "lastUpdated": "2022-08-09T18:45:15.483Z",
+    "lastUpdated": "2022-08-16T02:02:35.891Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
   },
   {
@@ -164,7 +164,7 @@
     "band": 0,
     "noDataValue": 0,
     "created": "2022-08-05T03:24:47.725Z",
-    "lastUpdated": "2022-08-09T18:47:20.865Z",
+    "lastUpdated": "2022-08-16T02:02:50.311Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
@@ -185,7 +185,7 @@
     "layerName": "kba",
     "classKeys": [],
     "created": "2022-08-10T04:13:49.722Z",
-    "lastUpdated": "2022-08-10T04:13:49.722Z",
+    "lastUpdated": "2022-08-16T02:02:51.917Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
     "propertiesToKeep": []
   },
@@ -207,23 +207,13 @@
     "layerName": "ebsa",
     "classKeys": [],
     "created": "2022-08-10T13:11:04.725Z",
-    "lastUpdated": "2022-08-10T13:11:04.725Z",
+    "lastUpdated": "2022-08-16T02:02:53.480Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Ecologically_and_biologically_siginificant_areas_(EBSAs)/EBSA.shp",
     "propertiesToKeep": []
   },
   {
-    "src": "data/src/Data_Received/Layers_From_Fili/Special_Unique_Marine_Areas/Samoa_SUMA.shp",
-    "layerName": "Samoa_SUMA",
-    "geo_type": "vector",
     "datasourceId": "suma",
-    "formats": [
-      "fgb"
-    ],
-    "classKeys": [
-      "Insh_Offsh"
-    ],
-    "created": "2022-08-10T13:23:53.565Z",
-    "lastUpdated": "2022-08-10T13:23:53.565Z",
+    "geo_type": "vector",
     "keyStats": {
       "Insh_Offsh": {
         "Inshore": {
@@ -243,8 +233,80 @@
         }
       }
     },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "Samoa_SUMA",
+    "classKeys": [
+      "Insh_Offsh"
+    ],
+    "created": "2022-08-10T13:23:53.565Z",
+    "lastUpdated": "2022-08-16T02:02:55.015Z",
+    "src": "data/src/Data_Received/Layers_From_Fili/Special_Unique_Marine_Areas/Samoa_SUMA.shp",
     "propertiesToKeep": [
       "Insh_Offsh"
     ]
+  },
+  {
+    "datasourceId": "abyssal_class",
+    "geo_type": "vector",
+    "keyStats": {
+      "Class": {
+        "Hills": {
+          "count": 13,
+          "area": 29905137578.14147
+        },
+        "Mountains": {
+          "count": 5,
+          "area": 32614778987.427914
+        },
+        "Plains": {
+          "count": 8,
+          "area": 35897952256.80746
+        }
+      },
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 1747726.04533932
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "abyssal_class",
+    "classKeys": [
+      "Class"
+    ],
+    "created": "2022-08-11T18:30:49.041Z",
+    "lastUpdated": "2022-08-16T02:02:56.406Z",
+    "src": "data/src/Samoa.gdb",
+    "propertiesToKeep": [
+      "Class"
+    ]
+  },
+  {
+    "datasourceId": "basins",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 19308296342.05726
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "basins",
+    "classKeys": [],
+    "created": "2022-08-11T18:35:18.933Z",
+    "lastUpdated": "2022-08-16T02:02:57.800Z",
+    "src": "data/src/Samoa.gdb",
+    "propertiesToKeep": []
   }
 ]

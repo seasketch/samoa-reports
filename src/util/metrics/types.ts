@@ -8,6 +8,8 @@ export const metricTypesSchema = z.enum(METRIC_TYPES);
 export const dataClassSchema = z.object({
   /** Unique identifier for class in project */
   classId: z.string(),
+  /** Optional datasource class key used to source classIds  */
+  classKey: z.string().optional(),
   /** Datasource for single data class */
   datasourceId: z.string().optional(),
   /** Name of class suitable for user display */

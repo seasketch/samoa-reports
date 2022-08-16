@@ -123,7 +123,7 @@ export function genVectorKeyStats(
     return {
       total: {
         total: {
-          count: 1,
+          count: featureColl.features.length,
           sum: null,
           area: area(featureColl),
         },
@@ -134,9 +134,9 @@ export function genVectorKeyStats(
     (statsSoFar, feat) => {
       const featArea = area(feat);
       return {
-        count: statsSoFar.count || 0 + 1,
+        count: statsSoFar.count! + 1,
         sum: null,
-        area: statsSoFar.area || 0 + featArea,
+        area: statsSoFar.area! + featArea,
       };
     },
     {
