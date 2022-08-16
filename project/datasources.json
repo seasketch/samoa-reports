@@ -45,9 +45,9 @@
       },
       "total": {
         "total": {
-          "count": 1,
+          "count": 8,
           "sum": null,
-          "area": 4644230437.20613
+          "area": 130002403111.96951
         }
       }
     },
@@ -56,7 +56,7 @@
       "Draft name"
     ],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-16T02:02:16.620Z",
+    "lastUpdated": "2022-08-16T03:26:33.707Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -77,7 +77,7 @@
     "formats": [],
     "classKeys": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-16T02:02:16.870Z",
+    "lastUpdated": "2022-08-16T03:26:33.898Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
@@ -99,7 +99,7 @@
     "layerName": "webm_Offshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-16T02:02:19.374Z",
+    "lastUpdated": "2022-08-16T03:26:35.324Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -109,7 +109,7 @@
     "keyStats": {
       "total": {
         "total": {
-          "count": 1,
+          "count": 3,
           "sum": null,
           "area": 1207288279.902524
         }
@@ -121,7 +121,7 @@
     "layerName": "webm_Inshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T19:19:19.486Z",
-    "lastUpdated": "2022-08-16T02:02:21.026Z",
+    "lastUpdated": "2022-08-16T03:26:36.917Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -143,7 +143,7 @@
     "band": 0,
     "noDataValue": 0,
     "created": "2022-08-05T02:34:25.996Z",
-    "lastUpdated": "2022-08-16T02:02:35.891Z",
+    "lastUpdated": "2022-08-16T03:26:51.882Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
   },
   {
@@ -164,7 +164,7 @@
     "band": 0,
     "noDataValue": 0,
     "created": "2022-08-05T03:24:47.725Z",
-    "lastUpdated": "2022-08-16T02:02:50.311Z",
+    "lastUpdated": "2022-08-16T03:27:07.911Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
@@ -173,7 +173,7 @@
     "keyStats": {
       "total": {
         "total": {
-          "count": 1,
+          "count": 7,
           "sum": null,
           "area": 169308901.32581657
         }
@@ -185,7 +185,7 @@
     "layerName": "kba",
     "classKeys": [],
     "created": "2022-08-10T04:13:49.722Z",
-    "lastUpdated": "2022-08-16T02:02:51.917Z",
+    "lastUpdated": "2022-08-16T03:27:09.246Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
     "propertiesToKeep": []
   },
@@ -195,7 +195,7 @@
     "keyStats": {
       "total": {
         "total": {
-          "count": 1,
+          "count": 2,
           "sum": null,
           "area": 118044202514.90329
         }
@@ -207,7 +207,7 @@
     "layerName": "ebsa",
     "classKeys": [],
     "created": "2022-08-10T13:11:04.725Z",
-    "lastUpdated": "2022-08-16T02:02:53.480Z",
+    "lastUpdated": "2022-08-16T03:27:10.628Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Ecologically_and_biologically_siginificant_areas_(EBSAs)/EBSA.shp",
     "propertiesToKeep": []
   },
@@ -227,9 +227,9 @@
       },
       "total": {
         "total": {
-          "count": 1,
+          "count": 62,
           "sum": null,
-          "area": 183513.81964007742
+          "area": 25023660899.46749
         }
       }
     },
@@ -241,7 +241,7 @@
       "Insh_Offsh"
     ],
     "created": "2022-08-10T13:23:53.565Z",
-    "lastUpdated": "2022-08-16T02:02:55.015Z",
+    "lastUpdated": "2022-08-16T03:27:12.079Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Special_Unique_Marine_Areas/Samoa_SUMA.shp",
     "propertiesToKeep": [
       "Insh_Offsh"
@@ -267,9 +267,9 @@
       },
       "total": {
         "total": {
-          "count": 1,
+          "count": 26,
           "sum": null,
-          "area": 1747726.04533932
+          "area": 98417868822.37686
         }
       }
     },
@@ -281,7 +281,7 @@
       "Class"
     ],
     "created": "2022-08-11T18:30:49.041Z",
-    "lastUpdated": "2022-08-16T02:02:56.406Z",
+    "lastUpdated": "2022-08-16T03:27:13.408Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Class"
@@ -293,7 +293,7 @@
     "keyStats": {
       "total": {
         "total": {
-          "count": 1,
+          "count": 2,
           "sum": null,
           "area": 19308296342.05726
         }
@@ -305,8 +305,44 @@
     "layerName": "basins",
     "classKeys": [],
     "created": "2022-08-11T18:35:18.933Z",
-    "lastUpdated": "2022-08-16T02:02:57.800Z",
+    "lastUpdated": "2022-08-16T03:27:14.875Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "canyons",
+    "geo_type": "vector",
+    "keyStats": {
+      "type": {
+        "blind": {
+          "count": 12,
+          "area": 1617082084.7436056
+        },
+        "shelf incising": {
+          "count": 10,
+          "area": 1745508359.7716928
+        }
+      },
+      "total": {
+        "total": {
+          "count": 22,
+          "sum": null,
+          "area": 3362590444.5152984
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "canyons",
+    "classKeys": [
+      "type"
+    ],
+    "created": "2022-08-16T03:25:40.660Z",
+    "lastUpdated": "2022-08-16T03:27:16.380Z",
+    "src": "data/src/Samoa.gdb",
+    "propertiesToKeep": [
+      "type"
+    ]
   }
 ]
