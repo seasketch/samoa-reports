@@ -25,6 +25,7 @@ export const projectSchema = z.object({
   areaSquareMeters: z.number(),
   noun: z.string(),
   nounPossessive: z.string(),
+  externalLinks: z.record(z.string()),
 });
 
 //// INFERRED TYPES ////

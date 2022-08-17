@@ -94,7 +94,7 @@ describe("Import raster data", () => {
         datasourceId: "ous_commercial",
         formats: [],
         noDataValue: 0,
-        band: 0,
+        band: 1,
       },
       {
         newDatasourcePath: "./test/datasources_test.json",

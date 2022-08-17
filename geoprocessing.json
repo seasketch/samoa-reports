@@ -15,6 +15,7 @@
     "src/functions/boundaryAreaOverlap.ts",
     "src/functions/deepwaterRegionAreaOverlap.ts",
     "src/functions/ousValueOverlap.ts",
+    "src/functions/gfwValueOverlap.ts",
     "src/functions/kbaAreaOverlap.ts",
     "src/functions/ebsaAreaOverlap.ts",
     "src/functions/sumaAreaOverlap.ts",

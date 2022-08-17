@@ -77,6 +77,7 @@ export async function reimportDatasources(
 
         await createOrUpdateDatasource(newVectorD, newDatasourcePath);
         console.log(`${ds.datasourceId} reimport complete`);
+        console.log();
         updated += 1;
       } catch (e: unknown) {
         if (e instanceof Error) {
@@ -132,6 +133,7 @@ export async function reimportDatasources(
 
         await createOrUpdateDatasource(newRasterD, newDatasourcePath);
         console.log(`${ds.datasourceId} reimport complete`);
+        console.log();
         updated += 1;
       } catch (e: unknown) {
         if (e instanceof Error) {

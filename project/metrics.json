@@ -275,5 +275,41 @@
                 "layerId": "60d37c22b4c604aa56927732"
             }
         ]
+    },
+    {
+        "metricId": "gfwValueOverlap",
+        "type": "valueOverlap",
+        "classes": [
+            {
+                "classId": "avg_fish_effort_allyears",
+                "display": "All",
+                "datasourceId": "avg_fish_effort_allyears",
+                "layerId": "62de347854123c0c5620442d"
+            },
+            {
+                "classId": "avg_fish_effort_allyears_dfl",
+                "display": "DFL",
+                "datasourceId": "avg_fisheffort_allyears_dfl",
+                "layerId": ""
+            },
+            {
+                "classId": "avg_fish_effort_allyears_tps",
+                "display": "TPS",
+                "datasourceId": "avg_fisheffort_allyears_tps",
+                "layerId": ""
+            },
+            {
+                "classId": "avg_fish_effort_allyears_trollers",
+                "display": "Trollers",
+                "datasourceId": "avg_fisheffort_allyears_trollers",
+                "layerId": ""
+            },
+            {
+                "classId": "avg_fish_effort_allyears_othergear",
+                "display": "Other",
+                "datasourceId": "avg_fisheffort_allyears_othergear",
+                "layerId": ""
+            }
+        ]
     }
 ]

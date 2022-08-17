@@ -183,8 +183,8 @@ async function rasterBandQuestion(
     {
       type: "input",
       name: "band",
-      message: "Enter band number to import, defaults to 0",
-      default: 0,
+      message: "Enter band number to import, defaults to 1",
+      default: 1,
       validate: (value) => (isNaN(parseInt(value)) ? "Not a number!" : true),
       filter: (value) => (isNaN(parseInt(value)) ? value : parseInt(value, 10)),
     },

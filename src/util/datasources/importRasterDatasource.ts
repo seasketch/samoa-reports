@@ -142,7 +142,7 @@ export async function genCog(config: ImportRasterDatasourceConfig) {
   const warpDst = getCogPath(config.dstPath, config.datasourceId, "_4326");
   const dst = getCogPath(config.dstPath, config.datasourceId);
   await $`gdalwarp -t_srs "EPSG:4326" ${src} ${warpDst}`;
-  await $`gdal_translate -r nearest -of COG -stats ${warpDst} ${dst}`;
+  await $`gdal_translate -b ${config.band} -r nearest -of COG -stats ${warpDst} ${dst}`;
   await $`rm ${warpDst}`;
 }
 

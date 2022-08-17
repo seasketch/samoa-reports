@@ -58,7 +58,7 @@
       "Draft name"
     ],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-16T14:57:07.154Z",
+    "lastUpdated": "2022-08-17T16:30:36.039Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -81,7 +81,7 @@
     ],
     "classKeys": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-16T14:57:08.503Z",
+    "lastUpdated": "2022-08-17T16:30:37.404Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
@@ -103,7 +103,7 @@
     "layerName": "webm_Offshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-16T14:57:09.969Z",
+    "lastUpdated": "2022-08-17T16:30:39.045Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -125,7 +125,7 @@
     "layerName": "webm_Inshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T19:19:19.486Z",
-    "lastUpdated": "2022-08-16T14:57:11.567Z",
+    "lastUpdated": "2022-08-17T16:30:40.705Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -144,10 +144,10 @@
     "formats": [
       "tif"
     ],
-    "band": 0,
+    "band": 1,
     "noDataValue": 0,
     "created": "2022-08-05T02:34:25.996Z",
-    "lastUpdated": "2022-08-16T14:57:26.458Z",
+    "lastUpdated": "2022-08-17T16:31:33.514Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
   },
   {
@@ -165,10 +165,10 @@
     "formats": [
       "tif"
     ],
-    "band": 0,
+    "band": 1,
     "noDataValue": 0,
     "created": "2022-08-05T03:24:47.725Z",
-    "lastUpdated": "2022-08-16T14:57:42.782Z",
+    "lastUpdated": "2022-08-17T16:32:24.693Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
@@ -189,7 +189,7 @@
     "layerName": "kba",
     "classKeys": [],
     "created": "2022-08-10T04:13:49.722Z",
-    "lastUpdated": "2022-08-16T14:57:44.142Z",
+    "lastUpdated": "2022-08-17T16:32:26.380Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
     "propertiesToKeep": []
   },
@@ -211,7 +211,7 @@
     "layerName": "ebsa",
     "classKeys": [],
     "created": "2022-08-10T13:11:04.725Z",
-    "lastUpdated": "2022-08-16T14:57:45.507Z",
+    "lastUpdated": "2022-08-17T16:32:28.111Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Ecologically_and_biologically_siginificant_areas_(EBSAs)/EBSA.shp",
     "propertiesToKeep": []
   },
@@ -245,7 +245,7 @@
       "Insh_Offsh"
     ],
     "created": "2022-08-10T13:23:53.565Z",
-    "lastUpdated": "2022-08-16T14:57:47.415Z",
+    "lastUpdated": "2022-08-17T16:32:30.345Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Special_Unique_Marine_Areas/Samoa_SUMA.shp",
     "propertiesToKeep": [
       "Insh_Offsh"
@@ -285,7 +285,7 @@
       "Class"
     ],
     "created": "2022-08-11T18:30:49.041Z",
-    "lastUpdated": "2022-08-16T14:57:49.944Z",
+    "lastUpdated": "2022-08-17T16:32:32.099Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Class"
@@ -309,7 +309,7 @@
     "layerName": "basins",
     "classKeys": [],
     "created": "2022-08-11T18:35:18.933Z",
-    "lastUpdated": "2022-08-16T14:57:51.417Z",
+    "lastUpdated": "2022-08-17T16:32:33.728Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -343,7 +343,7 @@
       "type"
     ],
     "created": "2022-08-16T03:25:40.660Z",
-    "lastUpdated": "2022-08-16T14:57:52.884Z",
+    "lastUpdated": "2022-08-17T16:32:35.407Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "type"
@@ -367,7 +367,7 @@
     "layerName": "escarpments",
     "classKeys": [],
     "created": "2022-08-16T03:38:49.033Z",
-    "lastUpdated": "2022-08-16T14:57:54.304Z",
+    "lastUpdated": "2022-08-17T16:32:37.401Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -389,7 +389,7 @@
     "layerName": "guyot",
     "classKeys": [],
     "created": "2022-08-16T03:39:23.182Z",
-    "lastUpdated": "2022-08-16T14:57:55.534Z",
+    "lastUpdated": "2022-08-17T16:32:38.832Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -411,7 +411,7 @@
     "layerName": "hadal",
     "classKeys": [],
     "created": "2022-08-16T03:39:44.993Z",
-    "lastUpdated": "2022-08-16T14:57:56.765Z",
+    "lastUpdated": "2022-08-17T16:32:40.245Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -433,7 +433,7 @@
     "layerName": "ridges",
     "classKeys": [],
     "created": "2022-08-16T03:40:13.666Z",
-    "lastUpdated": "2022-08-16T14:57:58.170Z",
+    "lastUpdated": "2022-08-17T16:32:42.175Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -479,7 +479,7 @@
       "Morphotype"
     ],
     "created": "2022-08-16T03:41:41.084Z",
-    "lastUpdated": "2022-08-16T14:57:59.411Z",
+    "lastUpdated": "2022-08-17T16:32:43.933Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Morphotype"
@@ -515,7 +515,7 @@
       "Class"
     ],
     "created": "2022-08-16T03:43:40.600Z",
-    "lastUpdated": "2022-08-16T14:58:00.892Z",
+    "lastUpdated": "2022-08-17T16:32:45.530Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Class"
@@ -539,7 +539,7 @@
     "layerName": "slope",
     "classKeys": [],
     "created": "2022-08-16T03:44:25.579Z",
-    "lastUpdated": "2022-08-16T14:58:02.341Z",
+    "lastUpdated": "2022-08-17T16:32:47.134Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -561,7 +561,7 @@
     "layerName": "terraces",
     "classKeys": [],
     "created": "2022-08-16T03:44:42.387Z",
-    "lastUpdated": "2022-08-16T14:58:03.580Z",
+    "lastUpdated": "2022-08-17T16:32:48.645Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -583,8 +583,135 @@
     "layerName": "trenches",
     "classKeys": [],
     "created": "2022-08-16T03:44:55.092Z",
-    "lastUpdated": "2022-08-16T14:58:04.841Z",
+    "lastUpdated": "2022-08-17T16:32:50.027Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "iba",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 6,
+          "sum": null,
+          "area": 970621022.9943511
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "Important_Bird_Areas",
+    "classKeys": [],
+    "created": "2022-08-17T15:03:20.883Z",
+    "lastUpdated": "2022-08-17T16:32:51.652Z",
+    "src": "data/src/Samoa.gdb",
+    "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "avg_fish_effort_allyears",
+    "geo_type": "raster",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 65893.27802450443,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "band": 1,
+    "noDataValue": -3.3999999521443642e+38,
+    "created": "2022-08-17T15:20:13.348Z",
+    "lastUpdated": "2022-08-17T16:32:55.181Z",
+    "src": "data/src/Data_Products/GFW/by-gear-type/avg_fish_effort_allyears.tif"
+  },
+  {
+    "datasourceId": "avg_fisheffort_allyears_dfl",
+    "geo_type": "raster",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 65026.684032120276,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "band": 2,
+    "noDataValue": -3.3999999521443642e+38,
+    "created": "2022-08-17T15:20:13.348Z",
+    "lastUpdated": "2022-08-17T16:32:57.549Z",
+    "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_dfl.tif"
+  },
+  {
+    "datasourceId": "avg_fisheffort_allyears_othergear",
+    "geo_type": "raster",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 697.3060000254773,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "band": 2,
+    "noDataValue": -3.3999999521443642e+38,
+    "created": "2022-08-17T15:20:13.348Z",
+    "lastUpdated": "2022-08-17T16:33:00.131Z",
+    "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_othergear.tif"
+  },
+  {
+    "datasourceId": "avg_fisheffort_allyears_tps",
+    "geo_type": "raster",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 163.8180021159351,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "band": 2,
+    "noDataValue": -3.3999999521443642e+38,
+    "created": "2022-08-17T15:20:13.348Z",
+    "lastUpdated": "2022-08-17T16:33:02.871Z",
+    "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_tps.tif"
+  },
+  {
+    "datasourceId": "avg_fisheffort_allyears_trollers",
+    "geo_type": "raster",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": null,
+          "sum": 5.469999998807907,
+          "area": null
+        }
+      }
+    },
+    "formats": [
+      "tif"
+    ],
+    "band": 2,
+    "noDataValue": -3.3999999521443642e+38,
+    "created": "2022-08-17T15:20:13.348Z",
+    "lastUpdated": "2022-08-17T16:33:05.434Z",
+    "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_trollers.tif"
   }
 ]
