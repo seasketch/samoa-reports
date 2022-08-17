@@ -3,51 +3,6 @@
     {
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d970333c46c258221883f5",
-      "classId": "basins",
-      "groupId": null,
-      "geographyId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "nearshore1"
-      }
-    },
-    {
-      "metricId": "geomorphAreaOverlap",
-      "sketchId": "62d970333c46c258221883f6",
-      "classId": "basins",
-      "groupId": null,
-      "geographyId": null,
-      "value": 322604435.6157889,
-      "extra": {
-        "sketchName": "span1"
-      }
-    },
-    {
-      "metricId": "geomorphAreaOverlap",
-      "sketchId": "62d970333c46c258221883f7",
-      "classId": "basins",
-      "groupId": null,
-      "geographyId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "offshore1"
-      }
-    },
-    {
-      "metricId": "geomorphAreaOverlap",
-      "sketchId": "62d970b0b8852d2258f694d3",
-      "classId": "basins",
-      "groupId": null,
-      "geographyId": null,
-      "value": 322604435.6157889,
-      "extra": {
-        "sketchName": "NetworkA",
-        "isCollection": true
-      }
-    },
-    {
-      "metricId": "geomorphAreaOverlap",
-      "sketchId": "62d970333c46c258221883f5",
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
@@ -175,6 +130,771 @@
       "groupId": null,
       "geographyId": null,
       "value": 28807693.252856247,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "basins",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "basins",
+      "groupId": null,
+      "geographyId": null,
+      "value": 322604435.6157889,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "basins",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "basins",
+      "groupId": null,
+      "geographyId": null,
+      "value": 322604435.6157889,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "blind",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "blind",
+      "groupId": null,
+      "geographyId": null,
+      "value": 45073961.56853681,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "blind",
+      "groupId": null,
+      "geographyId": null,
+      "value": 94403751.90446073,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "blind",
+      "groupId": null,
+      "geographyId": null,
+      "value": 139477713.47299755,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "shelf incising",
+      "groupId": null,
+      "geographyId": null,
+      "value": 26587787.72547786,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "shelf incising",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "shelf incising",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "shelf incising",
+      "groupId": null,
+      "geographyId": null,
+      "value": 26587787.72547786,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "escarpments",
+      "groupId": null,
+      "geographyId": null,
+      "value": 58572405.99148771,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "escarpments",
+      "groupId": null,
+      "geographyId": null,
+      "value": 417375056.12018824,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "escarpments",
+      "groupId": null,
+      "geographyId": null,
+      "value": 361861844.79555416,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "escarpments",
+      "groupId": null,
+      "geographyId": null,
+      "value": 837809306.9072301,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "guyot",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "guyot",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "guyot",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "guyot",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "hadal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "hadal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "hadal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "hadal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "ridges",
+      "groupId": null,
+      "geographyId": null,
+      "value": 136187665.66715038,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "ridges",
+      "groupId": null,
+      "geographyId": null,
+      "value": 283877680.3372704,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "ridges",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "ridges",
+      "groupId": null,
+      "geographyId": null,
+      "value": 420065346.00442076,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 48971974.85109245,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 48971974.85109245,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "8",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "8",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "8",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "8",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "high",
+      "groupId": null,
+      "geographyId": null,
+      "value": 108063214.46993412,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "high",
+      "groupId": null,
+      "geographyId": null,
+      "value": 120792395.95425835,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "high",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "high",
+      "groupId": null,
+      "geographyId": null,
+      "value": 228855610.4241925,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "medium",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "medium",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "medium",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "medium",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "slope",
+      "groupId": null,
+      "geographyId": null,
+      "value": 37964827.93388398,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "slope",
+      "groupId": null,
+      "geographyId": null,
+      "value": 501420301.9017736,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "slope",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1153788266.1763268,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "slope",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1693173396.011984,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "terraces",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "terraces",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "terraces",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "terraces",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "trenches",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "trenches",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "trenches",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "trenches",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true

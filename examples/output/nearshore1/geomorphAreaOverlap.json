@@ -3,17 +3,6 @@
     {
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96fdcb8852d2258f694c4",
-      "classId": "basins",
-      "groupId": null,
-      "geographyId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "nearshore1"
-      }
-    },
-    {
-      "metricId": "geomorphAreaOverlap",
-      "sketchId": "62d96fdcb8852d2258f694c4",
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
@@ -37,6 +26,193 @@
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96fdcb8852d2258f694c4",
       "classId": "Plains",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "basins",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "blind",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "shelf incising",
+      "groupId": null,
+      "geographyId": null,
+      "value": 26587787.72547786,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "escarpments",
+      "groupId": null,
+      "geographyId": null,
+      "value": 58572405.99148771,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "guyot",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "hadal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "ridges",
+      "groupId": null,
+      "geographyId": null,
+      "value": 136187665.66715038,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "8",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "high",
+      "groupId": null,
+      "geographyId": null,
+      "value": 108063214.46993412,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "medium",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "slope",
+      "groupId": null,
+      "geographyId": null,
+      "value": 37964827.93388398,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "terraces",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96fdcb8852d2258f694c4",
+      "classId": "trenches",
       "groupId": null,
       "geographyId": null,
       "value": 0,

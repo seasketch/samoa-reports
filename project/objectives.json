@@ -70,5 +70,85 @@
         "countsToward": {
             "Fully Protected Area": "yes"
         }
+    },
+    {
+        "objectiveId": "canyons",
+        "shortDesc": "Canyons",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "escarpments",
+        "shortDesc": "Escarpments",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "guyot",
+        "shortDesc": "Guyots",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "hadal",
+        "shortDesc": "Hadals",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "ridges",
+        "shortDesc": "Ridges",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "seamount",
+        "shortDesc": "Seamounts",
+        "target": 0.2,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "shelf",
+        "shortDesc": "Shelf",
+        "target": 0.2,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "slope",
+        "shortDesc": "Slope",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "terraces",
+        "shortDesc": "Terraces",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "trenches",
+        "shortDesc": "Trenches",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
     }
 ]

@@ -91,7 +91,7 @@ export async function geomorphAreaOverlap(
   );
 
   return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
+    metrics: rekeyMetrics(metrics),
     sketch: toNullSketch(sketch, true),
   };
 }

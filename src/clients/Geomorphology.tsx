@@ -55,14 +55,14 @@ const Geomorphology = () => {
               }
             >
               <p>
-                5 different deepwater subregions have been identified in the
-                offshore, each supporting distinct habitats and related
-                ecosystems. Plans should include a representative portion of
-                each subregion.
+                The seafloor has many unique physical features, each creating
+                habitats that support different ecological communities. Plans
+                should include a portion of each seafloor type (geomorphology
+                class).
               </p>
               <p>
-                This report summarizes the percentage of each offshore subregion
-                that overlaps with this plan.
+                This report summarizes the percentage of each offshore seafloor
+                type.
               </p>
               <ClassTable
                 rows={parentMetrics}
@@ -71,7 +71,7 @@ const Geomorphology = () => {
                   {
                     columnLabel: "Class",
                     type: "class",
-                    width: 30,
+                    width: 40,
                   },
                   {
                     columnLabel: "% Found Within Plan",
@@ -84,7 +84,7 @@ const Geomorphology = () => {
                       targetLabelStyle: "tight",
                       barHeight: 11,
                     },
-                    width: 40,
+                    width: 50,
                     targetValueFormatter: (
                       value: number,
                       row: number,
@@ -101,6 +101,11 @@ const Geomorphology = () => {
                           `${valueFormatter(value / 100, "percent0dig")}`;
                       }
                     },
+                  },
+                  {
+                    columnLabel: "Map",
+                    type: "layerToggle",
+                    width: 10,
                   },
                 ]}
               />

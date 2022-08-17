@@ -130,7 +130,7 @@
                 "display": "Abyssal - Hills",
                 "datasourceId": "abyssal_class",
                 "objectiveId": "abyssal",
-                "layerId": ""
+                "layerId": "60d37c22b4c604aa56927716"
             },
             {
                 "classId": "Mountains",
@@ -138,7 +138,7 @@
                 "display": "Abyssal - Mountains",
                 "datasourceId": "abyssal_class",
                 "objectiveId": "abyssal",
-                "layerId": ""
+                "layerId": "60d37c22b4c604aa56927716"
             },
             {
                 "classId": "Plains",
@@ -146,14 +146,133 @@
                 "display": "Abyssal - Plains",
                 "datasourceId": "abyssal_class",
                 "objectiveId": "abyssal",
-                "layerId": ""
+                "layerId": "60d37c22b4c604aa56927716"
             },
             {
                 "classId": "basins",
                 "display": "Basins",
                 "datasourceId": "basins",
                 "objectiveId": "basins",
-                "layerId": ""
+                "layerId": "60d37c22b4c604aa56927718"
+            },
+            {
+                "classId": "blind",
+                "display": "Canyons - Blind",
+                "datasourceId": "canyons",
+                "objectiveId": "canyons",
+                "layerId": "60d37c22b4c604aa5692771a"
+            },
+            {
+                "classId": "shelf incising",
+                "display": "Canyons - Shelf Incising",
+                "datasourceId": "canyons",
+                "objectiveId": "canyons",
+                "layerId": "60d37c22b4c604aa5692771a"
+            },
+            {
+                "classId": "escarpments",
+                "display": "Escarpments",
+                "datasourceId": "escarpments",
+                "objectiveId": "escarpments",
+                "layerId": "60d37c22b4c604aa5692771c"
+            },
+            {
+                "classId": "guyot",
+                "display": "Guyot",
+                "datasourceId": "guyot",
+                "objectiveId": "guyot",
+                "layerId": "60d37c22b4c604aa5692771e"
+            },
+            {
+                "classId": "hadal",
+                "display": "Hadal",
+                "datasourceId": "hadal",
+                "objectiveId": "hadal",
+                "layerId": "60d37c22b4c604aa56927720"
+            },
+            {
+                "classId": "ridges",
+                "display": "Ridges",
+                "datasourceId": "ridges",
+                "objectiveId": "ridges",
+                "layerId": "60d37c22b4c604aa56927724"
+            },
+            {
+                "classId": "1",
+                "classKey": "Morphotype",
+                "display": "Seamount - Morphotype 1",
+                "datasourceId": "seamount",
+                "objectiveId": "seamount",
+                "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
+                "classId": "2",
+                "classKey": "Morphotype",
+                "display": "Seamount - Morphotype 2",
+                "datasourceId": "seamount",
+                "objectiveId": "seamount",
+                "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
+                "classId": "3",
+                "classKey": "Morphotype",
+                "display": "Seamount - Morphotype 3",
+                "datasourceId": "seamount",
+                "objectiveId": "seamount",
+                "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
+                "classId": "8",
+                "classKey": "Morphotype",
+                "display": "Seamount - Morphotype 8",
+                "datasourceId": "seamount",
+                "objectiveId": "seamount",
+                "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
+                "classId": "10",
+                "classKey": "Morphotype",
+                "display": "Seamount - Morphotype 10",
+                "datasourceId": "seamount",
+                "objectiveId": "seamount",
+                "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
+                "classId": "high",
+                "classKey": "Class",
+                "display": "Shelf - High",
+                "datasourceId": "shelf_class",
+                "objectiveId": "shelf",
+                "layerId": "60d37c22b4c604aa56927728"
+            },
+            {
+                "classId": "medium",
+                "classKey": "Class",
+                "display": "Shelf - Medium",
+                "datasourceId": "shelf_class",
+                "objectiveId": "shelf",
+                "layerId": "60d37c22b4c604aa56927728"
+            },
+            {
+                "classId": "slope",
+                "display": "Slope",
+                "datasourceId": "slope",
+                "objectiveId": "slope",
+                "layerId": "60d37c22b4c604aa5692772c"
+            },
+            {
+                "classId": "terraces",
+                "display": "Terraces",
+                "datasourceId": "terraces",
+                "objectiveId": "terraces",
+                "layerId": "60d37c22b4c604aa56927730"
+            },
+            {
+                "classId": "trenches",
+                "display": "Trenches",
+                "datasourceId": "trenches",
+                "objectiveId": "trenches",
+                "layerId": "60d37c22b4c604aa56927732"
             }
         ]
     }

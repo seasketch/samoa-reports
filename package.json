@@ -56,16 +56,16 @@
     "ts-to-zod": "^1.11.0",
     "zx": "^4.3.0"
   },
-  "repositoryUrl": "https://github.com/mcclintock-lab/samoa-reports",
+  "repositoryUrl": "https://github.com/seasketch/samoa-reports",
   "author": "Tim Welch",
   "license": "MIT",
   "templates": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mcclintock-lab/samoa-reports.git"
+    "url": "git+https://github.com/seasketch/samoa-reports.git"
   },
-  "homepage": "https://github.com/mcclintock-lab/samoa-reports#readme",
+  "homepage": "https://github.com/seasketch/samoa-reports#readme",
   "bugs": {
-    "url": "https://github.com/mcclintock-lab/samoa-reports/issues"
+    "url": "https://github.com/seasketch/samoa-reports/issues"
   }
 }

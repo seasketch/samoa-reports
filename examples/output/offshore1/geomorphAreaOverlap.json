@@ -3,17 +3,6 @@
     {
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96ff7b8852d2258f694c8",
-      "classId": "basins",
-      "groupId": null,
-      "geographyId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "offshore1"
-      }
-    },
-    {
-      "metricId": "geomorphAreaOverlap",
-      "sketchId": "62d96ff7b8852d2258f694c8",
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
@@ -37,6 +26,193 @@
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96ff7b8852d2258f694c8",
       "classId": "Plains",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "basins",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "blind",
+      "groupId": null,
+      "geographyId": null,
+      "value": 94403751.90446073,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "shelf incising",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "escarpments",
+      "groupId": null,
+      "geographyId": null,
+      "value": 361861844.79555416,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "guyot",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "hadal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "ridges",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "8",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "high",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "medium",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "slope",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1153788266.1763268,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "terraces",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "trenches",
       "groupId": null,
       "geographyId": null,
       "value": 0,
