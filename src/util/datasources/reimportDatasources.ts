@@ -41,7 +41,17 @@ export async function reimportDatasources(
   /** Alternative path to store transformed data. useful for testing */
   newDstPath?: string
 ) {
-  const datasources = readDatasources(newDatasourcePath);
+  const singleDs = process && process.argv ? process.argv[2] : null;
+
+  const allDatasources = readDatasources(newDatasourcePath);
+  const datasources = singleDs
+    ? allDatasources.filter((ds) => ds.datasourceId === singleDs)
+    : allDatasources;
+
+  if (datasources.length === 0) {
+    console.log("No datasources found");
+    return;
+  }
 
   // Process one at a time
   let failed = 0;
