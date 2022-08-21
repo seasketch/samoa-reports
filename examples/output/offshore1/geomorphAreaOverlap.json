@@ -3,6 +3,17 @@
     {
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "abyssal_class_all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 592276508.645923,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
@@ -40,6 +51,17 @@
       "groupId": null,
       "geographyId": null,
       "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "canyons_all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 94403751.90446073,
       "extra": {
         "sketchName": "offshore1"
       }
@@ -113,6 +135,17 @@
     {
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "seamount_all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
       "classId": "1",
       "groupId": null,
       "geographyId": null,
@@ -158,6 +191,17 @@
       "metricId": "geomorphAreaOverlap",
       "sketchId": "62d96ff7b8852d2258f694c8",
       "classId": "10",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "geomorphAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "shelf_class_all",
       "groupId": null,
       "geographyId": null,
       "value": 0,

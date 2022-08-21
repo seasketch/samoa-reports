@@ -154,6 +154,13 @@
         "type": "areaOverlap",
         "classes": [
             {
+                "classId": "abyssal_class_all",
+                "display": "Abyssal",
+                "datasourceId": "abyssal_class",
+                "objectiveId": "abyssal",
+                "layerId": "60d37c22b4c604aa56927716"
+            },
+            {
                 "classId": "Hills",
                 "classKey": "Class",
                 "display": "Abyssal - Hills",
@@ -183,6 +190,13 @@
                 "datasourceId": "basins",
                 "objectiveId": "basins",
                 "layerId": "60d37c22b4c604aa56927718"
+            },
+            {
+                "classId": "canyons_all",
+                "display": "Canyons",
+                "datasourceId": "canyons",
+                "objectiveId": "canyons",
+                "layerId": "60d37c22b4c604aa5692771a"
             },
             {
                 "classId": "blind",
@@ -229,6 +243,13 @@
                 "layerId": "60d37c22b4c604aa56927724"
             },
             {
+                "classId": "seamount_all",
+                "display": "Seamount",
+                "datasourceId": "seamount",
+                "objectiveId": "seamount",
+                "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
                 "classId": "1",
                 "classKey": "Morphotype",
                 "display": "Seamount - Morphotype 1",
@@ -267,6 +288,13 @@
                 "datasourceId": "seamount",
                 "objectiveId": "seamount",
                 "layerId": "60d37c22b4c604aa56927726"
+            },
+            {
+                "classId": "shelf_class_all",
+                "display": "Shelf",
+                "datasourceId": "shelf_class",
+                "objectiveId": "shelf",
+                "layerId": "60d37c22b4c604aa56927728"
             },
             {
                 "classId": "high",

@@ -9,7 +9,6 @@ import {
   toNullSketch,
   overlapFeatures,
   rekeyMetrics,
-  sortMetrics,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
@@ -47,7 +46,8 @@ export async function geomorphAreaOverlap(
           // If this is a sub-class, filter by class name, exclude null geometry too
           // ToDo: should do deeper match to classKey
           const finalFeatures =
-            ds.classKeys.length > 0
+            ds.classKeys.length > 0 &&
+            curClass.classId !== `${ds.datasourceId}_all`
               ? dsFeatures.filter((feat) => {
                   return (
                     feat.geometry &&

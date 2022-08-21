@@ -28,7 +28,7 @@
       "classId": "Coral",
       "groupId": null,
       "geographyId": null,
-      "value": 0,
+      "value": 6,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -39,7 +39,7 @@
       "classId": "CoralAlgae",
       "groupId": null,
       "geographyId": null,
-      "value": 3,
+      "value": 18,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -94,7 +94,7 @@
       "classId": "Unknown",
       "groupId": null,
       "geographyId": null,
-      "value": 45,
+      "value": 113,
       "extra": {
         "sketchName": "nearshore1"
       }
