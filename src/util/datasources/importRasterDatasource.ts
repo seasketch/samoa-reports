@@ -6,6 +6,8 @@ import {
   InternalRasterDatasource,
   ImportRasterDatasourceOptions,
   ImportRasterDatasourceConfig,
+  Stats,
+  ClassStats,
 } from "./types";
 import dsConfig from "./config";
 import { publishDatasource } from "./publishDatasource";
@@ -17,6 +19,7 @@ import project from "../../../project";
 import geoblaze from "geoblaze";
 import LocalFileServer from "../localServer";
 import { getCogFilename } from "./helpers";
+import { Histogram } from "@seasketch/geoprocessing";
 
 export async function importRasterDatasource(
   options: ImportRasterDatasourceOptions,
@@ -76,6 +79,7 @@ export async function importRasterDatasource(
     lastUpdated: timestamp,
     keyStats: classStatsByProperty,
     noDataValue: config.noDataValue,
+    measurementType: config.measurementType,
   };
 
   await createOrUpdateDatasource(newVectorD, newDatasourcePath);
@@ -94,6 +98,7 @@ export function genRasterConfig(
     band,
     formats = dsConfig.importDefaultRasterFormats,
     noDataValue,
+    measurementType,
   } = options;
 
   if (!band) band = 0;
@@ -108,6 +113,7 @@ export function genRasterConfig(
     gp: fs.readJsonSync(path.join(".", "geoprocessing.json")),
     formats,
     noDataValue,
+    measurementType,
   };
 
   return config;
@@ -119,15 +125,41 @@ export async function genRasterKeyStats(
   raster: any
 ): Promise<KeyStats> {
   // continous - sum
-  const sum = geoblaze.sum(raster)[0] as number; // assumes single band/layer
+  const sum =
+    options.measurementType === "quantitative"
+      ? (geoblaze.sum(raster)[0] as number)
+      : null; // assumes single band/layer
+
+  // categorical - histogram, count by class
+  const classStats: ClassStats = (() => {
+    console.log("measurementType", options.measurementType);
+    if (options.measurementType !== "categorical") return {};
+
+    const histogram = geoblaze.histogram(raster) as Histogram;
+    console.log("histogram");
+    console.log(histogram);
+    if (!histogram) throw new Error("Histogram not returned");
+    // convert histogram to classStats
+    const classStats = Object.keys(histogram).reduce<ClassStats>(
+      (statsSoFar, curClass) => {
+        return {
+          ...statsSoFar,
+          [curClass]: {
+            count: histogram[curClass],
+          },
+        };
+      },
+      {}
+    );
+    console.log("classStats", classStats);
+    return classStats;
+  })();
+
   const totalStats = {
-    count: null,
     sum,
+    count: null,
     area: null,
   };
-
-  // categorical - histogram, count
-  const classStats = {};
 
   return {
     ...classStats,

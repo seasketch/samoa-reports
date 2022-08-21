@@ -150,5 +150,21 @@
         "countsToward": {
             "Fully Protected Area": "yes"
         }
+    },
+    {
+        "objectiveId": "iba",
+        "shortDesc": "Important Bird Areas",
+        "target": 0.1,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
+    },
+    {
+        "objectiveId": "benthic_reef",
+        "shortDesc": "Benthic Reef",
+        "target": 0.2,
+        "countsToward": {
+            "Fully Protected Area": "yes"
+        }
     }
 ]

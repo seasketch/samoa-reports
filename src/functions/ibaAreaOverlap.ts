@@ -12,31 +12,33 @@ import {
   sortMetrics,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
-import bbox from "@turf/bbox";
 import project from "../../project";
 import {
   getFlatGeobufFilename,
   isInternalVectorDatasource,
 } from "../util/datasources/helpers";
 
-export async function sumaAreaOverlap(
+export async function ibaAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
-  const metricGroup = project.getMetricGroup("sumaAreaOverlap");
-  const box = sketch.bbox || bbox(sketch);
+  const metricGroup = project.getMetricGroup("ibaAreaOverlap");
+
+  if (!metricGroup.datasourceId) {
+    throw new Error(`Missing datasourceId for metric ${metricGroup.metricId}`);
+  }
+  const ds = project.getDatasourceById(metricGroup.datasourceId);
 
   const features = (
     await Promise.all(
       metricGroup.classes.map(async (curClass) => {
-        if (!curClass.datasourceId) {
-          throw new Error(`Missing datasourceId ${curClass.classId}`);
-        }
-        const ds = project.getDatasourceById(curClass.datasourceId);
         if (isInternalVectorDatasource(ds)) {
           const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(ds)}`;
           console.log("url", url);
           // Fetch for entire project area, we want the whole thing
-          const polys = await fgbFetchAll<Feature<Polygon>>(url, box);
+          const polys = await fgbFetchAll<Feature<Polygon>>(
+            url,
+            project.basic.bbox
+          );
           return polys;
         }
         return [];
@@ -77,11 +79,11 @@ export async function sumaAreaOverlap(
   };
 }
 
-export default new GeoprocessingHandler(sumaAreaOverlap, {
-  title: "sumaAreaOverlap",
-  description: "Calculate sketch overlap with suma polygons",
+export default new GeoprocessingHandler(ibaAreaOverlap, {
+  title: "ibaAreaOverlap",
+  description: "Calculate sketch overlap with iba polygons",
   executionMode: "async",
-  memory: 4096,
+  memory: 2048,
   timeout: 40,
   requiresProperties: [],
 });

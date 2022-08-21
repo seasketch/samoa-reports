@@ -23,8 +23,8 @@ import styled from "styled-components";
 import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
-const metricGroup = project.getMetricGroup("sumaAreaOverlap");
-const legacyMetricGroup = project.getLegacyMetricGroup("sumaAreaOverlap");
+const metricGroup = project.getMetricGroup("keyAreaOverlap");
+const legacyMetricGroup = project.getLegacyMetricGroup("keyAreaOverlap");
 const totalMetrics = project.getPrecalcMetrics(
   metricGroup,
   "area",
@@ -72,17 +72,13 @@ const TableStyled = styled(ReportTableStyled)`
 const SizeCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
-    <ResultsCard
-      title="Special Unique Marine Areas"
-      functionName="sumaAreaOverlap"
-      useChildCard
-    >
+    <ResultsCard title="Key Areas" functionName="keyAreaOverlap" useChildCard>
       {(data: ReportResult) => {
         if (Object.keys(data).length === 0)
           throw new Error("Protection results not found");
         return (
           <ToolbarCard
-            title="Special Unique Marine Areas"
+            title="Key Areas"
             items={
               <>
                 <DataDownload
@@ -94,10 +90,7 @@ const SizeCard = () => {
               </>
             }
           >
-            <p>
-              Plans should include a portion of known Special Unique Marine
-              Areas (SUMAs).
-            </p>
+            <p>Plans should include a portion of the 4 types of Key Areas.</p>
 
             {genSingleSizeTable(data)}
 
@@ -110,7 +103,7 @@ const SizeCard = () => {
             <Collapse title="Learn more">
               <p>
                 {" "}
-                This report summarizes the proportion of special unique marine
+                This report summarizes the proportion of 4 types of key areas
                 areas within this plan.
               </p>
               <p>

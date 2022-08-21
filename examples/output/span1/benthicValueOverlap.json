@@ -1,0 +1,123 @@
+{
+  "metrics": [
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Algae",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Benthic Microalgae",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Coral",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "CoralAlgae",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Rock",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Rubble",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Sand",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Seagrass",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "benthicValueOverlap",
+      "sketchId": "62d96fedb8852d2258f694c6",
+      "classId": "Unknown",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "span1"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62d96fedb8852d2258f694c6",
+      "name": "span1",
+      "updatedAt": "2022-07-21T15:25:33.305Z",
+      "createdAt": "2022-07-21T15:25:33.305Z",
+      "sketchClassId": "62c71ab51d9b70564665d35c",
+      "isCollection": false,
+      "userAttributes": []
+    },
+    "id": "1",
+    "bbox": [
+      -172.4058308021423,
+      -14.734129262030025,
+      -172.0542683021423,
+      -13.893160813566107
+    ],
+    "geometry": null
+  }
+}

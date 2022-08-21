@@ -1,12 +1,12 @@
 {
   "metrics": [
     {
-      "metricId": "sumaAreaOverlap",
+      "metricId": "ibaAreaOverlap",
       "sketchId": "62d96fdcb8852d2258f694c4",
-      "classId": "suma",
+      "classId": "iba",
       "groupId": null,
       "geographyId": null,
-      "value": 407125.51024628617,
+      "value": 0,
       "extra": {
         "sketchName": "nearshore1"
       }

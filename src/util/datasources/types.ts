@@ -16,11 +16,13 @@ export const supportedFormatsSchema = z.enum(SUPPORTED_FORMATS);
 
 /** Data variable measurement type */
 const MEASUREMENT_TYPES = [
-  "quantitative-discrete-integer",
-  "quantitative-continuous-ratio",
-  "categorical-binary",
-  "categorical-nominal",
-  "categorical-ordinal",
+  // "quantitative-discrete-integer",
+  // "quantitative-continuous-ratio",
+  // "categorical-binary",
+  // "categorical-nominal",
+  // "categorical-ordinal",
+  "quantitative",
+  "categorical",
 ] as const;
 export const measurementTypesSchema = z.enum(MEASUREMENT_TYPES);
 
@@ -67,6 +69,7 @@ export const rasterDatasourceSchema = baseDatasourceSchema.merge(
     band: z.number(),
     /** Nodata value */
     noDataValue: z.number().optional(),
+    measurementType: measurementTypesSchema,
   })
 );
 
@@ -95,7 +98,7 @@ export const internalVectorImportSchema = internalImportSchema.merge(
   z.object({
     /** Import - What to keep in final dataset. Vector - properties, all else removed   */
     propertiesToKeep: z.array(z.string()),
-    /** Import - Whether to explode multi-geometries into single e.g. MultiPolygon to Polygon. Defaults to false */
+    /** Import - Whether to explode multi-geometries into single e.g. MultiPolygon to Polygon. Defaults to true */
     explodeMulti: z.boolean().optional(),
   })
 );

@@ -23,8 +23,8 @@ import styled from "styled-components";
 import project from "../../project";
 import { squareMeterToKilometer } from "@seasketch/geoprocessing";
 
-const metricGroup = project.getMetricGroup("sumaAreaOverlap");
-const legacyMetricGroup = project.getLegacyMetricGroup("sumaAreaOverlap");
+const metricGroup = project.getMetricGroup("ibaAreaOverlap");
+const legacyMetricGroup = project.getLegacyMetricGroup("ibaAreaOverlap");
 const totalMetrics = project.getPrecalcMetrics(
   metricGroup,
   "area",
@@ -73,8 +73,8 @@ const SizeCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <ResultsCard
-      title="Special Unique Marine Areas"
-      functionName="sumaAreaOverlap"
+      title="Important Bird Areas"
+      functionName="ibaAreaOverlap"
       useChildCard
     >
       {(data: ReportResult) => {
@@ -82,11 +82,11 @@ const SizeCard = () => {
           throw new Error("Protection results not found");
         return (
           <ToolbarCard
-            title="Special Unique Marine Areas"
+            title="Important Bird Areas"
             items={
               <>
                 <DataDownload
-                  filename="suma"
+                  filename={metricGroup.metricId}
                   data={data.metrics}
                   formats={["csv", "json"]}
                   placement="left-end"
@@ -95,8 +95,8 @@ const SizeCard = () => {
             }
           >
             <p>
-              Plans should include a portion of known Special Unique Marine
-              Areas (SUMAs).
+              Plans should include a portion of known Important Bird Areas
+              (IBAs).
             </p>
 
             {genSingleSizeTable(data)}
@@ -110,8 +110,8 @@ const SizeCard = () => {
             <Collapse title="Learn more">
               <p>
                 {" "}
-                This report summarizes the proportion of special unique marine
-                areas within this plan.
+                This report summarizes the proportion of important bird areas
+                (IBAs) within this plan.
               </p>
               <p>
                 If MPA boundaries overlap with each other, the overlap is only

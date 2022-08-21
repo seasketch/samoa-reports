@@ -19,10 +19,10 @@ import {
   isInternalVectorDatasource,
 } from "../util/datasources/helpers";
 
-export async function sumaAreaOverlap(
+export async function keyAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
-  const metricGroup = project.getMetricGroup("sumaAreaOverlap");
+  const metricGroup = project.getMetricGroup("keyAreaOverlap");
   const box = sketch.bbox || bbox(sketch);
 
   const features = (
@@ -77,11 +77,11 @@ export async function sumaAreaOverlap(
   };
 }
 
-export default new GeoprocessingHandler(sumaAreaOverlap, {
-  title: "sumaAreaOverlap",
-  description: "Calculate sketch overlap with suma polygons",
+export default new GeoprocessingHandler(keyAreaOverlap, {
+  title: "keyAreaOverlap",
+  description: "Calculate sketch overlap with key area polygons",
   executionMode: "async",
-  memory: 4096,
-  timeout: 40,
+  memory: 8192,
+  timeout: 60,
   requiresProperties: [],
 });

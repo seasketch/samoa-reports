@@ -218,6 +218,7 @@ export class ProjectClient {
         throw new Error(`Expected keyStats for ${ds.datasourceId}`);
       const classKey = mg.classKey! || curClass.classKey!;
       // If not class key use the total
+      if (!classKey && curClass.classId !== ds.datasourceId && !curClass.datasourceId) console.log(`Missing classKey in metricGroup ${mg.metricId}, class ${curClass.classId} so using total stat for precalc denominator.  Is this what is intended?`)
       const classValue = classKey
         ? ds.keyStats[classKey][curClass.classId][statName]
         : ds.keyStats.total.total[statName];

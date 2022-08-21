@@ -1,31 +1,31 @@
 {
   "metrics": [
     {
-      "metricId": "sumaAreaOverlap",
+      "metricId": "ibaAreaOverlap",
       "sketchId": "62d970333c46c258221883f5",
-      "classId": "suma",
+      "classId": "iba",
       "groupId": null,
       "geographyId": null,
-      "value": 407125.51024628617,
+      "value": 0,
       "extra": {
         "sketchName": "nearshore1"
       }
     },
     {
-      "metricId": "sumaAreaOverlap",
+      "metricId": "ibaAreaOverlap",
       "sketchId": "62d970333c46c258221883f6",
-      "classId": "suma",
+      "classId": "iba",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.60601552,
+      "value": 0,
       "extra": {
         "sketchName": "span1"
       }
     },
     {
-      "metricId": "sumaAreaOverlap",
+      "metricId": "ibaAreaOverlap",
       "sketchId": "62d970333c46c258221883f7",
-      "classId": "suma",
+      "classId": "iba",
       "groupId": null,
       "geographyId": null,
       "value": 0,
@@ -34,12 +34,12 @@
       }
     },
     {
-      "metricId": "sumaAreaOverlap",
+      "metricId": "ibaAreaOverlap",
       "sketchId": "62d970b0b8852d2258f694d3",
-      "classId": "suma",
+      "classId": "iba",
       "groupId": null,
       "geographyId": null,
-      "value": 49379100.1162618,
+      "value": 0,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true

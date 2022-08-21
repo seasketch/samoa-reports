@@ -77,6 +77,40 @@
         ]
     },
     {
+        "metricId": "keyAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "kba",
+                "display": "Key Biodiversity Area",
+                "datasourceId": "kba",
+                "objectiveId": "kba",
+                "layerId": "60d37c22b4c604aa56927704"
+            },
+            {
+                "classId": "ebsa",
+                "display": "Ecologically/Biologically Significant Areas",
+                "datasourceId": "ebsa",
+                "objectiveId": "ebsa",
+                "layerId": "62f3f4231c9f30d55f2762f7"
+            },
+            {
+                "classId": "suma",
+                "display": "Special Unique Marine Areas",
+                "datasourceId": "suma",
+                "objectiveId": "suma",
+                "layerId": "62f5973efeea1c86095ebf9c"
+            },
+            {
+                "classId": "iba",
+                "display": "Important Bird Areas",
+                "datasourceId": "iba",
+                "objectiveId": "iba",
+                "layerId": "60d37c22b4c604aa56927702"
+            }
+        ]
+    },
+    {
         "metricId": "kbaAreaOverlap",
         "type": "areaOverlap",
         "classes": [
@@ -105,17 +139,12 @@
     {
         "metricId": "sumaAreaOverlap",
         "type": "areaOverlap",
-        "datasourceId": "suma",
-        "objectiveId": "suma",
-        "classKey": "Insh_Offsh",
         "classes": [
             {
-                "classId": "Inshore",
-                "display": "Inshore"
-            },
-            {
-                "classId": "Offshore",
-                "display": "Offshore"
+                "classId": "suma",
+                "display": "Special Unique Marine Areas",
+                "datasourceId": "suma",
+                "objectiveId": "suma"
             }
         ],
         "layerId": "62f3f43c1c9f30d55f276326"
@@ -157,6 +186,7 @@
             },
             {
                 "classId": "blind",
+                "classKey": "type",
                 "display": "Canyons - Blind",
                 "datasourceId": "canyons",
                 "objectiveId": "canyons",
@@ -164,6 +194,7 @@
             },
             {
                 "classId": "shelf incising",
+                "classKey": "type",
                 "display": "Canyons - Shelf Incising",
                 "datasourceId": "canyons",
                 "objectiveId": "canyons",
@@ -309,6 +340,80 @@
                 "display": "Other",
                 "datasourceId": "avg_fisheffort_allyears_othergear",
                 "layerId": ""
+            }
+        ]
+    },
+    {
+        "metricId": "ibaAreaOverlap",
+        "type": "areaOverlap",
+        "datasourceId": "iba",
+        "objectiveId": "iba",
+        "classes": [            
+            {
+                "classId": "iba",
+                "display": "Important Bird Areas"
+            }
+        ],
+        "layerId": "60d37c22b4c604aa56927702"
+    },
+    {
+        "metricId": "benthicValueOverlap",
+        "type": "valueOverlap",
+        "layerId": "60d37c22b4c604aa56927734",
+        "classes": [
+            {
+                "classId": "Algae",
+                "display": "Algae",
+                "datasourceId": "benthic_reef_algae",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Benthic Microalgae",
+                "display": "Benthic Microalgae",
+                "datasourceId": "benthic_reef_microalgae",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "CoralAlgae",
+                "display": "Coral/Algae",
+                "datasourceId": "benthic_reef_coralalgae",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Coral",
+                "display": "Coral",
+                "datasourceId": "benthic_reef_coral",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Rock",
+                "display": "Rock",
+                "datasourceId": "benthic_reef_rock",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Rubble",
+                "display": "Rubble",
+                "datasourceId": "benthic_reef_rubble",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Sand",
+                "display": "Sand",
+                "datasourceId": "benthic_reef_sand",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Seagrass",
+                "display": "Seagrass",
+                "datasourceId": "benthic_reef_seagrass",
+                "objectiveId": "benthic_reef"
+            },
+            {
+                "classId": "Unknown",
+                "display": "Unknown",
+                "datasourceId": "benthic_reef_unknown",
+                "objectiveId": "benthic_reef"
             }
         ]
     }

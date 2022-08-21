@@ -94,7 +94,10 @@ const KbaCard = () => {
               </>
             }
           >
-            <p>Offshore plans must include Key Biodiversity Areas.</p>
+            <p>
+              Plans should include a portion of known Key Biodiversity Areas
+              (KBAs).
+            </p>
 
             {genSingleSizeTable(data)}
 

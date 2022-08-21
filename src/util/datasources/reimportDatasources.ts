@@ -41,11 +41,12 @@ export async function reimportDatasources(
   /** Alternative path to store transformed data. useful for testing */
   newDstPath?: string
 ) {
-  const singleDs = process && process.argv ? process.argv[2] : null;
+  // regular expression to match
+  const matcher = process && process.argv ? process.argv[2] : null;
 
   const allDatasources = readDatasources(newDatasourcePath);
-  const datasources = singleDs
-    ? allDatasources.filter((ds) => ds.datasourceId === singleDs)
+  const datasources = matcher
+    ? allDatasources.filter((ds) => ds.datasourceId.match(matcher))
     : allDatasources;
 
   if (datasources.length === 0) {

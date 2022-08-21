@@ -94,7 +94,10 @@ const EbsaCard = () => {
               </>
             }
           >
-            <p>Offshore plans must include Key Biodiversity Areas (KBAs).</p>
+            <p>
+              Plans should include a portion of known Key Biodiversity Areas
+              (KBAs).
+            </p>
 
             {genSingleSizeTable(data)}
 

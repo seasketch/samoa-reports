@@ -55,14 +55,14 @@ const Geomorphology = () => {
               }
             >
               <p>
-                The seafloor has many unique physical features, each creating
-                habitats that support different ecological communities. Plans
-                should include a portion of each seafloor type (geomorphology
-                class).
+                The seafloor (benthic zone) has many unique physical features,
+                each creating habitats that support different ecological
+                communities. Plans should include a portion of each seafloor
+                type (geomorphology class).
               </p>
               <p>
-                This report summarizes the percentage of each offshore seafloor
-                type.
+                This report summarizes the percentage of each seafloor type that
+                overlaps with this plan.
               </p>
               <ClassTable
                 rows={parentMetrics}

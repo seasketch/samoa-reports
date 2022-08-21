@@ -12,6 +12,7 @@ import {
   sortMetrics,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
+import bbox from "@turf/bbox";
 import project from "../../project";
 import {
   getFlatGeobufFilename,
@@ -22,6 +23,7 @@ export async function ebsaAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("ebsaAreaOverlap");
+  const box = sketch.bbox || bbox(sketch);
 
   const features = (
     await Promise.all(
@@ -34,10 +36,7 @@ export async function ebsaAreaOverlap(
           const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(ds)}`;
           console.log("url", url);
           // Fetch for entire project area, we want the whole thing
-          const polys = await fgbFetchAll<Feature<Polygon>>(
-            url,
-            project.basic.bbox
-          );
+          const polys = await fgbFetchAll<Feature<Polygon>>(url, box);
           return polys;
         }
         return [];

@@ -1,12 +1,12 @@
 {
   "metrics": [
     {
-      "metricId": "sumaAreaOverlap",
+      "metricId": "ibaAreaOverlap",
       "sketchId": "62d96fedb8852d2258f694c6",
-      "classId": "suma",
+      "classId": "iba",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.60601552,
+      "value": 0,
       "extra": {
         "sketchName": "span1"
       }

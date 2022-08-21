@@ -1,0 +1,68 @@
+{
+  "metrics": [
+    {
+      "metricId": "keyAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "ebsa",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1746067541.4330957,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "keyAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "iba",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "keyAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "kba",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "keyAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "suma",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62d96ff7b8852d2258f694c8",
+      "name": "offshore1",
+      "updatedAt": "2022-07-21T15:25:43.896Z",
+      "createdAt": "2022-07-21T15:25:43.896Z",
+      "sketchClassId": "62c71ab51d9b70564665d35c",
+      "isCollection": false,
+      "userAttributes": []
+    },
+    "id": "1",
+    "bbox": [
+      -173.16938060682975,
+      -14.154303252426633,
+      -172.63105052870472,
+      -13.759811006130201
+    ],
+    "geometry": null
+  }
+}

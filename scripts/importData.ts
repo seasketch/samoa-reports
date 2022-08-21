@@ -27,7 +27,13 @@ interface ImportVectorDatasourceAnswers
 interface ImportRasterDatasourceAnswers
   extends Pick<
     ImportRasterDatasourceOptions,
-    "src" | "datasourceId" | "band" | "geo_type" | "formats" | "noDataValue"
+    | "src"
+    | "datasourceId"
+    | "band"
+    | "geo_type"
+    | "formats"
+    | "noDataValue"
+    | "measurementType"
   > {}
 
 // Main function, wrapped in an IIFE to avoid top-level await
@@ -243,10 +249,33 @@ async function detailedVectorQuestions(
 
 async function detailedRasterQuestions(
   datasources: Datasources
-): Promise<Pick<ImportRasterDatasourceAnswers, "formats" | "noDataValue">> {
+): Promise<
+  Pick<
+    ImportRasterDatasourceAnswers,
+    "measurementType" | "formats" | "noDataValue"
+  >
+> {
   return inquirer.prompt<
-    Pick<ImportRasterDatasourceAnswers, "formats" | "noDataValue">
+    Pick<
+      ImportRasterDatasourceAnswers,
+      "measurementType" | "formats" | "noDataValue"
+    >
   >([
+    {
+      type: "list",
+      name: "measurementType",
+      message: "What type of measurement is used for this raster data?",
+      choices: [
+        {
+          value: "quantitative",
+          name: "Quantitative (cells assigned a float value as a single measurement",
+        },
+        {
+          value: "categorical",
+          name: "Categorical (cells assigned one ID value given list of unique class IDs",
+        },
+      ],
+    },
     {
       type: "checkbox",
       name: "formats",
