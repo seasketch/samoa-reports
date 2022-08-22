@@ -65,11 +65,14 @@ export const vectorDatasourceSchema = baseDatasourceSchema.merge(
 /** Properties for raster datasource */
 export const rasterDatasourceSchema = baseDatasourceSchema.merge(
   z.object({
+    /** Type of measurements that the raster values represent */
+    measurementType: measurementTypesSchema,
     /** Import - band within raster datasource to extract */
     band: z.number(),
     /** Nodata value */
     noDataValue: z.number().optional(),
-    measurementType: measurementTypesSchema,
+    /** Datasource ID containing polygon to filter pixels to include in raster precalc */
+    filterDatasource: z.string().optional(),
   })
 );
 

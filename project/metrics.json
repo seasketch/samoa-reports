@@ -11,18 +11,18 @@
                 "layerId": "60c7ca5c75ab03840c7c0528"
             },
             {
-                "classId": "inshore",
-                "display": "Inshore",
-                "datasourceId": "inshore",
-                "objectiveId": "inshore",
-                "layerId": "62db005954123c0c561e9561"
-            },
-            {
                 "classId": "offshore",
                 "display": "Offshore",
                 "datasourceId": "offshore",
                 "objectiveId": "offshore",
                 "layerId": "62db005954123c0c561e955f"
+            },
+            {
+                "classId": "inshore",
+                "display": "Inshore",
+                "datasourceId": "inshore",
+                "objectiveId": "inshore",
+                "layerId": "62db005954123c0c561e9561"
             }
         ]
     },
@@ -388,6 +388,7 @@
         "metricId": "benthicValueOverlap",
         "type": "valueOverlap",
         "layerId": "60d37c22b4c604aa56927734",
+        "objectiveId": "benthic_reef",
         "classes": [
             {
                 "classId": "Algae",

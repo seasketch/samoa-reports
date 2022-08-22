@@ -58,7 +58,7 @@
       "Draft name"
     ],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-19T14:23:11.842Z",
+    "lastUpdated": "2022-08-22T17:06:36.650Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -81,7 +81,7 @@
     ],
     "classKeys": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-19T14:23:13.187Z",
+    "lastUpdated": "2022-08-22T17:06:38.489Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
@@ -103,7 +103,7 @@
     "layerName": "webm_Offshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-19T14:23:14.678Z",
+    "lastUpdated": "2022-08-22T17:06:40.471Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -125,7 +125,7 @@
     "layerName": "webm_Inshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T19:19:19.486Z",
-    "lastUpdated": "2022-08-19T14:23:16.354Z",
+    "lastUpdated": "2022-08-22T17:06:42.792Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -144,11 +144,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-05T02:34:25.996Z",
-    "lastUpdated": "2022-08-19T14:23:32.194Z",
+    "lastUpdated": "2022-08-22T17:10:22.543Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
   },
   {
@@ -166,11 +166,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-05T03:24:47.725Z",
-    "lastUpdated": "2022-08-19T14:23:47.742Z",
+    "lastUpdated": "2022-08-22T17:14:32.208Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
@@ -191,7 +191,7 @@
     "layerName": "kba",
     "classKeys": [],
     "created": "2022-08-10T04:13:49.722Z",
-    "lastUpdated": "2022-08-19T14:23:49.228Z",
+    "lastUpdated": "2022-08-22T17:14:34.286Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/KBA.shp",
     "propertiesToKeep": []
   },
@@ -213,7 +213,7 @@
     "layerName": "ebsa",
     "classKeys": [],
     "created": "2022-08-10T13:11:04.725Z",
-    "lastUpdated": "2022-08-19T14:23:50.831Z",
+    "lastUpdated": "2022-08-22T17:14:36.219Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Ecologically_and_biologically_siginificant_areas_(EBSAs)/EBSA.shp",
     "propertiesToKeep": []
   },
@@ -247,7 +247,7 @@
       "Insh_Offsh"
     ],
     "created": "2022-08-10T13:23:53.565Z",
-    "lastUpdated": "2022-08-19T14:23:52.663Z",
+    "lastUpdated": "2022-08-22T17:14:39.828Z",
     "src": "data/src/Data_Received/Layers_From_Fili/Special_Unique_Marine_Areas/Samoa_SUMA.shp",
     "propertiesToKeep": [
       "Insh_Offsh"
@@ -287,7 +287,7 @@
       "Class"
     ],
     "created": "2022-08-11T18:30:49.041Z",
-    "lastUpdated": "2022-08-19T14:23:54.007Z",
+    "lastUpdated": "2022-08-22T17:14:41.664Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Class"
@@ -311,7 +311,7 @@
     "layerName": "basins",
     "classKeys": [],
     "created": "2022-08-11T18:35:18.933Z",
-    "lastUpdated": "2022-08-19T14:23:55.521Z",
+    "lastUpdated": "2022-08-22T17:14:43.619Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -345,7 +345,7 @@
       "type"
     ],
     "created": "2022-08-16T03:25:40.660Z",
-    "lastUpdated": "2022-08-19T14:23:56.850Z",
+    "lastUpdated": "2022-08-22T17:14:45.689Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "type"
@@ -369,7 +369,7 @@
     "layerName": "escarpments",
     "classKeys": [],
     "created": "2022-08-16T03:38:49.033Z",
-    "lastUpdated": "2022-08-19T14:23:58.424Z",
+    "lastUpdated": "2022-08-22T17:14:48.145Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -391,7 +391,7 @@
     "layerName": "guyot",
     "classKeys": [],
     "created": "2022-08-16T03:39:23.182Z",
-    "lastUpdated": "2022-08-19T14:23:59.758Z",
+    "lastUpdated": "2022-08-22T17:14:50.541Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -413,7 +413,7 @@
     "layerName": "hadal",
     "classKeys": [],
     "created": "2022-08-16T03:39:44.993Z",
-    "lastUpdated": "2022-08-19T14:24:01.029Z",
+    "lastUpdated": "2022-08-22T17:14:52.154Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -435,7 +435,7 @@
     "layerName": "ridges",
     "classKeys": [],
     "created": "2022-08-16T03:40:13.666Z",
-    "lastUpdated": "2022-08-19T14:24:02.476Z",
+    "lastUpdated": "2022-08-22T17:14:53.857Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -481,7 +481,7 @@
       "Morphotype"
     ],
     "created": "2022-08-16T03:41:41.084Z",
-    "lastUpdated": "2022-08-19T14:24:03.734Z",
+    "lastUpdated": "2022-08-22T17:14:55.456Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Morphotype"
@@ -517,7 +517,7 @@
       "Class"
     ],
     "created": "2022-08-16T03:43:40.600Z",
-    "lastUpdated": "2022-08-19T14:24:05.185Z",
+    "lastUpdated": "2022-08-22T17:14:57.389Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": [
       "Class"
@@ -541,7 +541,7 @@
     "layerName": "slope",
     "classKeys": [],
     "created": "2022-08-16T03:44:25.579Z",
-    "lastUpdated": "2022-08-19T14:24:06.671Z",
+    "lastUpdated": "2022-08-22T17:15:00.092Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -563,7 +563,7 @@
     "layerName": "terraces",
     "classKeys": [],
     "created": "2022-08-16T03:44:42.387Z",
-    "lastUpdated": "2022-08-19T14:24:08.087Z",
+    "lastUpdated": "2022-08-22T17:15:01.733Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -585,7 +585,7 @@
     "layerName": "trenches",
     "classKeys": [],
     "created": "2022-08-16T03:44:55.092Z",
-    "lastUpdated": "2022-08-19T14:24:09.399Z",
+    "lastUpdated": "2022-08-22T17:15:03.439Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -607,7 +607,7 @@
     "layerName": "Important_Bird_Areas",
     "classKeys": [],
     "created": "2022-08-17T15:03:20.883Z",
-    "lastUpdated": "2022-08-19T14:24:10.771Z",
+    "lastUpdated": "2022-08-22T17:15:05.157Z",
     "src": "data/src/Samoa.gdb",
     "propertiesToKeep": []
   },
@@ -618,7 +618,7 @@
       "total": {
         "total": {
           "count": null,
-          "sum": 65893.27802450443,
+          "sum": 29832.048025473487,
           "area": null
         }
       }
@@ -626,11 +626,12 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": -3.3999999521443642e+38,
-    "measurementType": "quantitative",
+    "filterDatasource": "eez",
     "created": "2022-08-17T15:20:13.348Z",
-    "lastUpdated": "2022-08-19T14:24:13.297Z",
+    "lastUpdated": "2022-08-22T17:34:27.721Z",
     "src": "data/src/Data_Products/GFW/by-gear-type/avg_fish_effort_allyears.tif"
   },
   {
@@ -640,7 +641,7 @@
       "total": {
         "total": {
           "count": null,
-          "sum": 65026.684032120276,
+          "sum": 29807.15000033332,
           "area": null
         }
       }
@@ -648,11 +649,12 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 2,
     "noDataValue": -3.3999999521443642e+38,
-    "measurementType": "quantitative",
+    "filterDatasource": "eez",
     "created": "2022-08-17T15:20:13.348Z",
-    "lastUpdated": "2022-08-19T14:24:15.642Z",
+    "lastUpdated": "2022-08-22T17:34:31.253Z",
     "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_dfl.tif"
   },
   {
@@ -662,7 +664,7 @@
       "total": {
         "total": {
           "count": null,
-          "sum": 697.3060000254773,
+          "sum": 185.70799965038896,
           "area": null
         }
       }
@@ -670,11 +672,12 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 2,
     "noDataValue": -3.3999999521443642e+38,
-    "measurementType": "quantitative",
+    "filterDatasource": "eez",
     "created": "2022-08-17T15:20:13.348Z",
-    "lastUpdated": "2022-08-19T14:24:18.139Z",
+    "lastUpdated": "2022-08-22T17:34:34.909Z",
     "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_othergear.tif"
   },
   {
@@ -684,7 +687,7 @@
       "total": {
         "total": {
           "count": null,
-          "sum": 163.8180021159351,
+          "sum": 24.618000213056803,
           "area": null
         }
       }
@@ -692,11 +695,12 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 2,
     "noDataValue": -3.3999999521443642e+38,
-    "measurementType": "quantitative",
+    "filterDatasource": "eez",
     "created": "2022-08-17T15:20:13.348Z",
-    "lastUpdated": "2022-08-19T14:24:20.514Z",
+    "lastUpdated": "2022-08-22T17:34:38.384Z",
     "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_tps.tif"
   },
   {
@@ -705,8 +709,8 @@
     "keyStats": {
       "total": {
         "total": {
+          "sum": 4.224000036716461,
           "count": null,
-          "sum": 5.469999998807907,
           "area": null
         }
       }
@@ -714,76 +718,13 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 2,
     "noDataValue": -3.3999999521443642e+38,
-    "measurementType": "quantitative",
+    "filterDatasource": "eez",
     "created": "2022-08-17T15:20:13.348Z",
-    "lastUpdated": "2022-08-19T14:24:22.783Z",
+    "lastUpdated": "2022-08-22T17:34:41.790Z",
     "src": "data/src/Data_Products/GFW/by-gear-type/avg_fisheffort_allyears_trollers.tif"
-  },
-  {
-    "datasourceId": "benthic",
-    "geo_type": "vector",
-    "keyStats": {
-      "benthic": {
-        "Rock": {
-          "count": 19451,
-          "area": 21594310.68459909
-        },
-        "Unknown": {
-          "count": 85397,
-          "area": 195536644.3319427
-        },
-        "Coral/Algae": {
-          "count": 46693,
-          "area": 103506013.48456553
-        },
-        "Sand": {
-          "count": 37480,
-          "area": 72487698.64276458
-        },
-        "Rubble": {
-          "count": 29590,
-          "area": 33034298.690359063
-        },
-        "Coral": {
-          "count": 48890,
-          "area": 36417962.23928843
-        },
-        "Seagrass": {
-          "count": 10039,
-          "area": 10055872.062569413
-        },
-        "Benthic Microalgae": {
-          "count": 15745,
-          "area": 21016236.012136832
-        },
-        "Algae": {
-          "count": 1408,
-          "area": 558118.5334618279
-        }
-      },
-      "total": {
-        "total": {
-          "count": 294693,
-          "sum": null,
-          "area": 494207154.6816833
-        }
-      }
-    },
-    "formats": [
-      "fgb"
-    ],
-    "layerName": "Geomorphology_Allen_Coral_Atlas_0001",
-    "classKeys": [
-      "benthic"
-    ],
-    "created": "2022-08-19T00:43:59.332Z",
-    "lastUpdated": "2022-08-19T15:35:56.290Z",
-    "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_0001.fgb",
-    "propertiesToKeep": [
-      "benthic"
-    ]
   },
   {
     "datasourceId": "benthic_reef_algae",
@@ -800,11 +741,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T01:33:29.732Z",
-    "lastUpdated": "2022-08-20T15:12:03.177Z",
+    "lastUpdated": "2022-08-22T17:15:59.113Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Algae.tif"
   },
   {
@@ -822,11 +763,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T01:34:26.679Z",
-    "lastUpdated": "2022-08-20T15:12:09.253Z",
+    "lastUpdated": "2022-08-22T17:16:23.979Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_BenthicMicroalgae.tif"
   },
   {
@@ -844,9 +785,9 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:01:27.066Z",
     "lastUpdated": "2022-08-20T15:12:16.011Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_CoralAlgae.tif"
@@ -866,11 +807,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:12:21.111Z",
-    "lastUpdated": "2022-08-20T15:12:20.013Z",
+    "lastUpdated": "2022-08-22T17:17:14.130Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Coral.tif"
   },
   {
@@ -888,11 +829,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:13:32.920Z",
-    "lastUpdated": "2022-08-20T15:12:24.001Z",
+    "lastUpdated": "2022-08-22T17:17:38.836Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Rock.tif"
   },
   {
@@ -910,11 +851,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:15:02.428Z",
-    "lastUpdated": "2022-08-20T15:12:28.101Z",
+    "lastUpdated": "2022-08-22T17:18:03.577Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Rubble.tif"
   },
   {
@@ -932,11 +873,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:16:13.223Z",
-    "lastUpdated": "2022-08-20T15:12:32.683Z",
+    "lastUpdated": "2022-08-22T17:18:28.160Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Sand.tif"
   },
   {
@@ -954,11 +895,11 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:17:36.576Z",
-    "lastUpdated": "2022-08-20T15:12:38.691Z",
+    "lastUpdated": "2022-08-22T17:18:52.542Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Seagrass.tif"
   },
   {
@@ -967,8 +908,8 @@
     "keyStats": {
       "total": {
         "total": {
-          "sum": 52843,
           "count": null,
+          "sum": 52843,
           "area": null
         }
       }
@@ -976,11 +917,33 @@
     "formats": [
       "tif"
     ],
+    "measurementType": "quantitative",
     "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative",
     "created": "2022-08-20T02:18:08.505Z",
-    "lastUpdated": "2022-08-20T15:12:44.449Z",
+    "lastUpdated": "2022-08-22T17:19:17.669Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Unknown.tif"
+  },
+  {
+    "datasourceId": "coastline",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 10,
+          "sum": null,
+          "area": 2870741123.3732533
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "Samoa Coastline",
+    "classKeys": [],
+    "created": "2022-08-21T17:52:22.616Z",
+    "lastUpdated": "2022-08-22T17:19:19.509Z",
+    "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Coastline.shp",
+    "propertiesToKeep": []
   }
 ]

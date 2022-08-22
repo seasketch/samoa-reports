@@ -6,20 +6,29 @@ import {
   InternalRasterDatasource,
   ImportRasterDatasourceOptions,
   ImportRasterDatasourceConfig,
-  Stats,
   ClassStats,
 } from "./types";
 import dsConfig from "./config";
 import { publishDatasource } from "./publishDatasource";
 import { createOrUpdateDatasource } from "./datasources";
-import { getDatasetBucketName } from "./helpers";
+import {
+  getDatasetBucketName,
+  getJsonFilename,
+  isInternalVectorDatasource,
+} from "./helpers";
 import { loadCogWindow } from "./cog";
 import project from "../../../project";
 // @ts-ignore
 import geoblaze from "geoblaze";
 import LocalFileServer from "../localServer";
 import { getCogFilename } from "./helpers";
-import { Histogram } from "@seasketch/geoprocessing";
+import dissolve from "@turf/dissolve";
+import {
+  Histogram,
+  isPolygonFeature,
+  FeatureCollection,
+  Polygon,
+} from "@seasketch/geoprocessing";
 
 export async function importRasterDatasource(
   options: ImportRasterDatasourceOptions,
@@ -99,6 +108,7 @@ export function genRasterConfig(
     formats = dsConfig.importDefaultRasterFormats,
     noDataValue,
     measurementType,
+    filterDatasource,
   } = options;
 
   if (!band) band = 0;
@@ -114,6 +124,7 @@ export function genRasterConfig(
     formats,
     noDataValue,
     measurementType,
+    filterDatasource,
   };
 
   return config;
@@ -124,11 +135,36 @@ export async function genRasterKeyStats(
   options: ImportRasterDatasourceConfig,
   raster: any
 ): Promise<KeyStats> {
+  // Optional filter polygon for raster precalc
+  const filterPoly = await (async () => {
+    if (!options.filterDatasource) {
+      return undefined;
+    }
+    const ds = project.getDatasourceById(options.filterDatasource);
+    if (isInternalVectorDatasource(ds)) {
+      const jsonFilename = path.join("./data/dist", getJsonFilename(ds));
+      const polys = fs.readJsonSync(jsonFilename) as FeatureCollection<Polygon>;
+      const filterPoly = dissolve(polys).features[0];
+      console.log(`Using filterDatasource ${options.filterDatasource}`);
+      if (isPolygonFeature(filterPoly)) {
+        return filterPoly;
+      } else {
+        `Expected datasource ${ds.datasourceId} to contain a single polygon feature`;
+      }
+    } else {
+      throw new Error(
+        `Expected ${ds.datasourceId} to be an internal vector datasource`
+      );
+    }
+  })();
+
   // continous - sum
-  const sum =
-    options.measurementType === "quantitative"
-      ? (geoblaze.sum(raster)[0] as number)
-      : null; // assumes single band/layer
+  const sum = (() => {
+    if (options.measurementType !== "quantitative") {
+      return null;
+    }
+    return geoblaze.sum(raster, filterPoly)[0] as number;
+  })();
 
   // categorical - histogram, count by class
   const classStats: ClassStats = (() => {

@@ -32,24 +32,38 @@ const precalcMetrics = project.getPrecalcMetrics(
   metricGroup.classKey
 );
 
-const getMetricGroupDatasource = (
-  mg: MetricGroup,
-  classId: Nullable<string>
-) => {
+const getMetricDatasource = (mg: MetricGroup, metric: Metric) => {
   if (metricGroup.datasourceId) {
     return metricGroup.datasourceId;
-  } else if (classId) {
-    return keyBy(metricGroup.classes, (m) => m.classId)[classId].datasourceId;
+  } else if (metric.classId) {
+    return keyBy(metricGroup.classes, (m) => m.classId)[metric.classId]
+      .datasourceId;
   }
 };
 
-const getClassDatasource = (mg: MetricGroup, classId: string) => {
+const getMetricGroupClassDatasource = (mg: MetricGroup, classId: string) => {
   return keyBy(metricGroup.classes, (m) => m.classId)[classId].datasourceId;
+};
+
+const filterMetricsByDatasource = (
+  metrics: Metric[],
+  datasourceIds: string[]
+) => {
+  return metrics.filter((m) => {
+    // get metric datasourceId, return true if single array includes
+    const datasourceId = getMetricDatasource(metricGroup, m);
+    if (!datasourceId)
+      throw new Error(`Expected datasourceId in class ${m.classId}`);
+    return datasourceIds.includes(datasourceId);
+  });
 };
 
 const datasourceCounts = metricGroup.classes.reduce<Record<string, number>>(
   (soFar, curClass) => {
-    const classDatasourceId = getClassDatasource(metricGroup, curClass.classId);
+    const classDatasourceId = getMetricGroupClassDatasource(
+      metricGroup,
+      curClass.classId
+    );
     if (!classDatasourceId)
       throw new Error(`Expected datasourceId for class ${curClass.classId}`);
     return {
@@ -90,7 +104,7 @@ export const sortMetrics = (
           return keyBy(metricGroup.classes, (m) => m.classId)[a.classId!]
             .display;
         } else if (idName === "datasourceId") {
-          return getMetricGroupDatasource(metricGroup, a.classId);
+          return getMetricDatasource(metricGroup, a);
         } else {
           return a[idName as MetricDimension];
         }
@@ -100,7 +114,7 @@ export const sortMetrics = (
           return keyBy(metricGroup.classes, (m) => m.classId)[b.classId!]
             .display;
         } else if (idName === "datasourceId") {
-          return getMetricGroupDatasource(metricGroup, b.classId);
+          return getMetricDatasource(metricGroup, b);
         } else {
           return b[idName as MetricDimension];
         }
@@ -132,26 +146,13 @@ const Geomorphology = () => {
           );
           const sortedMetrics = sortMetrics(parentMetrics);
 
-          const singleClassMetrics = sortedMetrics.filter((m) => {
-            // get metric datasourceId, return true if single array includes
-            const datasourceId = getMetricGroupDatasource(
-              metricGroup,
-              m.classId
-            );
-            if (!datasourceId)
-              throw new Error(`Expected datasourceId in class ${m.classId}`);
-            return dsGroups[0].includes(datasourceId);
-          });
-          const multiClassMetrics = sortedMetrics.filter((m) => {
-            // get metric datasourceId, return true if single array includes
-            const datasourceId = getMetricGroupDatasource(
-              metricGroup,
-              m.classId
-            );
-            if (!datasourceId)
-              throw new Error(`Expected datasourceId in class ${m.classId}`);
-            return dsGroups[1].includes(datasourceId);
-          });
+          const singleClassMetrics = filterMetricsByDatasource(
+            sortedMetrics,
+            dsGroups[0]
+          );
+          const multiMetricsByDatasource = dsGroups[1].map((ds) =>
+            filterMetricsByDatasource(sortedMetrics, [ds])
+          );
 
           return (
             <ToolbarCard
@@ -215,51 +216,55 @@ const Geomorphology = () => {
                   },
                 ]}
               />
-              <ClassTable
-                rows={multiClassMetrics}
-                dataGroup={legacyMetricGroup}
-                columnConfig={[
-                  {
-                    columnLabel: "Class",
-                    type: "class",
-                    width: 40,
-                  },
-                  {
-                    columnLabel: "% Found Within Plan",
-                    type: "metricChart",
-                    metricId: legacyMetricGroup.metricId,
-                    valueFormatter: "percent",
-                    chartOptions: {
-                      showTitle: true,
-                      targetLabelPosition: "bottom",
-                      targetLabelStyle: "tight",
-                      barHeight: 11,
-                    },
-                    width: 50,
-                    targetValueFormatter: (
-                      value: number,
-                      row: number,
-                      numRows: number
-                    ) => {
-                      if (row === 0) {
-                        return (value: number) =>
-                          `${valueFormatter(
-                            value / 100,
-                            "percent0dig"
-                          )} Target`;
-                      } else {
-                        return (value: number) =>
-                          `${valueFormatter(value / 100, "percent0dig")}`;
-                      }
-                    },
-                  },
-                  {
-                    columnLabel: "Map",
-                    type: "layerToggle",
-                    width: 10,
-                  },
-                ]}
-              />
+              {multiMetricsByDatasource.map((ms) => {
+                return (
+                  <ClassTable
+                    rows={ms}
+                    dataGroup={legacyMetricGroup}
+                    columnConfig={[
+                      {
+                        columnLabel: "Class",
+                        type: "class",
+                        width: 40,
+                      },
+                      {
+                        columnLabel: "% Found Within Plan",
+                        type: "metricChart",
+                        metricId: legacyMetricGroup.metricId,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                          targetLabelPosition: "bottom",
+                          targetLabelStyle: "tight",
+                          barHeight: 11,
+                        },
+                        width: 50,
+                        targetValueFormatter: (
+                          value: number,
+                          row: number,
+                          numRows: number
+                        ) => {
+                          if (row === 0) {
+                            return (value: number) =>
+                              `${valueFormatter(
+                                value / 100,
+                                "percent0dig"
+                              )} Target`;
+                          } else {
+                            return (value: number) =>
+                              `${valueFormatter(value / 100, "percent0dig")}`;
+                          }
+                        },
+                      },
+                      {
+                        columnLabel: "Map",
+                        type: "layerToggle",
+                        width: 10,
+                      },
+                    ]}
+                  />
+                );
+              })}
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>
               )}
