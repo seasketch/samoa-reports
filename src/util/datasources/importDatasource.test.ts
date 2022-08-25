@@ -95,6 +95,7 @@ describe("Import raster data", () => {
         formats: [],
         noDataValue: 0,
         band: 1,
+        measurementType: "quantitative",
       },
       {
         newDatasourcePath: "./test/datasources_test.json",
