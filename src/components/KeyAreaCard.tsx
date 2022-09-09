@@ -69,7 +69,7 @@ const TableStyled = styled(ReportTableStyled)`
   }
 `;
 
-const SizeCard = () => {
+const KeyAreaCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <ResultsCard title="Key Areas" functionName="keyAreaOverlap" useChildCard>
@@ -287,4 +287,4 @@ const genNetworkSizeTable = (data: ReportResult) => {
   );
 };
 
-export default SizeCard;
+export default KeyAreaCard;
