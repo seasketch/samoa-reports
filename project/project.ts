@@ -17,6 +17,7 @@ import {
   getDatasourceById,
   getInternalRasterDatasourceById,
   getInternalVectorDatasourceById,
+  getClipDatasource,
 } from "../src/util/datasources/helpers";
 import {
   getObjectiveById,
@@ -154,6 +155,16 @@ export class ProjectClient {
     return getGlobalEezVectorDatasource(this._datasources);
   }
 
+  /** Returns Datasource given clipBoundary name */
+  public getClipDatasource(clipBoundary: string): Datasource {
+    const clipDatasourceId = this._project.clipDatasources[clipBoundary];
+    if (!clipDatasourceId)
+      throw new Error(
+        `Missing clipDatasource for boundary name ${clipBoundary}`
+      );
+    return getClipDatasource(clipDatasourceId, this._datasources);
+  }
+
   // OBJECTIVES //
 
   /** Returns Objective given objectiveId */
@@ -218,7 +229,14 @@ export class ProjectClient {
         throw new Error(`Expected keyStats for ${ds.datasourceId}`);
       const classKey = mg.classKey! || curClass.classKey!;
       // If not class key use the total
-      if (!classKey && curClass.classId !== ds.datasourceId && !curClass.datasourceId) console.log(`Missing classKey in metricGroup ${mg.metricId}, class ${curClass.classId} so using total stat for precalc denominator.  Is this what is intended?`)
+      if (
+        !classKey &&
+        curClass.classId !== ds.datasourceId &&
+        !curClass.datasourceId
+      )
+        console.log(
+          `Missing classKey in metricGroup ${mg.metricId}, class ${curClass.classId} so using total stat for precalc denominator.  Is this what is intended?`
+        );
       const classValue = classKey
         ? ds.keyStats[classKey][curClass.classId][statName]
         : ds.keyStats.total.total[statName];

@@ -77,6 +77,132 @@
         ]
     },
     {
+        "metricId": "ousAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "aquaculture-area",
+                "display": "Aquaculture",
+                "datasourceId": "ous_aquaculture_area",
+                "layerId": "6318c54084580058403b011f"
+            },
+            {
+                "classId": "commercial-fishing",
+                "display": "Commercial Fishing",
+                "datasourceId": "ous_commercial_fishing",
+                "layerId": "621837c3824398156adbfc6c"
+            },
+            {
+                "classId": "protected-areas",
+                "display": "Community Mapped Protected Areas",
+                "datasourceId": "ous_protected_areas",
+                "layerId": "62db02b554123c0c561e97fd"
+            },
+            {
+                "classId": "community-swimming",
+                "display": "Community Swimming",
+                "datasourceId": "ous_community_swimming",
+                "layerId": "6318c54084580058403b011d"
+            },
+            {
+                "classId": "expand-areas",
+                "display": "Expand Area",
+                "datasourceId": "ous_expand_areas",
+                "layerId": "6318c54084580058403b011b"
+            },
+            {
+                "classId": "future-reserve",
+                "display": "Future Reserve",
+                "datasourceId": "ous_future_reserve",
+                "layerId": "62db02b554123c0c561e97ff"
+            },
+            {
+                "classId": "mangrove-planting",
+                "display": "Mangrove Planting",
+                "datasourceId": "ous_mangrove_planting",
+                "layerId": "6318c54084580058403b0121"
+            },
+            {
+                "classId": "mining-areas",
+                "display": "Mining",
+                "datasourceId": "ous_mining_areas",
+                "layerId": "6318c54084580058403b0123"
+            },
+            {
+                "classId": "other-polygons",
+                "display": "Other Area",
+                "datasourceId": "ous_other_polygons",
+                "layerId": "6318c54084580058403b012b"
+            },
+            {
+                "classId": "sewage-disposal",
+                "display": "Sewage Disposal",
+                "datasourceId": "ous_sewage_disposal",
+                "layerId": "6318c54084580058403b0125"
+            },
+            {
+                "classId": "subsistence-fishing",
+                "display": "Subsistence Fishing",
+                "datasourceId": "ous_subsistence_fishing",
+                "layerId": "6218379d824398156adbfc55"
+            },
+            {
+                "classId": "tourism-area",
+                "display": "Tourism",
+                "datasourceId": "ous_tourism_area",
+                "layerId": "6318c54084580058403b0127"
+            },
+            {
+                "classId": "waste-dumping",
+                "display": "Waste Dumping",
+                "datasourceId": "ous_waste_dumping",
+                "layerId": "6318c54084580058403b0129"
+            }
+        ]
+    },
+    {
+        "metricId": "ousConflictAreaOverlap",
+        "type": "areaOverlap",
+        "classes": [
+            {
+                "classId": "aquaculture-area",
+                "display": "Aquaculture",
+                "datasourceId": "ous_conflict_aquaculture",
+                "layerId": ""
+            },
+            {
+                "classId": "commercial-fishing",
+                "display": "Commercial Fishing",
+                "datasourceId": "ous_conflict_commercial",
+                "layerId": ""
+            },
+            {
+                "classId": "mangrove-planting",
+                "display": "Mangrove Planting",
+                "datasourceId": "ous_conflict_mangrove",
+                "layerId": ""
+            },
+            {
+                "classId": "mining-areas",
+                "display": "Mining",
+                "datasourceId": "ous_conflict_mining",
+                "layerId": ""
+            },
+            {
+                "classId": "restricted-subsistence",
+                "display": "Subsistence Fishing",
+                "datasourceId": "ous_conflict_subsistence",
+                "layerId": ""
+            },
+            {
+                "classId": "restricted-waste",
+                "display": "Waste Dumping",
+                "datasourceId": "ous_conflict_waste",
+                "layerId": ""
+            }
+        ]
+    },
+    {
         "metricId": "keyAreaOverlap",
         "type": "areaOverlap",
         "classes": [

@@ -1,0 +1,348 @@
+{
+  "metrics": [
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "aquaculture-area",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "aquaculture-area",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "aquaculture-area",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "aquaculture-area",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "commercial-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "commercial-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "commercial-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "commercial-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "mangrove-planting",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "mangrove-planting",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "mangrove-planting",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "mangrove-planting",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "mining-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "mining-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "mining-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "mining-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "restricted-subsistence",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "restricted-subsistence",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "restricted-subsistence",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "restricted-subsistence",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f5",
+      "classId": "restricted-waste",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "nearshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f6",
+      "classId": "restricted-waste",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "span1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970333c46c258221883f7",
+      "classId": "restricted-waste",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousConflictAreaOverlap",
+      "sketchId": "62d970b0b8852d2258f694d3",
+      "classId": "restricted-waste",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "NetworkA",
+        "isCollection": true
+      }
+    }
+  ],
+  "sketch": {
+    "type": "FeatureCollection",
+    "properties": {
+      "id": "62d970b0b8852d2258f694d3",
+      "name": "NetworkA",
+      "updatedAt": "2022-07-21T15:29:30.580Z",
+      "createdAt": "2022-07-21T15:28:48.669Z",
+      "sketchClassId": "62d9705ab8852d2258f694ce",
+      "isCollection": true,
+      "userAttributes": []
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62d970333c46c258221883f5",
+          "name": "nearshore1",
+          "updatedAt": "2022-07-21T15:29:30.635Z",
+          "createdAt": "2022-07-21T15:25:16.780Z",
+          "sketchClassId": "62c71ab51d9b70564665d35c",
+          "isCollection": false,
+          "userAttributes": []
+        },
+        "id": "1",
+        "bbox": [
+          -172.27279323500343,
+          -13.956641730619094,
+          -172.15675014418335,
+          -13.803324771426714
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62d970333c46c258221883f6",
+          "name": "span1",
+          "updatedAt": "2022-07-21T15:29:30.637Z",
+          "createdAt": "2022-07-21T15:25:33.305Z",
+          "sketchClassId": "62c71ab51d9b70564665d35c",
+          "isCollection": false,
+          "userAttributes": []
+        },
+        "id": "2",
+        "bbox": [
+          -172.4058308021423,
+          -14.734129262030025,
+          -172.0542683021423,
+          -13.893160813566107
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62d970333c46c258221883f7",
+          "name": "offshore1",
+          "updatedAt": "2022-07-21T15:29:30.590Z",
+          "createdAt": "2022-07-21T15:25:43.896Z",
+          "sketchClassId": "62c71ab51d9b70564665d35c",
+          "isCollection": false,
+          "userAttributes": []
+        },
+        "id": "3",
+        "bbox": [
+          -173.16938060682975,
+          -14.154303252426633,
+          -172.63105052870472,
+          -13.759811006130201
+        ],
+        "geometry": null
+      }
+    ]
+  }
+}

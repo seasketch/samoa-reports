@@ -26,10 +26,7 @@ const FishingValue = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <>
-      <ResultsCard
-        title="Fishing Impact - 2022 Ocean Use Survey"
-        functionName="ousValueOverlap"
-      >
+      <ResultsCard title="Fishing Value" functionName="ousValueOverlap">
         {(data: ReportResult) => {
           // Single sketch or collection top-level
           const parentMetrics = metricsWithSketchId(
@@ -43,10 +40,11 @@ const FishingValue = () => {
           return (
             <>
               <p>
-                This report summarizes the proportion of value for each sector
-                that overlaps with this plan, as reported in the Ocean Use
-                Survey. Plans should consider the potential impact to fisheries
-                if access or activities are restricted.
+                This report summarizes how much fishing value is within this
+                plan, by sector, as a percentage of the total value of all
+                fishing areas, as reported in the 2022 Ocean Use Survey. This
+                allows you to consider the potential impact to fisheries if
+                access or activities are restricted within this plan.
               </p>
 
               <ClassTable
@@ -82,15 +80,14 @@ const FishingValue = () => {
 
               <Collapse title="Learn more">
                 <p>
-                  ℹ️ Overview: to capture the value each commercial fishing
-                  sector places on different areas of the EEZ, an Ocean Use
-                  Survey was conducted. Individuals identified the sectors they
-                  participate in, and were asked to draw the areas they use
-                  relative to that sector and assign a value of importance.
-                  Individual responses were then combined to produce aggregate
-                  heatmaps by sector. This allows the value of areas to be
-                  quantified, summed, and compared to one another as more or
-                  less valuable.
+                  ℹ️ Overview: to capture the value each fishing sector places
+                  on different areas of the EEZ, an Ocean Use Survey was
+                  conducted. Individuals identified the sectors they participate
+                  in, and were asked to draw the areas they use relative to that
+                  sector and assign a value of importance. Individual responses
+                  were then combined to produce aggregate heatmaps by sector.
+                  This allows the value of areas to be quantified, summed, and
+                  compared to one another as more or less valuable.
                 </p>
                 <p>
                   Fishing value is then used as a proxy for measuring the
@@ -124,8 +121,8 @@ const FishingValue = () => {
                 <p>
                   📈 Report: Percentages are calculated by summing the areas of
                   fishing value within the MPAs in this plan, and dividing it by
-                  the total fishing value in the overall planning area. If the
-                  plan includes multiple areas that overlap, the overlap is only
+                  all fishing value in the overall planning area. If the plan
+                  includes multiple areas that overlap, the overlap is only
                   counted once.
                 </p>
               </Collapse>

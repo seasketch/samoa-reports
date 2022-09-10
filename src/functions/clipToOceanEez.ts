@@ -6,10 +6,11 @@ import {
   Polygon,
   MultiPolygon,
   clip,
+  toJsonFile,
 } from "@seasketch/geoprocessing";
 import area from "@turf/area";
 import bbox from "@turf/bbox";
-import { featureCollection as fc } from "@turf/helpers";
+import { featureCollection as fc, featureCollection } from "@turf/helpers";
 import flatten from "@turf/flatten";
 import kinks from "@turf/kinks";
 import { clipMultiMerge } from "@seasketch/geoprocessing";
@@ -19,34 +20,86 @@ import {
 } from "../util/datasources/global";
 import project from "../../project";
 import { datasourcesSchema } from "../util/datasources/types";
+import {
+  getFlatGeobufFilename,
+  isExternalVectorDatasource,
+  isInternalVectorDatasource,
+} from "../util/datasources/helpers";
+import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 const ENFORCE_MAX_SIZE = false;
 const MAX_SIZE_KM = 500000 * 1000 ** 2; // Default 500,000 KM
 
 // Defined at module level for potential caching/reuse by serverless process
 const datasources = datasourcesSchema.parse(project.datasources);
-const landDatasource = getLandVectorDatasource(datasources);
-const eezDatasource = getEezVectorDatasource(datasources);
+const landVectorDatasource = getLandVectorDatasource(datasources);
+const eezVectorDatasource = getEezVectorDatasource(datasources);
 
 export async function clipLand(feature: Feature<Polygon | MultiPolygon>) {
-  const landFeatures = await landDatasource.fetchUnion(bbox(feature), "gid");
+  const featureBox = bbox(feature);
+  const landDatasource = project.getClipDatasource("land");
+  const landFeatures = await (async () => {
+    if (
+      // Default
+      landDatasource.datasourceId === "global-clipping-osm-land"
+    ) {
+      const features = await landVectorDatasource.fetchUnion(featureBox, "gid");
+      return features;
+    } else {
+      // Override
+      if (!isInternalVectorDatasource(landDatasource))
+        throw new Error(
+          `Expected vector datasource for ${landDatasource.datasourceId}`
+        );
+      const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(
+        landDatasource
+      )}`;
+      const features = await fgbFetchAll<Feature<Polygon>>(url, featureBox);
+      return featureCollection(features);
+    }
+  })();
+
   if (landFeatures.features.length === 0) return feature;
   return clip(fc([feature, ...landFeatures.features]), "difference");
 }
 
 export async function clipOutsideEez(
   feature: Feature<Polygon | MultiPolygon>,
-  eezFilterByNames: string[] = ["Samoa"]
+  eezFilterByCountryCodes: string[] = ["Samoa"]
 ) {
-  let eezFeatures = await eezDatasource.fetch(bbox(feature));
-  if (eezFeatures.length === 0) return feature;
-  // Optionally filter down to a single country/union EEZ boundary
-  if (eezFilterByNames.length > 0) {
-    eezFeatures = eezFeatures.filter((e) =>
-      eezFilterByNames.includes(e.properties.UNION)
-    );
+  const featureBox = bbox(feature);
+  const eezDatasource = project.getClipDatasource("eez");
+  let eezFeatures = await (async () => {
+    if (
+      // Default
+      eezDatasource.datasourceId === "global-clipping-eez-land-union"
+    ) {
+      let features = await eezVectorDatasource.fetch(featureBox);
+      // Optionally filter down to a single country/union EEZ boundary
+      if (eezFilterByCountryCodes.length > 0) {
+        features = features.filter((e) =>
+          eezFilterByCountryCodes.includes(e.properties.UNION)
+        );
+      }
+      return features;
+    } else {
+      // Override
+      if (!isInternalVectorDatasource(eezDatasource))
+        throw new Error("Expected vector datasource for offshore");
+      const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(
+        eezDatasource
+      )}`;
+      const features = await fgbFetchAll<Feature<Polygon>>(url, featureBox);
+      return features;
+    }
+  })();
+
+  // If nothing to intersect then return the whole input feature
+  if (eezFeatures.length === 0) {
+    return feature;
+  } else {
+    return clipMultiMerge(feature, fc(eezFeatures), "intersection");
   }
-  return clipMultiMerge(feature, fc(eezFeatures), "intersection");
 }
 
 /**

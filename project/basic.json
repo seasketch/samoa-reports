@@ -6,5 +6,10 @@
   "externalLinks": {
     "gfwFishingEffort":
       "https://globalfishingwatch.org/dataset-and-code-fishing-effort"
+  },
+  "clipDatasources": {
+    "land": "global-clipping-osm-land",
+    "eez": "global-clipping-eez-land-union",
+    "offshore": "offshore"
   }
 }

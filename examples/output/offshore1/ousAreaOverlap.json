@@ -1,0 +1,167 @@
+{
+  "metrics": [
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "aquaculture-area",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "commercial-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "community-swimming",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "expand-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "future-reserve",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "mangrove-planting",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "mining-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "other-polygons",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "protected-areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "sewage-disposal",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "subsistence-fishing",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "tourism-area",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    },
+    {
+      "metricId": "ousAreaOverlap",
+      "sketchId": "62d96ff7b8852d2258f694c8",
+      "classId": "waste-dumping",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "offshore1"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62d96ff7b8852d2258f694c8",
+      "name": "offshore1",
+      "updatedAt": "2022-07-21T15:25:43.896Z",
+      "createdAt": "2022-07-21T15:25:43.896Z",
+      "sketchClassId": "62c71ab51d9b70564665d35c",
+      "isCollection": false,
+      "userAttributes": []
+    },
+    "id": "1",
+    "bbox": [
+      -173.16938060682975,
+      -14.154303252426633,
+      -172.63105052870472,
+      -13.759811006130201
+    ],
+    "geometry": null
+  }
+}

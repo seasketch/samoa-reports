@@ -105,6 +105,14 @@ export const getInternalRasterDatasourceById = (
   }
 };
 
+export const getClipDatasource = (
+  clipDatasourceId: string,
+  datasources: Datasources
+): Datasource => {
+  const ds = getDatasourceById(clipDatasourceId, datasources);
+  return ds;
+};
+
 /** Returns datasource filename in geojson format */
 export function getJsonFilename(datasource: InternalVectorDatasource) {
   return datasource.datasourceId + ".json";

@@ -148,7 +148,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-05T02:34:25.996Z",
-    "lastUpdated": "2022-08-22T17:10:22.543Z",
+    "lastUpdated": "2022-09-09T15:20:39.298Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
   },
   {
@@ -170,7 +170,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-05T03:24:47.725Z",
-    "lastUpdated": "2022-08-22T17:14:32.208Z",
+    "lastUpdated": "2022-09-09T15:20:54.932Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
@@ -709,8 +709,8 @@
     "keyStats": {
       "total": {
         "total": {
-          "sum": 4.224000036716461,
           "count": null,
+          "sum": 4.224000036716461,
           "area": null
         }
       }
@@ -945,5 +945,461 @@
     "lastUpdated": "2022-08-22T17:19:19.509Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Coastline.shp",
     "propertiesToKeep": []
+  },
+  {
+    "datasourceId": "ous_aquaculture_area",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 44,
+          "sum": null,
+          "area": 4394448.38017197
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Aquaculture_Area",
+    "classKeys": [],
+    "created": "2022-09-09T03:04:17.118Z",
+    "lastUpdated": "2022-09-09T15:20:56.273Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Aquaculture_Area.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_commercial_fishing",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 41,
+          "sum": null,
+          "area": 3347190064.4467254
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Commercial_Fishing",
+    "classKeys": [],
+    "created": "2022-09-09T03:14:57.516Z",
+    "lastUpdated": "2022-09-09T15:20:57.864Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Commercial_Fishing.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_community_swimming",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 86,
+          "sum": null,
+          "area": 11232928.759342406
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Community_Swimming",
+    "classKeys": [],
+    "created": "2022-09-09T03:15:28.554Z",
+    "lastUpdated": "2022-09-09T15:20:59.329Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Community_Swimming.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_expand_areas",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 43,
+          "sum": null,
+          "area": 8487480.754986973
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Expand_Areas",
+    "classKeys": [],
+    "created": "2022-09-09T03:15:53.845Z",
+    "lastUpdated": "2022-09-09T15:21:00.669Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Expand_Areas.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_future_reserve",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 49,
+          "sum": null,
+          "area": 14157475.855912613
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Future_Reserve",
+    "classKeys": [],
+    "created": "2022-09-09T03:16:26.537Z",
+    "lastUpdated": "2022-09-09T15:21:01.992Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Future_Reserve.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_mangrove_planting",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 54,
+          "sum": null,
+          "area": 3645522.0898950016
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Mangrove_Planting",
+    "classKeys": [],
+    "created": "2022-09-09T03:16:58.684Z",
+    "lastUpdated": "2022-09-09T15:21:03.471Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Mangrove_Planting.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_mining_areas",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 107,
+          "sum": null,
+          "area": 6561736.237483801
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Mining_Areas",
+    "classKeys": [],
+    "created": "2022-09-09T03:17:23.977Z",
+    "lastUpdated": "2022-09-09T15:21:05.081Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Mining_Areas.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_other_polygons",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 130,
+          "sum": null,
+          "area": 42034725.50259997
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Other_Polygons",
+    "classKeys": [],
+    "created": "2022-09-09T03:18:01.802Z",
+    "lastUpdated": "2022-09-09T15:21:06.896Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Other_Polygons.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_protected_areas",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 62,
+          "sum": null,
+          "area": 7167538.078055164
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_protected_areas",
+    "classKeys": [],
+    "created": "2022-09-09T03:18:29.613Z",
+    "lastUpdated": "2022-09-09T15:21:08.427Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_protected_areas.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_sewage_disposal",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 3,
+          "sum": null,
+          "area": 143856.84979754078
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Sewerage_Disposal",
+    "classKeys": [],
+    "created": "2022-09-09T03:18:53.597Z",
+    "lastUpdated": "2022-09-09T15:21:09.743Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Sewerage_Disposal.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_subsistence_fishing",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 56,
+          "sum": null,
+          "area": 292047480.2420203
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Subsistence_Fishing",
+    "classKeys": [],
+    "created": "2022-09-09T03:19:20.572Z",
+    "lastUpdated": "2022-09-09T15:21:11.505Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Subsistence_Fishing.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_tourism_area",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 62,
+          "sum": null,
+          "area": 4334669.439941507
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Tourism_Area",
+    "classKeys": [],
+    "created": "2022-09-09T03:19:46.353Z",
+    "lastUpdated": "2022-09-09T15:21:12.965Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Tourism_Area.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_waste_dumping",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 13,
+          "sum": null,
+          "area": 321757.71342375607
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_Waste_Dumping",
+    "classKeys": [],
+    "created": "2022-09-09T03:20:08.560Z",
+    "lastUpdated": "2022-09-09T15:21:14.306Z",
+    "src": "data/src/Data_Products/OUS/shapes/Samoa-shps-final/dissolved/dissolved_Waste_Dumping.geojson",
+    "propertiesToKeep": [
+      "name"
+    ]
+  },
+  {
+    "datasourceId": "ous_conflict_aquaculture",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 4,
+          "sum": null,
+          "area": 99668.66598957095
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_aquaculture-conflict-zone",
+    "classKeys": [],
+    "created": "2022-09-09T16:48:24.188Z",
+    "lastUpdated": "2022-09-09T22:36:31.754Z",
+    "src": "data/src/Data_Products/OUS/shapes/dissolved/dissolved_aquaculture-conflict-zone.geojson",
+    "propertiesToKeep": [
+      "id"
+    ]
+  },
+  {
+    "datasourceId": "ous_conflict_commercial",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 28,
+          "sum": null,
+          "area": 26981129.908088278
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_commfish-conflict-zone",
+    "classKeys": [],
+    "created": "2022-09-09T16:49:00.246Z",
+    "lastUpdated": "2022-09-09T22:36:33.099Z",
+    "src": "data/src/Data_Products/OUS/shapes/dissolved/dissolved_commfish-conflict-zone.geojson",
+    "propertiesToKeep": [
+      "id"
+    ]
+  },
+  {
+    "datasourceId": "ous_conflict_mangrove",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 38663.08254681329
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_mangrove-plant-conflict-zone",
+    "classKeys": [],
+    "created": "2022-09-09T16:49:22.432Z",
+    "lastUpdated": "2022-09-09T22:36:34.348Z",
+    "src": "data/src/Data_Products/OUS/shapes/dissolved/dissolved_mangrove-plant-conflict-zone.geojson",
+    "propertiesToKeep": [
+      "id"
+    ]
+  },
+  {
+    "datasourceId": "ous_conflict_mining",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 46,
+          "sum": null,
+          "area": 2864828.3043699134
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_mining-conflict-zones",
+    "classKeys": [],
+    "created": "2022-09-09T16:50:44.043Z",
+    "lastUpdated": "2022-09-09T22:36:35.742Z",
+    "src": "data/src/Data_Products/OUS/shapes/dissolved/dissolved_mining-conflict-zones.geojson",
+    "propertiesToKeep": [
+      "id"
+    ]
+  },
+  {
+    "datasourceId": "ous_conflict_subsistence",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 1,
+          "sum": null,
+          "area": 16174.044606622025
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_subsfish-conflict-zone",
+    "classKeys": [],
+    "created": "2022-09-09T16:51:10.024Z",
+    "lastUpdated": "2022-09-09T22:36:37.047Z",
+    "src": "data/src/Data_Products/OUS/shapes/dissolved/dissolved_subsfish-conflict-zone.geojson",
+    "propertiesToKeep": [
+      "id"
+    ]
+  },
+  {
+    "datasourceId": "ous_conflict_waste",
+    "geo_type": "vector",
+    "keyStats": {
+      "total": {
+        "total": {
+          "count": 2,
+          "sum": null,
+          "area": 3009.777646310067
+        }
+      }
+    },
+    "formats": [
+      "fgb"
+    ],
+    "layerName": "dissolved_wastedumping_conflict_zone",
+    "classKeys": [],
+    "created": "2022-09-09T16:52:17.058Z",
+    "lastUpdated": "2022-09-09T22:36:38.291Z",
+    "src": "data/src/Data_Products/OUS/shapes/dissolved/dissolved_wastedumping_conflict_zone.geojson",
+    "propertiesToKeep": [
+      "id"
+    ]
   }
 ]

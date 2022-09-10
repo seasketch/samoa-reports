@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ * @group smoke
+ */
 import { clipToOceanEez } from "./clipToOceanEez";
 import {
   getExampleFeatures,
