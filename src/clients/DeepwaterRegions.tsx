@@ -63,7 +63,7 @@ const DeepwaterRegions = () => {
                 each subregion.
               </p>
               <p>
-                This report summarizes the percentage of each offshore subregion
+                This report summarizes the proportion of each offshore subregion
                 that overlaps with this plan.
               </p>
               <ClassTable

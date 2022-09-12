@@ -26,7 +26,10 @@ const FishingValue = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <>
-      <ResultsCard title="Fishing Value" functionName="ousValueOverlap">
+      <ResultsCard
+        title="Fishing Value - 2022 Ocean Use Survey"
+        functionName="ousValueOverlap"
+      >
         {(data: ReportResult) => {
           // Single sketch or collection top-level
           const parentMetrics = metricsWithSketchId(
@@ -41,7 +44,7 @@ const FishingValue = () => {
             <>
               <p>
                 This report summarizes how much fishing value is within this
-                plan, by sector, as a percentage of the total value of all
+                plan, by sector, as a proportion of the total value of all
                 fishing areas, as reported in the 2022 Ocean Use Survey. This
                 allows you to consider the potential impact to fisheries if
                 access or activities are restricted within this plan.
@@ -95,7 +98,7 @@ const FishingValue = () => {
                   protected areas. This report can be used to minimize the
                   potential impact of a plan on a fishery, as well as identify
                   and reduce conflict between conservation objectives and
-                  fishing activities. The higher the percentage of value within
+                  fishing activities. The higher the proportion of value within
                   the plan, the greater the potential impact to the fishery if
                   access or activities are restricted.
                 </p>

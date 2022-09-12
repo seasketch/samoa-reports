@@ -16,20 +16,20 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project";
 
-const metricGroup = project.getMetricGroup("gfwValueOverlap");
+const metricGroup = project.getMetricGroup("wsValueOverlap");
 const precalcMetrics = project.getPrecalcMetrics(
   metricGroup,
   "sum",
   metricGroup.classKey
 );
 
-const FishingValue = () => {
+const FishingEffortLongline = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <>
       <ResultsCard
-        title="Fishing Effort - 2017-2021 Global Fishing Watch"
-        functionName="gfwValueOverlap"
+        title="Fishing Effort - 2015-2020 Longline Sets"
+        functionName="wsValueOverlap"
       >
         {(data: ReportResult) => {
           // Single sketch or collection top-level
@@ -42,18 +42,9 @@ const FishingValue = () => {
 
           const colConfigs: ClassTableColumnConfig[] = [
             {
-              columnLabel: "All Fishing",
+              columnLabel: "Longline",
               type: "class",
               width: 31,
-            },
-            {
-              type: "metricValue",
-              metricId: metricGroup.metricId,
-              valueFormatter: "integer",
-              valueLabel: "hours",
-              width: 20,
-              colStyle: { textAlign: "right" },
-              columnLabel: "Fishing Effort",
             },
             {
               type: "metricValue",
@@ -81,10 +72,10 @@ const FishingValue = () => {
           return (
             <>
               <p>
-                This report summarizes the proportion of fishing effort from
-                2019-2022 that is within this plan, as reported by Global
-                Fishing Watch. The higher the percentage, the greater the
-                potential impact to the fishery if access or activities are
+                This report summarizes the proportion of longline fishing effort
+                from 2015-2020 that is within this plan, as reported by Samoa
+                Ministry of Fisheries. The higher the percentage, the greater
+                the potential impact to the fishery if access or activities are
                 restricted.
               </p>
 
@@ -104,38 +95,22 @@ const FishingValue = () => {
                   for limiting the potential impact to fishing activities.
                 </p>
                 <p>
-                  🗺️ Source Data: <b>Apparent fishing effort</b> is measured
-                  using transmissions (or "pings") broadcast by fishing vessels
-                  using the automatic identification system (AIS) vessel
-                  tracking system.
+                  🗺️ Source Data: <b>Fishing</b> is measured in "hundreds of
+                  hooks" per set and "metric tons of catch" per set. A point
+                  location is provided for each set and these points are
+                  aggregated across all sets for all vessels over all years to
+                  produce a heatmap of number of hooks per 5km area.
                 </p>
                 <p>
-                  Machine learning models are then used to classify fishing
-                  vessels and predict when they are fishing based on their
-                  movement patterns and changes in speed.
-                </p>
-                <p>
-                  Apparent fishing effort can then be calculated for any area by
-                  summarizing the fishing hours for all fishing vessels in that
-                  area.
+                  Fishing effort is then calculated for any area by summing the
+                  total for all fishing vessels in that area.
                 </p>
                 <p>
                   📈 Report: Percentages are calculated by summing the total
-                  amount of fishing effort (in hours) within the MPAs in this
-                  plan, and dividing it by the total amount of fishing effort
-                  (in hours) across the overall planning area. If the plan
-                  includes multiple areas that overlap, the overlap is only
-                  counted once.
-                </p>
-                <p>
-                  There are a number of caveats and limitations to this data.
-                  For further information:{" "}
-                  <a
-                    target="_blank"
-                    href={`${project.basic.externalLinks.gfwFishingEffort}`}
-                  >
-                    Global Fishing Watch - Apparent Fishing Effort
-                  </a>
+                  amount of fishing effort within the MPAs in this plan, and
+                  dividing it by the total amount of fishing effort across the
+                  overall planning area. If the plan includes multiple areas
+                  that overlap, the overlap is only counted once.
                 </p>
               </Collapse>
             </>
@@ -164,4 +139,4 @@ const genSketchTable = (data: ReportResult) => {
   );
 };
 
-export default FishingValue;
+export default FishingEffortLongline;

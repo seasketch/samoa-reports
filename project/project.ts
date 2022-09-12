@@ -34,8 +34,6 @@ import {
   objectivesSchema,
 } from "../src/util/objectives/types";
 import {
-  DataClass,
-  DataGroup,
   GeoprocessingJsonConfig,
   Metric,
   MetricGroup as MetricGroupLegacy,

@@ -78,7 +78,7 @@ const ConflictAreaCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <ResultsCard
-      title="Human Use Conflict Areas"
+      title="Human Use Conflict Areas - 2022 Ocean Use Survey"
       functionName="ousConflictAreaOverlap"
       useChildCard
     >
@@ -87,7 +87,7 @@ const ConflictAreaCard = () => {
           throw new Error("Results not found");
         return (
           <ToolbarCard
-            title="Human Use Conflict Areas"
+            title="Human Use Conflict Areas - 2022 Ocean Use Survey"
             items={
               <>
                 <DataDownload

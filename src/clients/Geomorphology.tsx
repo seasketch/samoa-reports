@@ -168,7 +168,7 @@ const Geomorphology = () => {
                 type (geomorphology class).
               </p>
               <p>
-                This report summarizes the percentage of each seafloor type that
+                This report summarizes the proportion of each seafloor type that
                 overlaps with this plan.
               </p>
               <ClassTable

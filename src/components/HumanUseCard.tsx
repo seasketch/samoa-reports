@@ -75,7 +75,7 @@ const HumanUseCard = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <ResultsCard
-      title="Human Use Areas"
+      title="Human Use Areas - 2022 Ocean Use Survey"
       functionName="ousAreaOverlap"
       useChildCard
     >
@@ -84,7 +84,7 @@ const HumanUseCard = () => {
           throw new Error("Results not found");
         return (
           <ToolbarCard
-            title="Human Use Areas"
+            title="Human Use Areas - 2022 Ocean Use Survey"
             items={
               <>
                 <DataDownload
@@ -98,7 +98,7 @@ const HumanUseCard = () => {
           >
             <p>
               This report summarizes ocean use activities within this plan as a
-              percentage of all areas an activity is known to occur.
+              proportion of all areas an activity is known to occur.
             </p>
 
             {genSingleSizeTable(data)}
@@ -122,7 +122,7 @@ const HumanUseCard = () => {
                 measuring the potential impact caused by changes in allowed
                 uses, such as through the creation of protected areas. This
                 report can be used to understand the potential impact of a plan
-                on these activites. The higher the percentage of area within the
+                on these activites. The higher the proportion of area within the
                 plan, the greater the potential impact if access or activities
                 are restricted.
               </p>

@@ -1,0 +1,630 @@
+{
+  "metrics": [
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57b",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3146155,
+      "extra": {
+        "sketchName": "Offshore Zero Draft Plan",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57c",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 114748,
+      "extra": {
+        "sketchName": "MPA C"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57d",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 986660,
+      "extra": {
+        "sketchName": "MPA D"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57e",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2500,
+      "extra": {
+        "sketchName": "MPA E"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57f",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2500,
+      "extra": {
+        "sketchName": "MPA F"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af580",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 18590,
+      "extra": {
+        "sketchName": "MPA G"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af581",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 350,
+      "extra": {
+        "sketchName": "MPA H"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af582",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "MPA I"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af583",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "MPA J"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af584",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 505071,
+      "extra": {
+        "sketchName": "MPA K"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af585",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1237245,
+      "extra": {
+        "sketchName": "MPA L"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af586",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 236562,
+      "extra": {
+        "sketchName": "MPA B"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af587",
+      "classId": "fish_effort_hooks_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 41929,
+      "extra": {
+        "sketchName": "MPA A"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57b",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 796.9000006215647,
+      "extra": {
+        "sketchName": "Offshore Zero Draft Plan",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57c",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 27.011000003665686,
+      "extra": {
+        "sketchName": "MPA C"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57d",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 253.42500039283186,
+      "extra": {
+        "sketchName": "MPA D"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57e",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0.49000000953674316,
+      "extra": {
+        "sketchName": "MPA E"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af57f",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.0299999713897705,
+      "extra": {
+        "sketchName": "MPA F"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af580",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 4.730999946594238,
+      "extra": {
+        "sketchName": "MPA G"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af581",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0.04100000113248825,
+      "extra": {
+        "sketchName": "MPA H"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af582",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "MPA I"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af583",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "MPA J"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af584",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 143.17399959266186,
+      "extra": {
+        "sketchName": "MPA K"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af585",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 304.41400085017085,
+      "extra": {
+        "sketchName": "MPA L"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af586",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 49.9749998152256,
+      "extra": {
+        "sketchName": "MPA B"
+      }
+    },
+    {
+      "metricId": "wsValueOverlap",
+      "sketchId": "62eb05a204cb8648552af587",
+      "classId": "fish_effort_mt_longline",
+      "groupId": null,
+      "geographyId": null,
+      "value": 11.609000038355589,
+      "extra": {
+        "sketchName": "MPA A"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "FeatureCollection",
+    "properties": {
+      "id": "62eb05a204cb8648552af57b",
+      "name": "Offshore Zero Draft Plan",
+      "updatedAt": "2022-08-03T23:32:50.273Z",
+      "createdAt": "2022-08-02T23:21:05.514Z",
+      "sketchClassId": "609d8723c33f915a397225d3",
+      "isCollection": true,
+      "userAttributes": []
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af57d",
+          "name": "MPA D",
+          "updatedAt": "2022-08-03T23:32:50.274Z",
+          "createdAt": "2022-08-02T23:26:16.619Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "1",
+        "bbox": [
+          -171.6426999467734,
+          -13.390968322753471,
+          -170.54265699999712,
+          -12.289183376177128
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af57c",
+          "name": "MPA C",
+          "updatedAt": "2022-08-03T23:32:50.273Z",
+          "createdAt": "2022-08-02T23:25:46.226Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "2",
+        "bbox": [
+          -172.75964355468167,
+          -13.346984863280813,
+          -172.08593749999417,
+          -13.082954406737846
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af57e",
+          "name": "MPA E",
+          "updatedAt": "2022-08-03T23:32:50.275Z",
+          "createdAt": "2022-08-02T23:26:46.829Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "3",
+        "bbox": [
+          -171.6816406249942,
+          -13.610733032226108,
+          -171.5917968749942,
+          -13.522850036620648
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af57f",
+          "name": "MPA F",
+          "updatedAt": "2022-08-03T23:32:50.276Z",
+          "createdAt": "2022-08-02T23:27:44.814Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "4",
+        "bbox": [
+          -172.8045654296817,
+          -13.654655456542505,
+          -172.6783447265567,
+          -13.54985046386674
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af581",
+          "name": "MPA H",
+          "updatedAt": "2022-08-03T23:32:50.490Z",
+          "createdAt": "2022-08-02T23:28:48.407Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "5",
+        "bbox": [
+          -171.88671874999417,
+          -14.049636840819847,
+          -171.78808593749417,
+          -14.022789001464382
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af583",
+          "name": "MPA J",
+          "updatedAt": "2022-08-03T23:32:50.492Z",
+          "createdAt": "2022-08-02T23:30:16.639Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "6",
+        "bbox": [
+          -171.14270019530673,
+          -14.005783081054208,
+          -171.0528564453067,
+          -13.918052673339385
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af584",
+          "name": "MPA K",
+          "updatedAt": "2022-08-03T23:32:50.492Z",
+          "createdAt": "2022-08-02T23:31:16.491Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "7",
+        "bbox": [
+          -172.93933105468167,
+          -15.679443359374476,
+          -172.0410156249942,
+          -14.75010681152294
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af580",
+          "name": "MPA G",
+          "updatedAt": "2022-08-03T23:32:50.486Z",
+          "createdAt": "2022-08-02T23:28:19.993Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "8",
+        "bbox": [
+          -172.62487792968167,
+          -14.137313842772956,
+          -171.91674804686923,
+          -13.71204376220657
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af582",
+          "name": "MPA I",
+          "updatedAt": "2022-08-03T23:32:50.491Z",
+          "createdAt": "2022-08-02T23:29:40.910Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "9",
+        "bbox": [
+          -171.39770507811923,
+          -14.049636840819847,
+          -171.32226562499423,
+          -14.005783081054208
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af585",
+          "name": "MPA L",
+          "updatedAt": "2022-08-03T23:32:50.498Z",
+          "createdAt": "2022-08-02T23:33:19.088Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "10",
+        "bbox": [
+          -174.51135253905662,
+          -14.18114471435499,
+          -173.20874023436912,
+          -13.126983642577693
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af586",
+          "name": "MPA B",
+          "updatedAt": "2022-08-03T23:32:50.499Z",
+          "createdAt": "2022-08-02T23:35:27.613Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "11",
+        "bbox": [
+          -174.40417480468165,
+          -12.598152160644117,
+          -173.52319335936912,
+          -12.112419128417574
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "62eb05a204cb8648552af587",
+          "name": "MPA A",
+          "updatedAt": "2022-08-03T23:32:50.500Z",
+          "createdAt": "2022-08-02T23:41:26.913Z",
+          "sketchClassId": "609d871ec33f915a397225cb",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Notes",
+              "fieldType": "TextArea",
+              "exportId": "NOTES",
+              "value": ""
+            }
+          ]
+        },
+        "id": "12",
+        "bbox": [
+          -174.28617474501104,
+          -11.183200502399844,
+          -173.70252606337016,
+          -10.960848631875239
+        ],
+        "geometry": null
+      }
+    ]
+  }
+}

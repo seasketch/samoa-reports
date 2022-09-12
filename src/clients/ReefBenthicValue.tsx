@@ -83,7 +83,7 @@ const ReefBenthicValue = () => {
               <Collapse title="Learn more">
                 <p>
                   {" "}
-                  This report summarizes the percentage of each reef type that
+                  This report summarizes the proportion of each reef type that
                   overlaps with this plan.
                 </p>
                 <p>

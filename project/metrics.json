@@ -168,37 +168,37 @@
                 "classId": "aquaculture-area",
                 "display": "Aquaculture",
                 "datasourceId": "ous_conflict_aquaculture",
-                "layerId": ""
+                "layerId": "6318c5ac84580058403b01a2"
             },
             {
                 "classId": "commercial-fishing",
                 "display": "Commercial Fishing",
                 "datasourceId": "ous_conflict_commercial",
-                "layerId": ""
+                "layerId": "6318c5ac84580058403b01a4"
             },
             {
                 "classId": "mangrove-planting",
                 "display": "Mangrove Planting",
                 "datasourceId": "ous_conflict_mangrove",
-                "layerId": ""
+                "layerId": "6318c5ac84580058403b01a6"
             },
             {
                 "classId": "mining-areas",
                 "display": "Mining",
                 "datasourceId": "ous_conflict_mining",
-                "layerId": ""
+                "layerId": "6318c5ac84580058403b01a8"
             },
             {
                 "classId": "restricted-subsistence",
                 "display": "Subsistence Fishing",
                 "datasourceId": "ous_conflict_subsistence",
-                "layerId": ""
+                "layerId": "6318c5ac84580058403b01aa"
             },
             {
                 "classId": "restricted-waste",
                 "display": "Waste Dumping",
                 "datasourceId": "ous_conflict_waste",
-                "layerId": ""
+                "layerId": "6318c5ac84580058403b01ac"
             }
         ]
     },
@@ -473,13 +473,13 @@
             },
             {
                 "classId": "avg_fish_effort_allyears_dfl",
-                "display": "DFL",
+                "display": "Drifting Longline",
                 "datasourceId": "avg_fisheffort_allyears_dfl",
                 "layerId": ""
             },
             {
                 "classId": "avg_fish_effort_allyears_tps",
-                "display": "TPS",
+                "display": "Tuna Purse Seine",
                 "datasourceId": "avg_fisheffort_allyears_tps",
                 "layerId": ""
             },
@@ -493,6 +493,24 @@
                 "classId": "avg_fish_effort_allyears_othergear",
                 "display": "Other",
                 "datasourceId": "avg_fisheffort_allyears_othergear",
+                "layerId": ""
+            }
+        ]
+    },
+    {
+        "metricId": "wsValueOverlap",
+        "type": "valueOverlap",
+        "classes": [
+            {
+                "classId": "fish_effort_hooks_longline",
+                "display": "Effort - Number of hooks",
+                "datasourceId": "longline_fish_effort_2015_2020",
+                "layerId": ""
+            },
+            {
+                "classId": "fish_effort_mt_longline",
+                "display": "Effort - Fish Caught",
+                "datasourceId": "longline_fish_effort_mt_2015_2020",
                 "layerId": ""
             }
         ]

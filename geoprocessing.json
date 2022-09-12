@@ -20,6 +20,7 @@
     "src/functions/benthicValueOverlap.ts",
     "src/functions/keyAreaOverlap.ts",
     "src/functions/ousAreaOverlap.ts",
-    "src/functions/ousConflictAreaOverlap.ts"
+    "src/functions/ousConflictAreaOverlap.ts",
+    "src/functions/wsValueOverlap.ts"
   ]
 }

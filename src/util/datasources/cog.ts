@@ -16,7 +16,7 @@ interface CogOptions {
   windowBox?: BBox;
   /** if window is smaller than one pixel, will buffer the widest dimension to the size of one pixel, ensuring at least one pixel is returned */
   bufferSmall?: boolean;
-  /** optional buffer as percentage of max width of bbox of window, defaults to amount less than max pixel size + 20% of width */
+  /** optional buffer as proportion of max width of bbox of window, defaults to amount less than max pixel size + 20% of width */
   bufferWidthMultiple?: number;
 }
 
