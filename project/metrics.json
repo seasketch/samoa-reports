@@ -505,13 +505,13 @@
                 "classId": "fish_effort_hooks_longline",
                 "display": "Effort - Number of hooks",
                 "datasourceId": "longline_fish_effort_2015_2020",
-                "layerId": ""
+                "layerId": "6320be969ed647417b057627"
             },
             {
                 "classId": "fish_effort_mt_longline",
                 "display": "Effort - Fish Caught",
                 "datasourceId": "longline_fish_effort_mt_2015_2020",
-                "layerId": ""
+                "layerId": "6320b5e59ed647417b0571a8"
             }
         ]
     },
