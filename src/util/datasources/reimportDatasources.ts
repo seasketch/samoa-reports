@@ -8,11 +8,10 @@ import {
   importVectorDatasourceOptionsSchema,
   InternalRasterDatasource,
   InternalVectorDatasource,
-} from "./types";
-import {
   isInternalRasterDatasource,
   isInternalVectorDatasource,
-} from "./helpers";
+} from "@seasketch/geoprocessing";
+
 import { getDatasetBucketName, getCogFilename } from "./helpers";
 import {
   genVectorConfig,

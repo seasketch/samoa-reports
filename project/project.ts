@@ -12,40 +12,28 @@ import {
   InternalVectorDatasource,
   Stats,
   InternalRasterDatasource,
-} from "../src/util/datasources/types";
-import {
   getDatasourceById,
   getInternalRasterDatasourceById,
   getInternalVectorDatasourceById,
   getClipDatasource,
-} from "../src/util/datasources/helpers";
-import {
   getObjectiveById,
-  newObjectiveToLegacy,
-} from "../src/util/objectives/helpers";
-import {
   MetricGroup,
   MetricGroups,
   metricGroupsSchema,
-} from "../src/util/metrics/types";
-import {
-  ObjectiveNew,
-  ObjectivesNew,
   objectivesSchema,
-} from "../src/util/objectives/types";
-import {
   GeoprocessingJsonConfig,
   Metric,
-  MetricGroup as MetricGroupLegacy,
-} from "@seasketch/geoprocessing";
-
-import {
+  Package,
+  packageSchema,
+  geoprocessingConfigSchema,
   getLandVectorDatasource as getGlobalLandVectorDatasource,
   getEezVectorDatasource as getGlobalEezVectorDatasource,
   getGlobalVectorDatasourceById,
-} from "../src/util/datasources/global";
-import { Package } from "@seasketch/geoprocessing/dist/scripts";
-import { Project, projectSchema } from "../src/util/project/types";
+  Project,
+  projectSchema,
+  Objective,
+  Objectives,
+} from "@seasketch/geoprocessing";
 
 /**
  * Client for reading project configuration/metadata.
@@ -56,11 +44,10 @@ export class ProjectClient {
   private _project: Project = projectSchema.parse(basic);
   private _datasources: Datasources = datasourcesSchema.parse(datasources);
   private _metrics: MetricGroups = metricGroupsSchema.parse(metrics);
-  private _objectives: ObjectivesNew = objectivesSchema.parse(objectives);
-  // ToDo: add zod schema and validate
-  private _package: Package = projectPackage as Package;
-  // ToDo: add zod schema and validate
-  private _geoprocessing: GeoprocessingJsonConfig = gp;
+  private _objectives: Objectives = objectivesSchema.parse(objectives);
+  private _package: Package = packageSchema.parse(projectPackage);
+  private _geoprocessing: GeoprocessingJsonConfig =
+    geoprocessingConfigSchema.parse(gp);
 
   constructor() {
     if (ProjectClient._instance) {
@@ -93,7 +80,7 @@ export class ProjectClient {
   }
 
   /** Returns typed config from objectives.json */
-  public get objectives(): ObjectivesNew {
+  public get objectives(): Objectives {
     return this._objectives;
   }
 
@@ -166,7 +153,7 @@ export class ProjectClient {
   // OBJECTIVES //
 
   /** Returns Objective given objectiveId */
-  public getObjectiveById(objectiveId: string): ObjectiveNew {
+  public getObjectiveById(objectiveId: string): Objective {
     return getObjectiveById(objectiveId, this._objectives);
   }
 
@@ -177,31 +164,6 @@ export class ProjectClient {
     if (!mg) throw new Error(`Missing MetricGroup ${metricId} in metrics.json`);
 
     return mg;
-  }
-
-  public getLegacyMetricGroup(metricId: string): MetricGroupLegacy {
-    const mg = this.getMetricGroup(metricId);
-    const topObjective = mg.objectiveId
-      ? newObjectiveToLegacy(this.getObjectiveById(mg.objectiveId))
-      : undefined;
-
-    const legacyMg: MetricGroupLegacy = {
-      ...mg,
-      classes: mg.classes.map((curClass) => {
-        const target = curClass.objectiveId
-          ? this.getObjectiveById(curClass.objectiveId).target
-          : topObjective
-          ? topObjective.target
-          : undefined;
-        return {
-          ...curClass,
-          goalValue: target,
-        };
-      }),
-      ...({ objective: topObjective } || {}),
-    };
-
-    return legacyMg;
   }
 
   /** Returns Metrics for given MetricGroup stat precalcuated on import (keyStats) */
@@ -253,66 +215,6 @@ export class ProjectClient {
       return classMetric;
     });
     return metrics;
-
-    /**
-    if (mg.datasourceId && classKey) {
-      // top-level datasource, multi-class
-      const ds = this.getDatasourceById(mg.datasourceId);
-      const metrics = mg.classes.map((curClass) => {
-        if (!ds.keyStats)
-          throw new Error(`Expected keyStats for ${ds.datasourceId}`);
-        const classValue = ds.keyStats[classKey][curClass.classId][statName];
-        if (!classValue)
-          throw new Error(
-            `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
-          );
-        const classMetric = {
-          groupId: null,
-          geographyId: null,
-          sketchId: null,
-          metricId: mg.metricId,
-          classId: curClass.classId,
-          value: classValue,
-        };
-        return classMetric;
-      });
-      return metrics;
-    } else if (mg.classes[0].datasourceId) {
-      // class-level datasources, single-class each
-      const metrics = mg.classes
-        .map((curClass) => {
-          if (!curClass.datasourceId) {
-            throw new Error(`Missing datasourceId ${mg.metricId}`);
-          }
-          const ds = this.getDatasourceById(curClass.datasourceId);
-          if (!ds.keyStats)
-            throw new Error(`Expected keyStats for ${ds.datasourceId}`);
-          // Grab the total
-          const classValue = ds.keyStats.total.total[statName];
-          if (!classValue)
-            throw new Error(
-              `Expected total ${statName} stat for ${ds.datasourceId} ${curClass.classId}`
-            );
-          // single metric return, one per class
-          return [
-            {
-              groupId: null,
-              geographyId: null,
-              sketchId: null,
-              metricId: mg.metricId,
-              classId: curClass.classId,
-              value: classValue,
-            },
-          ];
-        })
-        .reduce<Metric[]>((metricsSoFar, curClassMetrics) => {
-          return metricsSoFar.concat(curClassMetrics);
-        }, []);
-
-      return metrics;
-    }
-    throw new Error(`Missing datasourceId(s) in MetricGroup ${mg.metricId}`);
-    */
   }
 }
 

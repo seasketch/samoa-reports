@@ -7,8 +7,8 @@ import {
   ImportRasterDatasourceOptions,
   ImportRasterDatasourceConfig,
   ClassStats,
-} from "./types";
-import dsConfig from "./config";
+  datasourceConfig,
+} from "@seasketch/geoprocessing";
 import { publishDatasource } from "./publishDatasource";
 import { createOrUpdateDatasource } from "./datasources";
 import {
@@ -105,7 +105,7 @@ export function genRasterConfig(
     src,
     datasourceId,
     band,
-    formats = dsConfig.importDefaultRasterFormats,
+    formats = datasourceConfig.importDefaultRasterFormats,
     noDataValue,
     measurementType,
     filterDatasource,
@@ -116,7 +116,7 @@ export function genRasterConfig(
   const config: ImportRasterDatasourceConfig = {
     geo_type,
     src,
-    dstPath: newDstPath || dsConfig.defaultDstPath,
+    dstPath: newDstPath || datasourceConfig.defaultDstPath,
     band,
     datasourceId,
     package: fs.readJsonSync(path.join(".", "package.json")),

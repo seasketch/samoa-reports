@@ -2,6 +2,8 @@ import http from "http";
 import finalhandler from "finalhandler";
 import serveStatic from "serve-static";
 
+// Switch to parseGeoraster
+
 export function startLocalServer(
   options: { path: string; port: number } = { path: "./", port: 8000 }
 ) {

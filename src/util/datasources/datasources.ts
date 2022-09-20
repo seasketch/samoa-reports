@@ -1,11 +1,15 @@
 import fs from "fs-extra";
 import path from "path";
-import { datasourcesSchema, Datasource, Datasources } from "./types";
+import {
+  datasourcesSchema,
+  Datasource,
+  Datasources,
+  datasourceConfig,
+} from "@seasketch/geoprocessing";
 import {
   isInternalVectorDatasource,
   isInternalRasterDatasource,
 } from "./helpers";
-import dsConfig from "./config";
 
 /**
  * Manages datasources for a geoprocessing project
@@ -75,7 +79,7 @@ export function readDatasources(filePath?: string) {
   const finalFilePath =
     filePath && filePath.length > 0
       ? filePath
-      : dsConfig.defaultDatasourcesPath;
+      : datasourceConfig.defaultDatasourcesPath;
 
   const diskPds = (() => {
     try {
@@ -91,7 +95,7 @@ export function readDatasources(filePath?: string) {
       console.log(
         `Datasource file not found at ${finalFilePath}, using default datasources`
       );
-      fs.ensureDirSync(path.dirname(dsConfig.defaultDatasourcesPath));
+      fs.ensureDirSync(path.dirname(datasourceConfig.defaultDatasourcesPath));
       // fallback to default
       return pds;
     }
@@ -111,6 +115,6 @@ export function writeDatasources(pd: Datasources, filePath?: string) {
   const finalFilePath =
     filePath && filePath.length > 0
       ? filePath
-      : dsConfig.defaultDatasourcesPath;
+      : datasourceConfig.defaultDatasourcesPath;
   fs.writeJSONSync(finalFilePath, pd, { spaces: 2 });
 }

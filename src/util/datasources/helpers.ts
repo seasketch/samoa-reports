@@ -10,7 +10,7 @@ import {
   Datasource,
   Datasources,
   BaseImportDatasourceConfig,
-} from "./types";
+} from "@seasketch/geoprocessing";
 
 export const isInternalVectorDatasource = (
   /** InternalVectorDatasource object */

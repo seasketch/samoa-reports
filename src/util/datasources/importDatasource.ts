@@ -3,7 +3,7 @@ import {
   ImportRasterDatasourceOptions,
   importVectorDatasourceOptionsSchema,
   importRasterDatasourceOptionsSchema,
-} from "./types";
+} from "@seasketch/geoprocessing";
 
 import { importVectorDatasource } from "./importVectorDatasource";
 import { importRasterDatasource } from "./importRasterDatasource";

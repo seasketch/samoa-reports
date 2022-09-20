@@ -9,8 +9,8 @@ import {
   ImportVectorDatasourceOptions,
   Stats,
   ImportVectorDatasourceConfig,
-} from "./types";
-import dsConfig from "./config";
+  datasourceConfig,
+} from "@seasketch/geoprocessing";
 import { publishDatasource } from "./publishDatasource";
 import { createOrUpdateDatasource } from "./datasources";
 import area from "@turf/area";
@@ -83,7 +83,7 @@ export function genVectorConfig(
     propertiesToKeep = [],
     classKeys,
     layerName,
-    formats = dsConfig.importDefaultVectorFormats,
+    formats = datasourceConfig.importDefaultVectorFormats,
     explodeMulti,
   } = options;
 
@@ -96,7 +96,7 @@ export function genVectorConfig(
   const config: ImportVectorDatasourceConfig = {
     geo_type,
     src,
-    dstPath: newDstPath || dsConfig.defaultDstPath,
+    dstPath: newDstPath || datasourceConfig.defaultDstPath,
     propertiesToKeep,
     classKeys,
     layerName,
