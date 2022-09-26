@@ -90,7 +90,7 @@ const FishingValue = () => {
 
               <ClassTable
                 rows={metricsValueAndPerc}
-                dataGroup={metricGroup}
+                metricGroup={metricGroup}
                 columnConfig={colConfigs}
               />
 
@@ -160,7 +160,7 @@ const genSketchTable = (data: ReportResult) => {
   );
 
   return (
-    <SketchClassTable rows={sketchRows} dataGroup={metricGroup} formatPerc />
+    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
 

@@ -25,7 +25,6 @@ import {
 import project from "../../project";
 
 const metricGroup = project.getMetricGroup("geomorphAreaOverlap");
-const legacyMetricGroup = project.getLegacyMetricGroup("geomorphAreaOverlap");
 const precalcMetrics = project.getPrecalcMetrics(
   metricGroup,
   "area",
@@ -173,7 +172,7 @@ const Geomorphology = () => {
               </p>
               <ClassTable
                 rows={singleClassMetrics}
-                dataGroup={legacyMetricGroup}
+                metricGroup={metricGroup}
                 columnConfig={[
                   {
                     columnLabel: "Class",
@@ -183,7 +182,7 @@ const Geomorphology = () => {
                   {
                     columnLabel: "% Found Within Plan",
                     type: "metricChart",
-                    metricId: legacyMetricGroup.metricId,
+                    metricId: metricGroup.metricId,
                     valueFormatter: "percent",
                     chartOptions: {
                       showTitle: true,
@@ -220,7 +219,7 @@ const Geomorphology = () => {
                 return (
                   <ClassTable
                     rows={ms}
-                    dataGroup={legacyMetricGroup}
+                    metricGroup={metricGroup}
                     columnConfig={[
                       {
                         columnLabel: "Class",
@@ -230,7 +229,7 @@ const Geomorphology = () => {
                       {
                         columnLabel: "% Found Within Plan",
                         type: "metricChart",
-                        metricId: legacyMetricGroup.metricId,
+                        metricId: metricGroup.metricId,
                         valueFormatter: "percent",
                         chartOptions: {
                           showTitle: true,
@@ -282,22 +281,18 @@ const genSketchTable = (data: ReportResult) => {
   const childSketchIds = childSketches.map((sk) => sk.properties.id);
   const childSketchMetrics = toPercentMetric(
     metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === legacyMetricGroup.metricId),
+      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
       childSketchIds
     ),
     precalcMetrics
   );
   const sketchRows = flattenBySketchAllClass(
     childSketchMetrics,
-    legacyMetricGroup.classes,
+    metricGroup.classes,
     childSketches
   );
   return (
-    <SketchClassTable
-      rows={sketchRows}
-      dataGroup={legacyMetricGroup}
-      formatPerc
-    />
+    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
 

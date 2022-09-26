@@ -58,7 +58,7 @@
       "Draft name"
     ],
     "created": "2022-08-02T04:11:36.336Z",
-    "lastUpdated": "2022-08-22T17:06:36.650Z",
+    "lastUpdated": "2022-09-23T01:57:42.427Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Revised Deepwater Bioregions.shp",
     "propertiesToKeep": [
       "Draft name"
@@ -81,7 +81,7 @@
     ],
     "classKeys": [],
     "created": "2022-08-02T04:11:36.955Z",
-    "lastUpdated": "2022-08-22T17:06:38.489Z",
+    "lastUpdated": "2022-09-23T01:57:42.638Z",
     "src": "data/src/Data_Received/Layers_From_Kaituu/Samoa Provisional EEZ.shp",
     "propertiesToKeep": []
   },
@@ -103,7 +103,7 @@
     "layerName": "webm_Offshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T04:47:34.556Z",
-    "lastUpdated": "2022-08-22T17:06:40.471Z",
+    "lastUpdated": "2022-09-23T01:57:42.877Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -125,7 +125,7 @@
     "layerName": "webm_Inshore_AOI_3395",
     "classKeys": [],
     "created": "2022-08-02T19:19:19.486Z",
-    "lastUpdated": "2022-08-22T17:06:42.792Z",
+    "lastUpdated": "2022-09-23T01:57:43.116Z",
     "src": "data/src/SamoaPlanningLayers.gdb",
     "propertiesToKeep": []
   },
@@ -1425,25 +1425,25 @@
     "src": "data/src/Analytics/WS_LL__2015_2020_Hooks_Heatmap.tif"
   },
   {
-    "src": "data/src/Analytics/WS_LL__2015_2020_MT_Heatmap.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "longline_fish_effort_mt_2015_2020",
-    "formats": [
-      "tif"
-    ],
-    "created": "2022-09-12T21:12:13.866Z",
-    "lastUpdated": "2022-09-12T21:12:13.866Z",
+    "geo_type": "raster",
     "keyStats": {
       "total": {
         "total": {
-          "sum": 2462.1699990648776,
           "count": null,
+          "sum": 2462.1699990648776,
           "area": null
         }
       }
     },
+    "formats": [
+      "tif"
+    ],
+    "measurementType": "quantitative",
+    "band": 1,
     "noDataValue": 0,
-    "measurementType": "quantitative"
+    "created": "2022-09-12T21:12:13.866Z",
+    "lastUpdated": "2022-09-12T21:12:13.866Z",
+    "src": "data/src/Analytics/WS_LL__2015_2020_MT_Heatmap.tif"
   }
 ]

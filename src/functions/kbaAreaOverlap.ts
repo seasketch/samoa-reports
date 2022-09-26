@@ -10,13 +10,11 @@ import {
   overlapFeatures,
   rekeyMetrics,
   sortMetrics,
+  getFlatGeobufFilename,
+  isInternalVectorDatasource,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import project from "../../project";
-import {
-  getFlatGeobufFilename,
-  isInternalVectorDatasource,
-} from "../util/datasources/helpers";
 
 export async function kbaAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>

@@ -6,23 +6,19 @@ import {
   Polygon,
   MultiPolygon,
   clip,
-  toJsonFile,
   getLandVectorDatasource,
   getEezVectorDatasource,
   datasourcesSchema,
+  getFlatGeobufFilename,
+  isInternalVectorDatasource,
+  clipMultiMerge,
 } from "@seasketch/geoprocessing";
 import area from "@turf/area";
 import bbox from "@turf/bbox";
 import { featureCollection as fc, featureCollection } from "@turf/helpers";
 import flatten from "@turf/flatten";
 import kinks from "@turf/kinks";
-import { clipMultiMerge } from "@seasketch/geoprocessing";
 import project from "../../project";
-import {
-  getFlatGeobufFilename,
-  isExternalVectorDatasource,
-  isInternalVectorDatasource,
-} from "../util/datasources/helpers";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 const ENFORCE_MAX_SIZE = false;

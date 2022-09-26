@@ -9,14 +9,12 @@ import {
   toNullSketch,
   overlapFeatures,
   rekeyMetrics,
+  getFlatGeobufFilename,
+  isInternalVectorDatasource,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
-import {
-  getFlatGeobufFilename,
-  isInternalVectorDatasource,
-} from "../util/datasources/helpers";
 
 export async function geomorphAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>

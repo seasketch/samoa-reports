@@ -26,7 +26,6 @@ import styled from "styled-components";
 import project from "../../project";
 
 const metricGroup = project.getMetricGroup("ousAreaOverlap");
-const legacyMetricGroup = project.getLegacyMetricGroup("ousAreaOverlap");
 const totalMetrics = project.getPrecalcMetrics(
   metricGroup,
   "area",
@@ -193,7 +192,7 @@ const genSingleSizeTable = (data: ReportResult) => {
     <>
       <ClassTable
         rows={finalMetrics}
-        dataGroup={legacyMetricGroup}
+        metricGroup={metricGroup}
         columnConfig={[
           {
             columnLabel: "Activity",
@@ -243,23 +242,19 @@ const genNetworkSizeTable = (data: ReportResult) => {
   const childSketchIds = childSketches.map((sk) => sk.properties.id);
   const childSketchMetrics = toPercentMetric(
     metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === legacyMetricGroup.metricId),
+      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
       childSketchIds
     ),
     totalMetrics
   );
   const sketchRows = flattenBySketchAllClass(
     childSketchMetrics,
-    legacyMetricGroup.classes,
+    metricGroup.classes,
     childSketches
   );
 
   return (
-    <SketchClassTable
-      rows={sketchRows}
-      dataGroup={legacyMetricGroup}
-      formatPerc
-    />
+    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
 

@@ -10,11 +10,11 @@ import {
   overlapFeatures,
   rekeyMetrics,
   sortMetrics,
+  getFlatGeobufFilename,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
-import { getFlatGeobufFilename } from "../util/datasources/helpers";
 
 //// GENERATE THIS ON DATASOURCE IMPORT?  That way the client can use it
 export const classKey = "Draft name";

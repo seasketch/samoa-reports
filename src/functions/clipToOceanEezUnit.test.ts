@@ -1,15 +1,10 @@
 import { clipLand, clipOutsideEez, clipToOceanEez } from "./clipToOceanEez";
-import {
-  getExampleFeatures,
-  getExampleFeaturesByName,
-  writeResultOutput,
-} from "@seasketch/geoprocessing/scripts/testing";
+import { getExampleFeatures } from "@seasketch/geoprocessing/scripts/testing";
 import {
   ValidationError,
   Feature,
   Polygon,
   MultiPolygon,
-  fixtures,
 } from "@seasketch/geoprocessing";
 import booleanValid from "@turf/boolean-valid";
 import { selfCrossingSketchPolygon } from "@seasketch/geoprocessing/dist/src/testing/fixtures/invalidSketches";

@@ -13,8 +13,8 @@
     "test:smoke": "start-server-and-test start-data 8080 'npm run __test -- --runInBand --group=smoke --silent'",
     "test:smoke:matching": "npm run __test -- --runInBand --group=smoke -t",
     "add:template": "geoprocessing add:template",
-    "import:data": "npx ts-node scripts/importData.ts",
-    "reimport:data": "npx ts-node scripts/reimportData.ts",
+    "import:data": "geoprocessing import:data",
+    "reimport:data": "geoprocessing reimport:data",
     "create:function": "geoprocessing create:function",
     "create:client": "geoprocessing create:client",
     "start:client": "geoprocessing start:client",
@@ -38,6 +38,7 @@
     "@turf/bbox": "6.5.0",
     "@turf/bbox-clip": "6.5.0",
     "@turf/combine": "6.5.0",
+    "@turf/dissolve": "^6.5.0",
     "@turf/flatten": "6.5.0",
     "@turf/invariant": "6.5.0",
     "@turf/kinks": "6.5.0",
@@ -49,7 +50,7 @@
     "zod": "^3.17.3"
   },
   "devDependencies": {
-    "@seasketch/geoprocessing": "0.15.1-experimental-import-data.37",
+    "@seasketch/geoprocessing": "0.15.1-experimental-import-data.75",
     "@turf/boolean-disjoint": "6.5.0",
     "@turf/boolean-valid": "6.5.0",
     "@types/finalhandler": "^1.1.1",
