@@ -43,19 +43,14 @@
     "@turf/invariant": "6.5.0",
     "@turf/kinks": "6.5.0",
     "encoding": "^0.1.13",
-    "finalhandler": "^1.2.0",
     "geoblaze": "^0.3.2",
     "georaster": "^1.5.4",
-    "union-subdivided-polygons": "^0.9.1",
-    "zod": "^3.17.3"
+    "union-subdivided-polygons": "^0.9.1"
   },
   "devDependencies": {
-    "@seasketch/geoprocessing": "0.15.1-experimental-import-data.75",
+    "@seasketch/geoprocessing": "0.15.1-experimental-import-data.84",
     "@turf/boolean-disjoint": "6.5.0",
-    "@turf/boolean-valid": "6.5.0",
-    "@types/finalhandler": "^1.1.1",
-    "ts-to-zod": "^1.11.0",
-    "zx": "^4.3.0"
+    "@turf/boolean-valid": "6.5.0"
   },
   "repositoryUrl": "https://github.com/seasketch/samoa-reports",
   "author": "Tim Welch",

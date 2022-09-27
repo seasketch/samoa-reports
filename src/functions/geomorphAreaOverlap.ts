@@ -33,7 +33,6 @@ export async function geomorphAreaOverlap(
         const ds = project.getDatasourceById(curClass.datasourceId);
         if (isInternalVectorDatasource(ds)) {
           const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(ds)}`;
-          console.log("url", url);
 
           // Fetch features overlapping with sketch, pull from cache if already fetched
           const dsFeatures =
