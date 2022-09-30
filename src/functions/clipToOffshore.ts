@@ -5,18 +5,16 @@ import {
   Feature,
   Polygon,
   MultiPolygon,
+  getFlatGeobufFilename,
+  isInternalVectorDatasource,
+  clipMultiMerge,
 } from "@seasketch/geoprocessing";
+import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import area from "@turf/area";
 import { featureCollection as fc } from "@turf/helpers";
 import flatten from "@turf/flatten";
 import kinks from "@turf/kinks";
-import { clipMultiMerge } from "@seasketch/geoprocessing";
 import project from "../../project";
-import {
-  getFlatGeobufFilename,
-  isInternalVectorDatasource,
-} from "../util/datasources/helpers";
-import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 const ENFORCE_MAX_SIZE = false;
 const MAX_SIZE_KM = 500000 * 1000 ** 2; // Default 500,000 KM

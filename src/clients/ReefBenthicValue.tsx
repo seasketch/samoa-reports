@@ -18,7 +18,6 @@ import {
 import project from "../../project";
 
 const metricGroup = project.getMetricGroup("benthicValueOverlap");
-const legacyMetricGroup = project.getLegacyMetricGroup("benthicValueOverlap");
 const precalcMetrics = project.getPrecalcMetrics(
   metricGroup,
   "sum",
@@ -56,7 +55,7 @@ const ReefBenthicValue = () => {
 
               <ClassTable
                 rows={parentMetrics}
-                dataGroup={legacyMetricGroup}
+                metricGroup={metricGroup}
                 columnConfig={[
                   {
                     columnLabel: "Reef Type",
@@ -113,7 +112,7 @@ const genSketchTable = (data: ReportResult) => {
   );
 
   return (
-    <SketchClassTable rows={sketchRows} dataGroup={metricGroup} formatPerc />
+    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
 

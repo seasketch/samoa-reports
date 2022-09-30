@@ -20,9 +20,6 @@ import {
 import project from "../../project";
 
 const metricGroup = project.getMetricGroup("deepwaterRegionAreaOverlap");
-const legacyMetricGroup = project.getLegacyMetricGroup(
-  "deepwaterRegionAreaOverlap"
-);
 const precalcMetrics = project.getPrecalcMetrics(
   metricGroup,
   "area",
@@ -68,7 +65,7 @@ const DeepwaterRegions = () => {
               </p>
               <ClassTable
                 rows={parentMetrics}
-                dataGroup={legacyMetricGroup}
+                metricGroup={metricGroup}
                 columnConfig={[
                   {
                     columnLabel: "Deepwater Region",
@@ -78,7 +75,7 @@ const DeepwaterRegions = () => {
                   {
                     columnLabel: "% Found Within Plan",
                     type: "metricChart",
-                    metricId: legacyMetricGroup.metricId,
+                    metricId: metricGroup.metricId,
                     valueFormatter: "percent",
                     chartOptions: {
                       showTitle: true,
@@ -123,22 +120,18 @@ const genSketchTable = (data: ReportResult) => {
   const childSketchIds = childSketches.map((sk) => sk.properties.id);
   const childSketchMetrics = toPercentMetric(
     metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === legacyMetricGroup.metricId),
+      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
       childSketchIds
     ),
     precalcMetrics
   );
   const sketchRows = flattenBySketchAllClass(
     childSketchMetrics,
-    legacyMetricGroup.classes,
+    metricGroup.classes,
     childSketches
   );
   return (
-    <SketchClassTable
-      rows={sketchRows}
-      dataGroup={legacyMetricGroup}
-      formatPerc
-    />
+    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
 

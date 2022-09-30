@@ -9,14 +9,12 @@ import {
   toNullSketch,
   overlapFeatures,
   rekeyMetrics,
+  getFlatGeobufFilename,
+  isInternalVectorDatasource,
 } from "@seasketch/geoprocessing";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project";
-import {
-  getFlatGeobufFilename,
-  isInternalVectorDatasource,
-} from "../util/datasources/helpers";
 
 export async function geomorphAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
@@ -35,7 +33,6 @@ export async function geomorphAreaOverlap(
         const ds = project.getDatasourceById(curClass.datasourceId);
         if (isInternalVectorDatasource(ds)) {
           const url = `${project.dataBucketUrl()}${getFlatGeobufFilename(ds)}`;
-          console.log("url", url);
 
           // Fetch features overlapping with sketch, pull from cache if already fetched
           const dsFeatures =
