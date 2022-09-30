@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "ts-node": "ts-node --transpile-only --compiler-options '{\"esModuleInterop\":true, \"module\":\"commonjs\"}'",
-    "start-data": "http-server data/dist -c-1 --silent",
+    "start-data": "http-server data/dist -c-1",
     "__test": "geoprocessing test",
     "test": "npm run test:unit && npm run test:smoke",
     "test:unit": "npm run __test -- --group=unit",
@@ -13,8 +13,11 @@
     "test:smoke": "start-server-and-test start-data 8080 'npm run __test -- --runInBand --group=smoke --silent'",
     "test:smoke:matching": "npm run __test -- --runInBand --group=smoke -t",
     "add:template": "geoprocessing add:template",
-    "import:data": "geoprocessing import:data",
-    "reimport:data": "geoprocessing reimport:data",
+    "import:data": "start-server-and-test 'http-server data/dist -c-1 -p 8001' http://localhost:8001 import:data_",
+    "import:data_": "geoprocessing import:data",
+    "reimport:data": "start-server-and-test 'http-server data/dist -c-1 -p 8001' http://localhost:8001 reimport:data_",
+    "reimport:data_": "geoprocessing reimport:data",
+    "publish:data": "geoprocessing publish:data",
     "create:function": "geoprocessing create:function",
     "create:client": "geoprocessing create:client",
     "start:client": "geoprocessing start:client",
@@ -48,7 +51,7 @@
     "union-subdivided-polygons": "^0.9.1"
   },
   "devDependencies": {
-    "@seasketch/geoprocessing": "0.15.1-experimental-import-data.84",
+    "@seasketch/geoprocessing": "0.15.1-experimental-import-data.116",
     "@turf/boolean-disjoint": "6.5.0",
     "@turf/boolean-valid": "6.5.0"
   },

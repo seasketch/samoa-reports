@@ -148,7 +148,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-05T02:34:25.996Z",
-    "lastUpdated": "2022-09-09T15:20:39.298Z",
+    "lastUpdated": "2022-09-30T13:45:27.380Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Commercial_Fishing.tif"
   },
   {
@@ -157,8 +157,8 @@
     "keyStats": {
       "total": {
         "total": {
-          "count": null,
           "sum": 108252,
+          "count": null,
           "area": null
         }
       }
@@ -170,7 +170,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-05T03:24:47.725Z",
-    "lastUpdated": "2022-09-09T15:20:54.932Z",
+    "lastUpdated": "2022-09-30T14:03:48.402Z",
     "src": "data/src/Data_Products/OUS/heatmaps/Subsistence_Fishing.tif"
   },
   {
@@ -745,7 +745,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T01:33:29.732Z",
-    "lastUpdated": "2022-08-22T17:15:59.113Z",
+    "lastUpdated": "2022-09-30T13:13:58.064Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Algae.tif"
   },
   {
@@ -767,7 +767,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T01:34:26.679Z",
-    "lastUpdated": "2022-08-22T17:16:23.979Z",
+    "lastUpdated": "2022-09-30T13:15:42.918Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_BenthicMicroalgae.tif"
   },
   {
@@ -789,7 +789,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:01:27.066Z",
-    "lastUpdated": "2022-08-20T15:12:16.011Z",
+    "lastUpdated": "2022-09-30T13:17:27.670Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_CoralAlgae.tif"
   },
   {
@@ -811,7 +811,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:12:21.111Z",
-    "lastUpdated": "2022-08-22T17:17:14.130Z",
+    "lastUpdated": "2022-09-30T13:19:16.179Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Coral.tif"
   },
   {
@@ -833,7 +833,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:13:32.920Z",
-    "lastUpdated": "2022-08-22T17:17:38.836Z",
+    "lastUpdated": "2022-09-30T13:21:01.338Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Rock.tif"
   },
   {
@@ -855,7 +855,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:15:02.428Z",
-    "lastUpdated": "2022-08-22T17:18:03.577Z",
+    "lastUpdated": "2022-09-30T13:22:46.405Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Rubble.tif"
   },
   {
@@ -877,7 +877,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:16:13.223Z",
-    "lastUpdated": "2022-08-22T17:18:28.160Z",
+    "lastUpdated": "2022-09-30T13:24:30.730Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Sand.tif"
   },
   {
@@ -899,7 +899,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:17:36.576Z",
-    "lastUpdated": "2022-08-22T17:18:52.542Z",
+    "lastUpdated": "2022-09-30T13:26:16.211Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Seagrass.tif"
   },
   {
@@ -921,7 +921,7 @@
     "band": 1,
     "noDataValue": 0,
     "created": "2022-08-20T02:18:08.505Z",
-    "lastUpdated": "2022-08-22T17:19:17.669Z",
+    "lastUpdated": "2022-09-30T13:27:57.763Z",
     "src": "data/src/Analytics/Geomorphology_Allen_Coral_Atlas_Unknown.tif"
   },
   {
