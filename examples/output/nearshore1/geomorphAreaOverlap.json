@@ -61,7 +61,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 26587787.72547786,
+      "value": 26587787.725475658,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -83,7 +83,7 @@
       "classId": "shelf incising",
       "groupId": null,
       "geographyId": null,
-      "value": 26587787.72547786,
+      "value": 26587787.725475658,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -204,7 +204,7 @@
       "classId": "shelf_class_all",
       "groupId": null,
       "geographyId": null,
-      "value": 108063214.46993412,
+      "value": 108063214.46992972,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -215,7 +215,7 @@
       "classId": "high",
       "groupId": null,
       "geographyId": null,
-      "value": 108063214.46993412,
+      "value": 108063214.46992972,
       "extra": {
         "sketchName": "nearshore1"
       }

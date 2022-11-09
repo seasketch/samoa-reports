@@ -6,7 +6,7 @@
       "classId": "abyssal_class_all",
       "groupId": null,
       "geographyId": null,
-      "value": 915914367.8422627,
+      "value": 915914367.8422585,
       "extra": {
         "sketchName": "span1"
       }
@@ -17,7 +17,7 @@
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
-      "value": 411115161.7682066,
+      "value": 411115161.7681977,
       "extra": {
         "sketchName": "span1"
       }
@@ -50,7 +50,7 @@
       "classId": "basins",
       "groupId": null,
       "geographyId": null,
-      "value": 322604435.6157889,
+      "value": 322604435.61578006,
       "extra": {
         "sketchName": "span1"
       }
@@ -61,7 +61,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 45073961.56853681,
+      "value": 45073961.568537086,
       "extra": {
         "sketchName": "span1"
       }
@@ -72,7 +72,7 @@
       "classId": "blind",
       "groupId": null,
       "geographyId": null,
-      "value": 45073961.56853681,
+      "value": 45073961.568537086,
       "extra": {
         "sketchName": "span1"
       }
@@ -94,7 +94,7 @@
       "classId": "escarpments",
       "groupId": null,
       "geographyId": null,
-      "value": 417375056.12018824,
+      "value": 417375056.1200507,
       "extra": {
         "sketchName": "span1"
       }
@@ -138,7 +138,7 @@
       "classId": "seamount_all",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.85109245,
+      "value": 48971974.851093546,
       "extra": {
         "sketchName": "span1"
       }
@@ -171,7 +171,7 @@
       "classId": "3",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.85109245,
+      "value": 48971974.851093546,
       "extra": {
         "sketchName": "span1"
       }
@@ -237,7 +237,7 @@
       "classId": "slope",
       "groupId": null,
       "geographyId": null,
-      "value": 501420301.9017736,
+      "value": 501420301.9017764,
       "extra": {
         "sketchName": "span1"
       }

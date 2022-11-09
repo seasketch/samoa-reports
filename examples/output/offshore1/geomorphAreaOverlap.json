@@ -61,7 +61,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 94403751.90446073,
+      "value": 94403751.90445206,
       "extra": {
         "sketchName": "offshore1"
       }
@@ -72,7 +72,7 @@
       "classId": "blind",
       "groupId": null,
       "geographyId": null,
-      "value": 94403751.90446073,
+      "value": 94403751.90445206,
       "extra": {
         "sketchName": "offshore1"
       }
@@ -94,7 +94,7 @@
       "classId": "escarpments",
       "groupId": null,
       "geographyId": null,
-      "value": 361861844.79555416,
+      "value": 361861844.795555,
       "extra": {
         "sketchName": "offshore1"
       }

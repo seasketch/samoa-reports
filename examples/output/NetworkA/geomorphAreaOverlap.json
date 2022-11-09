@@ -17,7 +17,7 @@
       "classId": "abyssal_class_all",
       "groupId": null,
       "geographyId": null,
-      "value": 915914367.8422627,
+      "value": 915914367.8422585,
       "extra": {
         "sketchName": "span1"
       }
@@ -39,7 +39,7 @@
       "classId": "abyssal_class_all",
       "groupId": null,
       "geographyId": null,
-      "value": 1508190876.488186,
+      "value": 1508190876.4881816,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -62,7 +62,7 @@
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
-      "value": 411115161.7682066,
+      "value": 411115161.7681977,
       "extra": {
         "sketchName": "span1"
       }
@@ -84,7 +84,7 @@
       "classId": "Hills",
       "groupId": null,
       "geographyId": null,
-      "value": 411447098.64544547,
+      "value": 411447098.6454366,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -197,7 +197,7 @@
       "classId": "basins",
       "groupId": null,
       "geographyId": null,
-      "value": 322604435.6157889,
+      "value": 322604435.61578006,
       "extra": {
         "sketchName": "span1"
       }
@@ -219,7 +219,7 @@
       "classId": "basins",
       "groupId": null,
       "geographyId": null,
-      "value": 322604435.6157889,
+      "value": 322604435.61578006,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -231,7 +231,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 26587787.72547786,
+      "value": 26587787.725475658,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -242,7 +242,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 45073961.56853681,
+      "value": 45073961.568537086,
       "extra": {
         "sketchName": "span1"
       }
@@ -253,7 +253,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 94403751.90446073,
+      "value": 94403751.90445206,
       "extra": {
         "sketchName": "offshore1"
       }
@@ -264,7 +264,7 @@
       "classId": "canyons_all",
       "groupId": null,
       "geographyId": null,
-      "value": 166065501.19847542,
+      "value": 166065501.1984648,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -287,7 +287,7 @@
       "classId": "blind",
       "groupId": null,
       "geographyId": null,
-      "value": 45073961.56853681,
+      "value": 45073961.568537086,
       "extra": {
         "sketchName": "span1"
       }
@@ -298,7 +298,7 @@
       "classId": "blind",
       "groupId": null,
       "geographyId": null,
-      "value": 94403751.90446073,
+      "value": 94403751.90445206,
       "extra": {
         "sketchName": "offshore1"
       }
@@ -309,7 +309,7 @@
       "classId": "blind",
       "groupId": null,
       "geographyId": null,
-      "value": 139477713.47299755,
+      "value": 139477713.47298914,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -321,7 +321,7 @@
       "classId": "shelf incising",
       "groupId": null,
       "geographyId": null,
-      "value": 26587787.72547786,
+      "value": 26587787.725475658,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -354,7 +354,7 @@
       "classId": "shelf incising",
       "groupId": null,
       "geographyId": null,
-      "value": 26587787.72547786,
+      "value": 26587787.725475658,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -377,7 +377,7 @@
       "classId": "escarpments",
       "groupId": null,
       "geographyId": null,
-      "value": 417375056.12018824,
+      "value": 417375056.1200507,
       "extra": {
         "sketchName": "span1"
       }
@@ -388,7 +388,7 @@
       "classId": "escarpments",
       "groupId": null,
       "geographyId": null,
-      "value": 361861844.79555416,
+      "value": 361861844.795555,
       "extra": {
         "sketchName": "offshore1"
       }
@@ -399,7 +399,7 @@
       "classId": "escarpments",
       "groupId": null,
       "geographyId": null,
-      "value": 837809306.9072301,
+      "value": 837809306.9070935,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -557,7 +557,7 @@
       "classId": "seamount_all",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.85109245,
+      "value": 48971974.851093546,
       "extra": {
         "sketchName": "span1"
       }
@@ -579,7 +579,7 @@
       "classId": "seamount_all",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.85109245,
+      "value": 48971974.851093546,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -692,7 +692,7 @@
       "classId": "3",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.85109245,
+      "value": 48971974.851093546,
       "extra": {
         "sketchName": "span1"
       }
@@ -714,7 +714,7 @@
       "classId": "3",
       "groupId": null,
       "geographyId": null,
-      "value": 48971974.85109245,
+      "value": 48971974.851093546,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -816,7 +816,7 @@
       "classId": "shelf_class_all",
       "groupId": null,
       "geographyId": null,
-      "value": 108063214.46993412,
+      "value": 108063214.46992972,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -849,7 +849,7 @@
       "classId": "shelf_class_all",
       "groupId": null,
       "geographyId": null,
-      "value": 228855610.4241925,
+      "value": 228855610.42418808,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -861,7 +861,7 @@
       "classId": "high",
       "groupId": null,
       "geographyId": null,
-      "value": 108063214.46993412,
+      "value": 108063214.46992972,
       "extra": {
         "sketchName": "nearshore1"
       }
@@ -894,7 +894,7 @@
       "classId": "high",
       "groupId": null,
       "geographyId": null,
-      "value": 228855610.4241925,
+      "value": 228855610.42418808,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
@@ -962,7 +962,7 @@
       "classId": "slope",
       "groupId": null,
       "geographyId": null,
-      "value": 501420301.9017736,
+      "value": 501420301.9017764,
       "extra": {
         "sketchName": "span1"
       }
@@ -984,7 +984,7 @@
       "classId": "slope",
       "groupId": null,
       "geographyId": null,
-      "value": 1693173396.011984,
+      "value": 1693173396.011987,
       "extra": {
         "sketchName": "NetworkA",
         "isCollection": true
